@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-input type="email" placeholder="johnsmith@something.com" [(ngModel)]="email" ></ion-input>
+  <ion-input type="password" placeholder="pass1234" [(ngModel)]="pass"></ion-input>
+    <ion-button (click)="login()" class="login-button" shape = "round">
+      Login
+    </ion-button>
+ 
+</ion-content>
