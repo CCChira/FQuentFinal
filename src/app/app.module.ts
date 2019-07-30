@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import {AuthService} from '../providers/auth-tools/auth-tools';
+import {PasswordValidator} from '../validators/password.validator';
 /// import { AuthServiceModule } from '../providers/auth-tools/auth-tools';
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import {AuthService} from '../providers/auth-tools/auth-tools';
     AngularFireDatabaseModule,
   ],
   providers: [
+    PasswordValidator,
     AuthService,
     StatusBar,
     SplashScreen,

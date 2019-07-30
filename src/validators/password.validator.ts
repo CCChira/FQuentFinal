@@ -2,6 +2,7 @@ import { FormControl } from '@angular/forms';
 export class PasswordValidator {
     static isCorrect(control: FormControl): any {
         function validPassword(password) {
+ validPassword(password) {
             const rule = /^\w+$/;
             if (password) {
                 if (password.length < 6) {

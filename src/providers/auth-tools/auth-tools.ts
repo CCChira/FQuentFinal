@@ -24,6 +24,7 @@ export class AuthService {
             this.state = state;
         });
     }
+
     /*logOut() {
         this.googleplus.logout().then(() => {
             this.afAuth.auth.signOut();
