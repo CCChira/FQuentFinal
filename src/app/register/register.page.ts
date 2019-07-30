@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-
+///import { AuthService } from '../../providers/auth-tools/auth-tools'; /// able to use providers for further register
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',

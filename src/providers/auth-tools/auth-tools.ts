@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/map';
+/// import 'rxjs/add/operator/map';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
-import { GooglePlus, GooglePlusOriginal } from '@ionic-native/google-plus';
+// import { GooglePlus, GooglePlusOriginal } from '@ionic-native/google-plus';
 @Injectable()
 export class AuthService {
     public state = {};
     public isCorrect = {};
-    constructor(public afAuth: AngularFireAuth, public googleplus: GooglePlusOriginal) {
+    constructor(public afAuth: AngularFireAuth/*, public googleplus: GooglePlusOriginal*/) {
         this.isCorrect = 0;
     }
     login(email, pass) {
@@ -24,13 +24,13 @@ export class AuthService {
             this.state = state;
         });
     }
-    logOut() {
+    /*logOut() {
         this.googleplus.logout().then(() => {
             this.afAuth.auth.signOut();
         },
         () => {
             this.afAuth.auth.signOut();
         });
-    }
+    }*/
 }
 
