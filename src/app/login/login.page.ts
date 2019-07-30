@@ -23,7 +23,6 @@ export class LoginPage implements OnInit {
     }
     if (this.email && this.pass) {
       let ok = true;
-      if (!validMail) {
       if (!validMail(this.email)) {
         ok = false;
         this.invalidEmailOrPassAlert();
@@ -39,7 +38,6 @@ export class LoginPage implements OnInit {
       });
     } else {console.log('fara email/parola');
             this.invalidEmailOrPassAlert();
-          } /// no email no pass error
           }
   }
   getRegisterPage() {

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-///import { AuthService } from '../../providers/auth-tools/auth-tools'; /// able to use providers for further register
 import { PasswordValidator } from '../../validators/password.validator';
 import { AlertController } from '@ionic/angular';
 /// import { AuthService } from '../../providers/auth-tools/auth-tools'; /// able to use providers for further register
@@ -14,13 +13,6 @@ export class RegisterPage implements OnInit {
 
   private email;
   private password;
-  constructor(private afAuth: AngularFireAuth, private router: Router) { }
-  public register(email, password) {
-    this.afAuth.auth.createUserWithEmailAndPassword(this.email, this.password).then((res) => {
-      this.router.navigateByUrl('login');
-      this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password).then((res2) => {
-        this.router.navigateByUrl('home');
-      });
   // tslint:disable-next-line: max-line-length
   constructor(private afAuth: AngularFireAuth, private router: Router, private passValidate: PasswordValidator, private alertCtrl: AlertController) { }
   public register(email, password){
@@ -53,8 +45,6 @@ export class RegisterPage implements OnInit {
     });
     (await alert).present();
   }
-  public displayLogin() {
-    this.router.navigateByUrl('login');
   public displayHome() {
     this.router.navigateByUrl('home');
   }
