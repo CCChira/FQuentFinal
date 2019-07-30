@@ -14,6 +14,44 @@ ion-button.login-button{
     --transition: background-color 15ms linear;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+ion-content{
+  --background:#ffffff;
+  --margin: auto
 }
+.text{
+ color: warning;
+}
+ion-item{
+  --background: #f0f7f2;
+  --border-color: #0a5e1d;
+  --box-sizing: border-box;
+  --border-radius: 100px;
+}
+
+ion-segment{
+  --box-sizing: border-box;
+  --border-radius: 100px;
+  --width: 70%;
+}
+
+ion-row{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    justify-content: center;
+}
+
+ion-button{
+  --background: #0a5e1d;
+  --border-color: #0a5e1d;
+  --border-radius:100px;
+  --shape: round
+}
+ion-button.login-button{
+    width: 30px;
+}
+ion-fab-button{
+  margin-left: 2em;
+  margin-right: 2em;
+  --background: clear;
+}
+

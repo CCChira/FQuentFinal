@@ -1,4 +1,5 @@
 <ion-content  color="primary">
+<ion-content>
   <form  #form="ngForm" (ngSubmit)="register(form)">
     <ion-grid>
       <ion-row color="primary" justify-content-center>
@@ -26,5 +27,58 @@
         </ion-col>
       </ion-row>
     </ion-grid>
+       <ion-grid>
+          <ion-col>
+            <ion-row justify-content-center>
+              <img src="../../assets/download.png" alt="">
+            </ion-row>
+            <ion-row justify-content-center>
+              <ion-item >
+                <ion-icon slot="start" name="person"></ion-icon>
+                <ion-input  name="name" type="text" placeholder="Name" ngModel required></ion-input>
+              </ion-item>
+            </ion-row>
+        
+            <ion-row justify-content-center>
+             <ion-item>
+               <ion-icon slot="start" name="mail"></ion-icon>
+               <ion-input name="email" type="email" placeholder="your@email.com" [(ngModel)]="email"></ion-input>
+             </ion-item>
+            </ion-row>
+        
+            <ion-row justify-content-center>
+              <ion-item>
+                <ion-icon slot="start" name="lock"></ion-icon>
+                <ion-input name="password" type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+              </ion-item>
+            </ion-row>
+        
+            <ion-row justify-content-center>
+              <ion-item>
+                <ion-icon slot="start" name="lock"></ion-icon>
+                <ion-input name="confirm" type="password" placeholder="Confirm Password" ngModel required></ion-input>
+              </ion-item>
+            </ion-row>
+        
+            <ion-row justify-content-center>
+              <ion-button (click)="register()">Register</ion-button>
+            </ion-row>
+        
+            <ion-item-divider>
+              <ion-label>
+                <p align= center> Sign up with </p> </ion-label>
+            </ion-item-divider>
+        
+            <ion-row justify-content-center>
+                <ion-fab-button> <img src="assets\img\FbIcon.svg" alt="FacebookIcon"> </ion-fab-button>
+                <ion-fab-button> <img src="assets\img\Google+ icon.svg" alt="GoogleIcon"> </ion-fab-button>
+            </ion-row>
+        
+            <ion-row justify-content-end>
+              <img src="src\assets\img\LeafDoodle.png" alt="doodle">
+            </ion-row>
+        
+          </ion-col>
+      </ion-grid>
   </form>
 </ion-content>
