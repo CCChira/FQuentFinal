@@ -20,11 +20,6 @@ export class RegisterPage implements OnInit {
 
   public register( ) {
     const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (this.passValidate.validPassword(password) && email.match(mailFormat)) {
-        this.afAuth.auth.createUserWithEmailAndPassword(email, password).then((res) => {
-          this.afAuth.auth.signInWithEmailAndPassword(email, password).then((res2) => {
-            this.displayHome();
-          });
     const passwordFormat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
     if (this.password.match(passwordFormat) && this.email.match(mailFormat)) {
         this.afAuth.auth.createUserWithEmailAndPassword(this.email, this.password).then((res) => {
@@ -32,10 +27,7 @@ export class RegisterPage implements OnInit {
               this.displayHome();
             });
         });
-    } else if (!this.passValidate.validPassword(password)) {
-       this.invalidPassAlert();
-    } else if (!email.match(mailFormat)) {
-    } else if (!this.password.match(passwordFormat)) {
+    }  else if (!this.password.match(passwordFormat)) {
        this.invalidPassAlert()
     } else if (!this.email.match(mailFormat)) {
        this.invalidEmailAlert();
