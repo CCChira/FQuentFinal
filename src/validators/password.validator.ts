@@ -8,6 +8,10 @@ export class PasswordValidator {
                 if (password.length < 6) {
                     return false;
                 }
+ validPassword(password): any {
+            const rule = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}&/;
+            if(rule.test(password)) {
+                return true;
             } else {
                 return false;
             }

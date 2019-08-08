@@ -6,12 +6,15 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AngularFireModule} from '@angular/fire';
 import { AppComponent } from './app.component';
+import {AppComponent} from '../app/app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import {AuthService} from '../providers/auth-tools/auth-tools';
 import {PasswordValidator} from '../validators/password.validator';
+import {EmailValidator} from '../validators/email.validator';
+import { ReactiveFormsModule } from '@angular/forms';
 /// import { AuthServiceModule } from '../providers/auth-tools/auth-tools';
 @NgModule({
   declarations: [AppComponent],
@@ -23,8 +26,10 @@ import {PasswordValidator} from '../validators/password.validator';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    ReactiveFormsModule
   ],
   providers: [
+    EmailValidator,
     PasswordValidator,
     AuthService,
     StatusBar,
