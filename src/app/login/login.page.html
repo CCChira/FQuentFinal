@@ -1,14 +1,40 @@
-<ion-header>
-  <ion-toolbar>
-    
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-input type="email" placeholder="johnsmith@something.com" [(ngModel)]="email" ></ion-input>
-  <ion-input type="password" placeholder="pass1234" [(ngModel)]="pass"></ion-input>
-    <ion-button (click)="getHomePage()" class="login-button" shape = "round">
-      Login
-    </ion-button>
- 
+  <form  #form="ngForm" (ngSubmit)="register(form)">
+    <ion-grid>
+      <ion-col>
+        <ion-row justify-content-center>
+          <img src="../../assets/download.png" alt="">
+        </ion-row>
+        
+        <ion-row justify-content-center>
+        <ion-item>
+          <ion-icon slot="start" name="mail"></ion-icon>
+          <ion-input name="email" type="email" placeholder="your@email.com" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        </ion-row>
+    
+        <ion-row justify-content-center>
+          <ion-item>
+            <ion-icon slot="start" name="lock"></ion-icon>
+            <ion-input name="password" type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+        </ion-row>
+    
+        <ion-row justify-content-center>
+          <ion-button (click)="getHomePage()">   Login   </ion-button>
+          <ion-button (click)="getRegisterPage()" > Register </ion-button>
+        </ion-row>
+        
+        <ion-item-divider>
+          <ion-label text-center> Login with </ion-label>
+        </ion-item-divider>
+    
+        <ion-row justify-content-center>
+            <ion-fab-button> <img src="assets\img\FbIcon.svg" alt="FacebookIcon"> </ion-fab-button>
+            <ion-fab-button> <img src="assets\img\Google+ icon.svg" alt="GoogleIcon"> </ion-fab-button>
+        </ion-row>
+    
+        </ion-col>
+      </ion-grid>
+   </form>
 </ion-content>
