@@ -1,5 +1,4 @@
 <ion-content>
-  <form  #form="ngForm" (ngSubmit)="register(form)">
   <div>
        <ion-grid>
           <ion-col>
@@ -9,7 +8,6 @@
             <ion-row justify-content-center>
               <ion-item >
                 <ion-icon slot="start" name="person"></ion-icon>
-                <ion-input  name="name" type="text" placeholder="Name" ngModel required></ion-input>
                 <ion-input  name="name" type="text" [(ngModel)]="name" placeholder="Name"></ion-input>
               </ion-item>
             </ion-row>
@@ -17,7 +15,6 @@
             <ion-row justify-content-center>
              <ion-item>
                <ion-icon slot="start" name="mail"></ion-icon>
-               <ion-input name="email" type="email" placeholder="your@email.com" [(ngModel)]="email"></ion-input>
                <ion-input name="email" type="email" [(ngModel)]="email" placeholder="your@email.com" ></ion-input>
              </ion-item>
             </ion-row>
@@ -25,7 +22,6 @@
             <ion-row justify-content-center>
               <ion-item>
                 <ion-icon slot="start" name="lock"></ion-icon>
-                <ion-input name="password" type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
                 <ion-input name="password" type="password" [(ngModel)]="password" placeholder="Password"></ion-input>
               </ion-item>
             </ion-row>
@@ -33,7 +29,6 @@
             <ion-row justify-content-center>
               <ion-item>
                 <ion-icon slot="start" name="lock"></ion-icon>
-                <ion-input name="confirm" type="password" placeholder="Confirm Password" ngModel required></ion-input>
                 <ion-input name="confirm" type="password" [(ngModel)]="confirmpass" placeholder="Confirm Password"></ion-input>
               </ion-item>
             </ion-row>
@@ -58,6 +53,5 @@
         
           </ion-col>
       </ion-grid>
-  </form>
   </div>
 </ion-content>

@@ -1,16 +1,4 @@
-<ion-header>
-  <ion-toolbar>
-    
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-input type="email" placeholder="johnsmith@something.com" [(ngModel)]="email" ></ion-input>
-  <ion-input type="password" placeholder="pass1234" [(ngModel)]="pass"></ion-input>
-    <ion-button (click)="getHomePage()" class="login-button" shape = "round">
-      Login
-    </ion-button>
- 
   <form  #form="ngForm" (ngSubmit)="register(form)">
     <ion-grid>
       <ion-col>
