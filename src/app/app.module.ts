@@ -15,6 +15,7 @@ import {PasswordValidator} from '../validators/password.validator';
 import {EmailValidator} from '../validators/email.validator';
 import { ReactiveFormsModule } from '@angular/forms';
 /// import { AuthServiceModule } from '../providers/auth-tools/auth-tools';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

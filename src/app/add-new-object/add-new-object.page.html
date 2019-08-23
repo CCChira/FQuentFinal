@@ -1,0 +1,63 @@
+<ion-content>
+    <ion-grid>
+        <ion-col>
+
+          <ion-row class="margini">
+            <img src="\assets\icon\Ellipse.svg" alt="FlexLogo">
+          </ion-row>
+
+            <ion-row class="margini">
+              <ion-item class="login-input">
+
+                <ion-input  class="ion-input1" name="titlu" type="text" placeholder="Add a title" [(ngModel)]="titlu">
+                </ion-input>
+              </ion-item>
+            </ion-row>
+
+            <ion-row class="margini">
+              <ion-item class="login-input">
+
+                <ion-input class="ion-input1" name="email" type="email" placeholder="Email" [(ngModel)]="email">
+                </ion-input>
+              </ion-item>
+            </ion-row>
+
+            <ion-row class="margini">
+              <ion-item class="login-input">
+
+                <ion-input class="ion-input1" name="description" type="text" placeholder="Description" [(ngModel)]="description">
+                </ion-input>
+              </ion-item>
+            </ion-row>
+
+            <ion-row class="margini">
+              <ion-item class="login-input">
+                <figure class="login-icon_img">
+                  <img class="img-verde" src="\assets\icon\lacrima.svg" alt="lacrima">
+                  <img class="passmail" src="\assets\Log In\padlock.svg" alt="pass">
+                </figure>
+                <ion-input class="ion-input1" name="confirm" type="password" placeholder="Confirm Password" [(ngModel)]="confirmpass">
+                </ion-input>
+              </ion-item>
+            </ion-row>
+
+            <ion-row class="margini">
+              <ion-item class="login-input">
+                <figure class="login-icon_img">
+                  <img class="img-verde" src="\assets\icon\lacrima.svg" alt="lacrima">
+                  <img class="passmail" src="\assets\Log In\padlock.svg" alt="pass">
+                </figure>
+                <ion-input class="ion-input1" name="number" type="number" placeholder="Phone number" [(ngModel)]="string"  min="0" max="10" required>
+                </ion-input>
+              </ion-item>
+            </ion-row>
+
+            <ion-row class="margini">
+              <ion-button class="buton-login" (click)="register()">
+                <p class="styleb">CONTINUE</p>
+              </ion-button>
+            </ion-row>
+
+        </ion-col>
+    </ion-grid>
+</ion-content>

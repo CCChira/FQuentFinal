@@ -1,6 +1,135 @@
-// App Styles
-// ----------------------------------------------------------------------------
-// Put style rules here that you want to apply to the entire application. These 
-// styles are for the entire app and not just one component. Additionally, this 
-// file can hold Sass mixins, functions, and placeholder classes to be imported 
+// All pages - App Styles
+.text{ color: warning; }
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
+
+.margini{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  justify-content: center; }
+
+.passmail{
+  position: absolute;
+  color: #FCFCFC;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.44));
+  width: 18px;
+  height: 20px;
+  margin-left: 14px; }
+
+.buton-login{
+  position: absolute;
+  margin-top: 14.5px;
+  width: 305px;
+  height: 39px;
+  border-radius: 100px;
+  --background: #37B77A;
+  --box-shadow: none; }
+
+.img-verde{
+  //filter: drop-shadow(0 0 5px #000);
+  align-self: center;
+  z-index: -1;
+  margin-right: 0.5em; }
+
+.ion-input1{ // Campurile de date introductibile - particularizate
+  width: 305px;
+  height: 46px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-radius: 100px;
+  margin:0%;
+  padding-left: 62px !important; }
+
+.login-input,
+.login-input *{ overflow: visible !important; }
+.login-input{ position: relative; }
+
+.login-icon_img{
+  margin: 0;
+  position: absolute;
+  top: 0;
+  z-index: 5; }
+
+.login-icon_img:before{
+  border-radius: 50%;
+  //box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  content: '';
+  height: 46px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 46px;
+  z-index: -1; }
+
+.login-icon_img img{ margin: 0; }
+
+.login-icon_img img:last-child{
+  height: 20px;
+  left: 50%;
+  margin: -12px 0 0 -13px;
+  position: absolute;
+  top: 50%;
+  width: 18px; }
+
+ion-content{ // Fondul tuturor ecranelor
+  --background: #f0f7f2;
+  --margin: auto; }
+
+ion-row{ // Randurile din grila
+  margin-top: 1em;
+  margin-bottom: 1em;
+  justify-content: center;}
+
+ion-button{ // Butoanele de REGISTER
+  --background: #0a5e1d;
+  --border-color: #0a5e1d;
+  --border-radius: 100px;
+  --shape: round; }
+
+ion-button.login-button{ width: 100px; }
+
+ion-fab-button{ // Butoanele de FB si G+
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  --background: clear; }
+
+.stylea{
+  font-weight: bold;
+  text-align: center;
+  margin-top: -10px; }
+
+.styleb{
+  font-weight: bold;
+  font-size: 16px;
+  color: #FCFCFC; }
+
+.style0{
+  font-weight: bold; }
+
+.style1{
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: -5px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #7A7A7A; }
+
+.style2{
+  font-size: 16px;
+  margin-top: -5px;
+  margin-bottom: 15px;
+  margin-left: 25px;
+  margin-right: 5px;
+  color: #7A7A7A; }
+
+// Put style rules here that you want to apply to the entire application. These
+// styles are for the entire app and not just one component. Additionally, this
+// file can hold Sass mixins, functions, and placeholder classes to be imported
 // and used throughout the application.
