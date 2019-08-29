@@ -4,11 +4,11 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { RegisterPage } from './register.page';
+import { Lostpass3Page } from './lostpass3.page';
 
 const routes: Routes=[ {
     path: '',
-    component: RegisterPage } ];
+    component: Lostpass3Page } ];
 
 @NgModule( {
   imports: [
@@ -16,6 +16,6 @@ const routes: Routes=[ {
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes) ],
-  declarations: [RegisterPage] } )
+  declarations: [Lostpass3Page] } )
 
-export class RegisterPageModule {}
+export class Lostpass3PageModule {}

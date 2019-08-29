@@ -1,0 +1,41 @@
+<ion-content>
+  <form #lostpass2Form="ngForm">
+    <ion-grid>
+      <ion-col>
+
+        <ion-item class="style02" lines="none" detail="false" href="http://localhost:8100/lostpass1">
+          <ion-icon name="arrow-back" slot="start" margin="2px"> </ion-icon>
+          <ion-label class="style01"> Request again </ion-label>
+        </ion-item>
+
+        <ion-row class="margini0"> <img src="\assets\icon\Ellipse.svg" alt="FlexLogo"> </ion-row>
+
+        <ion-row> <p class="style11"> Please enter the Verification Code. </p> </ion-row>
+
+        <ion-row class="margini3"> <p class="style12"> We have sent a verification code to your registered email. </p> </ion-row>
+
+        <ion-row>
+          <ion-item class="linkstyle" lines="none">
+              <ion-col> <ion-input class="digitfield" name="digit1" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" [(ngModel)]="digit1"> </ion-input> </ion-col>
+              <ion-col> <ion-input class="digitfield" name="digit2" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" [(ngModel)]="digit2"> </ion-input> </ion-col>
+              <ion-col> <ion-input class="digitfield" name="digit3" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" [(ngModel)]="digit3"> </ion-input> </ion-col>
+              <ion-col> <ion-input class="digitfield" name="digit4" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" [(ngModel)]="digit4"> </ion-input> </ion-col>
+          </ion-item>
+        </ion-row>
+
+        <ion-row class="margini1">
+          <ion-button class="bigbutton" (click)="newpass()"> <p class="styleb"> VERIFY CODE </p> </ion-button>
+        </ion-row>
+
+        <ion-row> <p class="style3"> Don't have an account? </p> </ion-row>
+
+        <ion-row>
+          <ion-item class="linkstyle" detail="false" href="http://localhost:8100/register">
+            <ion-label style="color: #F99531; font-size: 20px; font-weight: bold; margin: 5px 10px 5px 10px;"> Sign Up! </ion-label>
+          </ion-item>
+        </ion-row>
+
+       </ion-col>
+    </ion-grid>
+  </form>
+</ion-content>
