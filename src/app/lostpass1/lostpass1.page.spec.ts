@@ -9,14 +9,13 @@ describe('Lostpass1Page', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ Lostpass1Page ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-    .compileComponents(); }));
+      schemas: [CUSTOM_ELEMENTS_SCHEMA], })
+    .compileComponents(); } ) );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Lostpass1Page);
     component = fixture.componentInstance;
-    fixture.detectChanges(); });
+    fixture.detectChanges(); } );
 
   it('should create', () => {
     expect(component).toBeTruthy(); });
