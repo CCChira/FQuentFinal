@@ -10,9 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import {AuthService} from '../providers/auth-tools/auth-tools';
-import {PasswordValidator} from '../validators/password.validator';
-import {EmailValidator} from '../validators/email.validator';
+import { AuthService } from '../providers/auth-tools/auth-tools';
+import { PasswordValidator } from '../validators/password.validator';
+import { EmailValidator } from '../validators/email.validator';
 import { ReactiveFormsModule } from '@angular/forms';
 /// import { AuthServiceModule } from '../providers/auth-tools/auth-tools';
 

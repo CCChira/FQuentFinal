@@ -12,6 +12,8 @@ const routes: Routes = [
   { path: 'newoffer', loadChildren: './newoffer/newoffer.module#NewofferPageModule' },
   { path: 'newrequest', loadChildren: './newrequest/newrequest.module#NewrequestPageModule' },
   { path: 'market', loadChildren: './market/market.module#MarketPageModule' },
+  { path: 'searcher', loadChildren: './searcher/searcher.module#SearcherPageModule' },
+  { path: 'tooltop', loadChildren: './tooltop/tooltop.module#TooltopPageModule' },
 ];
 
 @NgModule({

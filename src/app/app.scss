@@ -11,6 +11,9 @@
 .margini3{ //ion-row: specific page logos
   margin: 10px 30px 10px 30px; }
 
+.marginih{ //paragraph: in slides
+  padding: 10px 10px 10px 10px; }
+
 .myicons{  //img: small icons
   width: 18px;
   height: 20px;
@@ -20,11 +23,22 @@
   width: 305px;
   height: 46px;
   font-size: 18px;
-  --color: #ADADAD;
-  background: rgba(255, 255, 255, 0.3);
+  color: #7A7A7A;
+  background: rgba(255, 255, 255, 0.6); //alb 70%, combinat cu fondul
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 100px;
   padding-left: 60px !important; }
+
+.digitfield{ //ion-input: campurile de digits
+  width: 44px;
+  height: 44px;
+  font-size: 110%;
+  color: #7A7A7A;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.6); //alb 60%, combinat cu fondul
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0px 12px 0px 12px;
+  padding: 10px 4px 10px 4px !important; }
 
 .mydrop{ //img: lacrima
   align-self: center;
@@ -48,8 +62,63 @@
   top: 50%;
   width: 18px; }
 
+.setaridiv{ // div: setarea generala
+  display: flex;
+  justify-content: center; }
+
+ion-card{ // setarea generala
+  display: flex;
+  //justify-content: center;
+  width: 400px;
+  border-radius: 10px !important;
+  margin: 0px 30px 10px 30px !important; }
+
+ion-card.thumbcard{
+  display: flex;
+  //justify-content: center;
+  width: 170px !important;
+  border-radius: 5px !important;
+  margin: 5px 5px 5px 5px !important; }
+
+ion-card-header{ // setarea generala
+  padding: 10px 2px 0px 2px !important; }
+
+ion-card-content.thumbpad{ // setarea generala
+  padding: 10px 10px 10px 10px !important; }
+
+ion-card-title{ // setarea generala
+  font-size: 22px;
+  color: #37B77A;
+  margin: 0px 5px 10px 5px; }
+
+ion-card-subtitle{ // setarea generala
+  font-size: 16px;
+  color: #ADADAD;
+  margin: 5px 5px -5px 5px; }
+
+.paratext{ //paragraph: in slides
+  font-size: 18px !important;
+  color: #37B77A;
+  margin: 10px 10px 15px 10px !important; }
+
+.minitext{ //paragraph: in slides
+  font-size: 16px !important;
+  color: #37B77A;
+  text-align: center;
+  margin: 0px 5px -5px 5px !important; }
+
+.swiper-pagination-bullet{ // punctele de la swipe
+  width: 12px;
+  height: 12px;
+  --bullet-background: #ADADAD;
+  --bullet-background-active: #F99531;
+  margin: 12px 8px 10px 8px !important;
+  display: inline-block;
+  border-radius: 100%;
+  opacity: 0.8; }
+
 ion-content{ // fondul tuturor ecranelor
-  --background: #f0f7f2;
+  --background: #fff7f2; //rose ivory
   --margin: auto; }
 
 ion-item{ // setarea generala
@@ -62,10 +131,10 @@ ion-item{ // setarea generala
   --padding-start: 0px; }
 
 ion-item.linkstyle{ // link orange + la 4 digits
-  --background: #F0F7F2;
-  --background-focused: #F0F7F2; // la trecere cu Tab
-  --background-activated: #F0F7F2; // la apasare
-  --background-hover: #F0F7F2; // la trecere cu mouse
+  --background: #FFF7F2;
+  --background-focused: #FFF7F2; // la trecere cu Tab
+  --background-activated: #FFF7F2; // la apasare
+  --background-hover: #FFF7F2; // la trecere cu mouse
   --border-radius: 100px;
   --inner-padding: 0px 25px 0px 25px; }
 
@@ -83,7 +152,11 @@ ion-button{ // setarea generala
   margin-top: 0px;
   margin-bottom: 0px; }
 
-.bigbutton{ //ion-button: butonul mare
+ion-fab-button{ // Butoanele de FB si G+
+  margin: 10px 30px 20px 30px;
+  --background: clear; }
+
+.bigbutton{ // ion-button: butonul mare
   width: 305px;
   height: 45px;
   --background: #37B77A;
@@ -91,40 +164,60 @@ ion-button{ // setarea generala
   --background-hover: #2E9664; } // la trecere cu mouse
 // --box-shadow: none;
 
-.styleb{ //p: scrisul pe butoane
+.bigbutton2{ // ion-button: butonul mare negativ
+  width: 305px;
+  height: 45px;
+  --background: #FFFFFF;
+  --background-activated: #2E9664; // la apasare
+  --background-hover: #2E9664;  // la trecere cu mouse
+  display: flex;
+  margin: 10px 40px 10px 40px !important;
+  border: 3px solid #37B77A;
+  box-sizing: border-box;
+  border-radius: 100px;}
+// --box-shadow: none;
+
+.styleb{ // p: scrisul pe butoane
   font-weight: bold;
   font-size: 16px;
-  color: #FCFCFC; }
+  color: #FFF7F2; }
 
-ion-fab-button{ // Butoanele de FB si G+
-  margin: 10px 30px 20px 30px;
-  --background: clear; }
+.styleb2{ //p: scrisul pe butoane negative
+ font-weight: bold;
+ font-size: 16px;
+ color: #37B77A; /*verde*/ }
 
-.style01{ //ion-label: arrow header writing
-  font-weight: bold;
-  color: #FA7A7A;
+.style01{ // ion-label: arrow header writing
+  margin: 0px 10px 0px 25px;
   padding: -25px 10px -20px 10px; }
 
-.style02{ //ion-item: arrow header
+.style02{ // ion-item: arrow header writinG
+  font-weight: bold;
   font-size: 16px;
   margin: 0px 5px 10px 5px;
   color: #7A7A7A; }
 
-.style11{ //ion-row: question one
+.style11{ // ion-row: question one
   font-weight: bold;
   font-size: 18px;
   margin: 5px 10px 5px 10px;
   color: #7A7A7A; }
 
-.style12{ //ion row: answer one
+.style12{ // ion row: answer one
   font-size: 16px;
   margin: 0px 10px 0px 10px;
   color: #7A7A7A; }
 
-.style3{ //ion-row: question two + group.svg
+.style21{ // ion-row: question two + group.svg
   font-size: 18px;
   margin: 8px 10px 8px 10px;
   color: #7A7A7A; }
+
+.style22{ // ion-label: answer two
+  color: #F99531 !important; // portocaliu
+  font-size: 20px !important;
+  font-weight: bold;
+  margin: 5px 10px 5px 10px; }
 
 // Put style rules here that you want to apply to the entire application. These
 // styles are for the entire app and not just one component. Additionally, this
