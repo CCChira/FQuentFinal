@@ -15,20 +15,17 @@ $(document).ready(function() {
 
     setTimeout(function() {
       scrolling = false;
-    }, animTime);
-  };
+    }, animTime); };
 
   function navigateUp() {
     if (curPage === 1) return;
     curPage--;
-    pagination();
-  };
+    pagination(); };
 
   function navigateDown() {
     if (curPage === numOfPages) return;
     curPage++;
-    pagination();
-  };
+    pagination(); };
 
   $(document).on("mousewheel DOMMouseScroll", function(e) {
     if (scrolling) return;
@@ -36,8 +33,7 @@ $(document).ready(function() {
       navigateUp();
     } else {
       navigateDown();
-    }
-  });
+    } });
 
   $(document).on("keydown", function(e) {
     if (scrolling) return;
@@ -45,7 +41,5 @@ $(document).ready(function() {
       navigateUp();
     } else if (e.which === 40) {
       navigateDown();
-    }
-  });
-
-});
+    } });
+} );

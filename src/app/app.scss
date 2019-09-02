@@ -71,14 +71,16 @@ ion-card{ // setarea generala
   //justify-content: center;
   width: 400px;
   border-radius: 10px !important;
-  margin: 0px 30px 10px 30px !important; }
+  margin: 10px 30px 10px 30px !important; }
 
 ion-card.thumbcard{
   display: flex;
-  //justify-content: center;
   width: 170px !important;
   border-radius: 5px !important;
   margin: 5px 5px 5px 5px !important; }
+
+ion-card.thincard{
+  margin: 10px 30px -5px 30px !important; }
 
 ion-card-header{ // setarea generala
   padding: 10px 2px 0px 2px !important; }
@@ -146,15 +148,14 @@ ion-row{ // setarea generala
 ion-col{ // setarea generala + la casutele de digits
  --ion-grid-column-padding: 5px; }
 
-ion-button{ // setarea generala
-  --background: #0a5e1d;
-  --border-radius: 100px;
-  margin-top: 0px;
-  margin-bottom: 0px; }
-
 ion-fab-button{ // Butoanele de FB si G+
   margin: 10px 30px 20px 30px;
   --background: clear; }
+
+ion-button{ // setarea generala
+  --border-radius: 28px;
+  margin-top: 0px;
+  margin-bottom: 0px; }
 
 .bigbutton{ // ion-button: butonul mare
   width: 305px;
@@ -162,7 +163,6 @@ ion-fab-button{ // Butoanele de FB si G+
   --background: #37B77A;
   --background-activated: #2E9664; // la apasare
   --background-hover: #2E9664; } // la trecere cu mouse
-// --box-shadow: none;
 
 .bigbutton2{ // ion-button: butonul mare negativ
   width: 305px;
@@ -170,12 +170,8 @@ ion-fab-button{ // Butoanele de FB si G+
   --background: #FFFFFF;
   --background-activated: #2E9664; // la apasare
   --background-hover: #2E9664;  // la trecere cu mouse
-  display: flex;
-  margin: 10px 40px 10px 40px !important;
   border: 3px solid #37B77A;
-  box-sizing: border-box;
-  border-radius: 100px;}
-// --box-shadow: none;
+  border-radius: 28px; }
 
 .styleb{ // p: scrisul pe butoane
   font-weight: bold;

@@ -1,6 +1,98 @@
 <ion-content>
-  <div>
-   <a href="#1"></a>
-   <a href="#2"></a>
-</div>
+  <ion-grid>
+    <ion-col>
+
+      <ion-slides pager>
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title> Tool's Bonanza </ion-card-title>
+              <ion-card-subtitle> Easiest way to share ! </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <img src="\assets\samples\Background.jpg" alt="Background">
+              <p class="paratext"> Best deals inside... </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title> Oferta zilei </ion-card-title>
+              <ion-card-subtitle> Promotia 1 </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <img src="\assets\samples\Bosch2.jpg" alt="Bormasina">
+              <p class="paratext"> Cartierul Marasti </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title> Oferta zilei </ion-card-title>
+              <ion-card-subtitle> Promotia 2 </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <img src="\assets\samples\Yikoda.jpg" alt="Filetanta">
+              <p class="paratext"> Cartierul Manastur </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title> Oferta zilei </ion-card-title>
+              <ion-card-subtitle> Promotia 3 </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <img src="\assets\samples\Blackdecker4.jpg" alt="Flex">
+              <p class="paratext"> Cartierul Gheorghieni </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title> Oferta zilei </ion-card-title>
+              <ion-card-subtitle> Promotia 4 </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <img src="\assets\samples\Makita3.jpg" alt="Drujba">
+              <p class="paratext"> Cartierul Centru </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+
+
+        <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title> Oferta zilei </ion-card-title>
+              <ion-card-subtitle> Promotia 5 </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <img src="\assets\samples\Dewalt2.jpg" alt="Capsator">
+              <p class="paratext"> Cartierul Gruia </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+
+      </ion-slides>
+
+      <ion-row class="margini0"> <ion-button class="bigbutton"  (click)="gotoLogin()"> <p class="styleb"> LOGIN </p> </ion-button> </ion-row>
+      <ion-row class="margini0"> <ion-button class="bigbutton2" (click)="gotoRegister()"> <p class="styleb2"> REGISTER </p> </ion-button> </ion-row>
+
+      <ion-row>
+        <ion-item class="linkstyle" detail="false" href="http://localhost:8100/market">
+          <ion-label class="style22"> Go to Market! </ion-label>
+        </ion-item>
+      </ion-row>
+
+    </ion-col>
+  </ion-grid>
 </ion-content>
