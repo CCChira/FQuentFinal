@@ -1,0 +1,66 @@
+<ion-content>
+  <form #searcherForm="ngForm">
+    <ion-grid>
+        <ion-col>
+
+          <ion-item class="style02" lines="none" detail="false" href="http://localhost:8100/home">
+            <ion-icon name="arrow-back" slot="start" margin="2px"> </ion-icon>
+            <ion-label class="style01"> Search </ion-label>
+          </ion-item>
+
+          <ion-row class="margini0"> <img src="\assets\icon\Ellipse.svg" alt="FlexLogo"> </ion-row>
+
+          <ion-row> <p class="style11"> Try our search: </p> </ion-row>
+
+          <ion-row class="margini1">
+            <ion-item lines="none">
+              <ion-input  class="infield" name="keyword" type="text" placeholder="Keyword" [(ngModel)]="keyword"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="margini1">
+            <ion-item lines="none">
+              <ion-input class="infield" name="category" type="text" placeholder="Category" [(ngModel)]="category"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="margini1">
+            <ion-item lines="none">
+              <ion-input class="infield" name="description" type="text" placeholder="Description" [(ngModel)]="description"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="margini1">
+            <ion-item lines="none">
+              <ion-input class="infield" name="maxprice" type="text" placeholder="Maximum Price" [(ngModel)]="maxprice"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="margini1">
+            <ion-item lines="none">
+              <ion-input class="infield" name="searcharea" type="text" placeholder="Search Area" [(ngModel)]="searcharea"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="margini1">
+            <ion-button class="bigbutton" (click)="searchsome()"> <p class="styleb"> SEARCH MARKET </p> </ion-button>
+          </ion-row>
+
+          <ion-row> <p class="style21"> Want to offer or request something? </p> </ion-row>
+
+          <ion-row>
+            <ion-item class="linkstyle" detail="false" href="http://localhost:8100/newoffer">
+              <ion-label class="style22"> Insert an offer! </ion-label>
+            </ion-item>
+          </ion-row>
+
+          <ion-row>
+            <ion-item class="linkstyle" detail="false" href="http://localhost:8100/newrequest">
+              <ion-label class="style22"> Insert a request! </ion-label>
+            </ion-item>
+          </ion-row>
+
+        </ion-col>
+    </ion-grid>
+  </form>
+</ion-content>
