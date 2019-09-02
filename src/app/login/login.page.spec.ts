@@ -10,12 +10,12 @@ describe('LoginPage', () => {
     TestBed.configureTestingModule({
       declarations: [ LoginPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA], })
-    .compileComponents(); }));
+    .compileComponents(); } ) );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(LoginPage);
     component = fixture.componentInstance;
-    fixture.detectChanges(); });
+    fixture.detectChanges(); } );
 
   it('should create', () => {
     expect(component).toBeTruthy(); });
