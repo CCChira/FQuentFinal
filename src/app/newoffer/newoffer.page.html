@@ -8,11 +8,28 @@
             <ion-label class="style01"> New Offer </ion-label>
           </ion-item>
 
-          <ion-row class="margini0"> <img src="\assets\icon\Ellipse.svg" alt="FlexLogo"> </ion-row>
+          <ion-row> <p class="style11"> Insert a new offer: </p> </ion-row>
 
-          <ion-row> <p class="style11"> Do you have something to lend? </p> </ion-row>
+          <ion-row>
+             <ion-card class="medcard">
+               <ion-card-content class="thumbpad">
+                 <span *ngIf="uploadImage === null"> <img id="initialImage" src="\assets\samples\Background.jpg" /> </span>
+                 <span *ngIf="uploadImage != null"> <img id="checkinImage" [src]="uploadImage" (load)="imageLoaded()" /> </span>
+                 <span *ngIf="processing"> <ion-spinner> </ion-spinner> <h1>Processing...</h1> </span>
+               </ion-card-content>
+             </ion-card>
+           </ion-row>
 
-          <ion-row class="margini3"> <p class="style12"> Insert a new offer to the market: </p> </ion-row>
+          <ion-row class="margini1">
+            <input type="file" id="fileLoader" #fileLoader name="files" title="Load File" hidden />
+            <ion-button class="addbutton" icon-left (click)="addPicture(fileLoader)">
+              <ion-icon name="camera"> </ion-icon>
+              <p class="styleb"> &nbsp;&nbsp;SELECT IMAGE </p>
+            </ion-button>
+            <ion-button class="remvbutton" icon-left (click)="removePic()" [disabled]="uploadImage === null">
+              <ion-icon name="trash"> </ion-icon>
+            </ion-button>
+          </ion-row>
 
           <ion-row class="margini1">
             <ion-item lines="none">

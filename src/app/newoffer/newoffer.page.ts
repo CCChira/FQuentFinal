@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../providers/auth-tools/auth-tools';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 @Component( {
   selector: 'app-newoffer',
@@ -9,12 +10,14 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./newoffer.page.scss'], } )
 
 export class NewofferPage implements OnInit {
+  private processing: boolean;
+  private uploadImage = null;
   private title;
   private category;
   private description;
   private reqprice;
   private contactphone;
-  constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
+  constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController, public navCtrl: NavController) { }
 
   public newoffer() {
     if (true /*decizie lipsa pentru verificarea unei oferte noi*/ ) {
@@ -34,5 +37,25 @@ export class NewofferPage implements OnInit {
   public displayMarket() {
     this.router.navigateByUrl('market'); }
 
+  addPicture(fileLoader) {
+    fileLoader.click();
+    var that = this;
+    fileLoader.onchange = function () {
+      var file = fileLoader.files[0];
+      var reader = new FileReader();
+
+      reader.addEventListener("load", function () {
+        that.processing = true;
+        that.uploadImage = reader.result; }, false);
+
+      if (file) {
+        reader.readAsDataURL(file); } } }
+
+  imageLoaded(){
+    this.processing = false; }
+
+  removePic() {
+    this.uploadImage = null; }
+
   ngOnInit() { }
-}
+ }

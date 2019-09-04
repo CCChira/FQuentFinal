@@ -24,9 +24,9 @@
   height: 46px;
   font-size: 18px;
   color: #7A7A7A;
-  background: rgba(255, 255, 255, 0.6); //alb 70%, combinat cu fondul
+  background: rgba(255, 255, 255, 0.6); //alb 60%, combinat cu fondul
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 100px;
+  border-radius: 28px;
   padding-left: 60px !important; }
 
 .digitfield{ //ion-input: campurile de digits
@@ -68,24 +68,32 @@
 
 ion-card{ // setarea generala
   display: flex;
-  //justify-content: center;
   width: 400px;
   border-radius: 10px !important;
   margin: 10px 30px 10px 30px !important; }
 
-ion-card.thumbcard{
+ion-card.medcard{ // carduri medii
+  display: flex;
+  width: 240px !important;
+  border-radius: 10px !important;
+  margin: 5px 5px 5px 5px !important; }
+
+ion-card.thumbcard{ // carduri mici
   display: flex;
   width: 170px !important;
   border-radius: 5px !important;
   margin: 5px 5px 5px 5px !important; }
 
-ion-card.thincard{
+ion-card.thincard{ // carduri inguste
   margin: 10px 30px -5px 30px !important; }
 
 ion-card-header{ // setarea generala
   padding: 10px 2px 0px 2px !important; }
 
-ion-card-content.thumbpad{ // setarea generala
+ion-card-content{ // setarea generala
+  padding: 13px 13px 13px 13px !important; }
+
+ion-card-content.thumbpad{ // carduri medii si mici
   padding: 10px 10px 10px 10px !important; }
 
 ion-card-title{ // setarea generala
@@ -120,24 +128,24 @@ ion-card-subtitle{ // setarea generala
   opacity: 0.8; }
 
 ion-content{ // fondul tuturor ecranelor
-  --background: #fff7f2; //rose ivory
+  --background: white; //rose ivory
   --margin: auto; }
 
 ion-item{ // setarea generala
-  --background: #fff7f2;
-  --border-color: #fff7f2;
-  --border-radius: 100px;
+  --background: white;
+  --border-color: white;
+  --border-radius: 30px;
   --shape: round;
   --inner-padding-top: 0px;
   --inner-padding-end: -1px;
   --padding-start: 0px; }
 
 ion-item.linkstyle{ // link orange + la 4 digits
-  --background: #FFF7F2;
-  --background-focused: #FFF7F2; // la trecere cu Tab
-  --background-activated: #FFF7F2; // la apasare
-  --background-hover: #FFF7F2; // la trecere cu mouse
-  --border-radius: 100px;
+  --background: white;
+  --background-focused: white; // la trecere cu Tab
+  --background-activated: white; // la apasare
+  --background-hover: white; // la trecere cu mouse
+  --border-radius: 30px;
   --inner-padding: 0px 25px 0px 25px; }
 
 ion-row{ // setarea generala
@@ -153,7 +161,7 @@ ion-fab-button{ // Butoanele de FB si G+
   --background: clear; }
 
 ion-button{ // setarea generala
-  --border-radius: 28px;
+  --border-radius: 75px;
   margin-top: 0px;
   margin-bottom: 0px; }
 
@@ -173,10 +181,24 @@ ion-button{ // setarea generala
   border: 3px solid #37B77A;
   border-radius: 28px; }
 
+.addbutton{ // ion-button: butonul de "select image"
+  width: 216px;
+  height: 45px;
+  --background: #37B77A;
+  --background-activated: #2E9664; // la apasare
+  --background-hover: #2E9664; } // la trecere cu mouse
+
+.remvbutton{ // ion-button: butonul de "remove image"
+  width: 80px;
+  height: 48px;
+  --background: #37B77A;
+  --background-activated: #2E9664; // la apasare
+  --background-hover: #2E9664; } // la trecere cu mouse
+
 .styleb{ // p: scrisul pe butoane
   font-weight: bold;
   font-size: 16px;
-  color: #FFF7F2; }
+  color: white; }
 
 .styleb2{ //p: scrisul pe butoane negative
  font-weight: bold;
