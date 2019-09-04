@@ -10,10 +10,11 @@
 
           <ion-row> <p class="style11"> Insert a new offer: </p> </ion-row>
 
+
           <ion-row>
              <ion-card class="medcard">
                <ion-card-content class="thumbpad">
-                 <span *ngIf="uploadImage === null"> <img id="initialImage" src="\assets\samples\Background.jpg" /> </span>
+                 <span *ngIf="uploadImage === null"> <img id="initialImage" src="\assets\icon\Camera.jpg" /> </span>
                  <span *ngIf="uploadImage != null"> <img id="checkinImage" [src]="uploadImage" (load)="imageLoaded()" /> </span>
                  <span *ngIf="processing"> <ion-spinner> </ion-spinner> <h1>Processing...</h1> </span>
                </ion-card-content>
