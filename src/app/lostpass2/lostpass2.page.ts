@@ -21,13 +21,13 @@ export class Lostpass2Page implements OnInit {
       this.displayLospass3(); }
 
       else {console.log('cod incorect');
-        this.invalidCodeAlert(); }  }
+        this.invalidCodeAlert(); } }
 
   async invalidCodeAlert() {
     const alert = this.alertCtrl.create({
       header: 'Code Verifying Failed',
       message: 'You need to enter a valid code in order to change password.',
-      buttons: ['TRY AGAIN']  });
+      buttons: ['TRY AGAIN'] });
     (await alert).present(); }
 
   public displayLospass3() {

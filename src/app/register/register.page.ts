@@ -31,7 +31,7 @@ export class RegisterPage implements OnInit {
         this.invalidPassAlert(); }
         else if (!this.email.match(mailFormat)) {
           console.log('mail incorect');
-          this.invalidEmailAlert(); }  }
+          this.invalidEmailAlert(); } }
 
   public loginWithFacebook() {
     this.facebookAlert();

@@ -22,7 +22,7 @@ export class SearcherPage implements OnInit {
       this.displayFound(); }
 
       else {console.log('cautare incompleta');
-        this.invalidSearchAlert(); }  }
+        this.invalidSearchAlert(); } }
 
   async invalidSearchAlert() {
     const alert = this.alertCtrl.create({

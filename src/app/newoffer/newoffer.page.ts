@@ -25,7 +25,7 @@ export class NewofferPage implements OnInit {
       this.displayMarket(); }
 
       else {console.log('oferta incompleta');
-        this.invalidOfferAlert(); }  }
+        this.invalidOfferAlert(); } }
 
   async invalidOfferAlert() {
     const alert = this.alertCtrl.create({

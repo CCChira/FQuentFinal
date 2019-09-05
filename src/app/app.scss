@@ -5,7 +5,7 @@
 .margini1{ //ion-row: randuri de inserare + butoane validare
   margin: 12px; }
 
-.margini2{ //ion-row: specific page logos
+.margini2{ //ion-row: specific page logos - binoclu
   margin: 10px 47px 0px 10px; }
 
 .margini3{ //ion-row: specific page logos
@@ -14,25 +14,27 @@
 .marginih{ //paragraph: in slides
   padding: 10px 10px 10px 10px; }
 
-.myicons{  //img: small icons
+.myicons{ //img: small icons
   width: 18px;
   height: 20px;
   margin-left: 14px; }
 
 .infield{ //ion-input: campurile de inserare
   width: 305px;
-  height: 46px;
+  height: 48px;
   font-size: 18px;
+  font-family: 'Trebuchet MS', Sans-serif;
   color: #7A7A7A;
   background: rgba(255, 255, 255, 0.6); //alb 60%, combinat cu fondul
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1); //gri 10%
   border-radius: 28px;
-  padding-left: 60px !important; }
+  padding: 0px 8px 0px 58px !important; }
 
 .digitfield{ //ion-input: campurile de digits
   width: 44px;
   height: 44px;
   font-size: 110%;
+  font-family: 'Trebuchet MS', Sans-serif;
   color: #7A7A7A;
   text-align: center;
   background: rgba(255, 255, 255, 0.6); //alb 60%, combinat cu fondul
@@ -41,14 +43,14 @@
   padding: 10px 4px 10px 4px !important; }
 
 .mydrop{ //img: lacrima
-  align-self: center;
-  z-index: -1;
-  margin-right: 0.5em; }
+  top: 2px;
+  left: 1px;
+  position: relative;
+  z-index: -1; }
 
 .figicon{ //figure: small icons
   margin: 0;
   position: absolute;
-  top: 0;
   z-index: 5; }
 
 .figicon img{
@@ -57,12 +59,12 @@
 .figicon img:last-child{
   height: 20px;
   left: 50%;
-  margin: -12px 0 0 -13px;
+  margin: -10px 0 0 -11px;
   position: absolute;
   top: 50%;
   width: 18px; }
 
-.setaridiv{ // div: setarea generala
+.setaridiv{ // div: setarea la thincard
   display: flex;
   justify-content: center; }
 
@@ -88,9 +90,11 @@ ion-card.thincard{ // carduri inguste
   margin: 10px 30px -5px 30px !important; }
 
 ion-card-header{ // setarea generala
+  font-family: 'Trebuchet MS', Sans-serif;
   padding: 10px 2px 0px 2px !important; }
 
 ion-card-content{ // setarea generala
+  font-family: 'Trebuchet MS', Sans-serif;
   padding: 13px 13px 13px 13px !important; }
 
 ion-card-content.thumbpad{ // carduri medii si mici
@@ -98,6 +102,7 @@ ion-card-content.thumbpad{ // carduri medii si mici
 
 ion-card-title{ // setarea generala
   font-size: 22px;
+  font-weight: bold;
   color: #37B77A;
   margin: 0px 5px 10px 5px; }
 
@@ -106,12 +111,12 @@ ion-card-subtitle{ // setarea generala
   color: #ADADAD;
   margin: 5px 5px -5px 5px; }
 
-.paratext{ //paragraph: in slides
+.paratext{ // paragraph: in slides
   font-size: 18px !important;
   color: #37B77A;
   margin: 10px 10px 15px 10px !important; }
 
-.minitext{ //paragraph: in slides
+.minitext{ // paragraph: in slides
   font-size: 16px !important;
   color: #37B77A;
   text-align: center;
@@ -136,8 +141,7 @@ ion-item{ // setarea generala
   --border-color: white;
   --border-radius: 30px;
   --shape: round;
-  --inner-padding-top: 0px;
-  --inner-padding-end: -1px;
+  --inner-padding-end: 0px;
   --padding-start: 0px; }
 
 ion-item.linkstyle{ // link orange + la 4 digits
@@ -154,7 +158,7 @@ ion-row{ // setarea generala
   justify-content: center; }
 
 ion-col{ // setarea generala + la casutele de digits
- --ion-grid-column-padding: 5px; }
+ --ion-grid-column-padding: 0px; }
 
 ion-fab-button{ // Butoanele de FB si G+
   margin: 10px 30px 20px 30px;
@@ -196,42 +200,50 @@ ion-button{ // setarea generala
   --background-hover: #2E9664; } // la trecere cu mouse
 
 .styleb{ // p: scrisul pe butoane
+  font-family: 'Trebuchet MS', Sans-serif;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   color: white; }
 
-.styleb2{ //p: scrisul pe butoane negative
+.styleb2{ // p: scrisul pe butoane negative
+ font-family: 'Trebuchet MS', Sans-serif;
  font-weight: bold;
- font-size: 16px;
+ font-size: 18px;
  color: #37B77A; /*verde*/ }
 
 .style01{ // ion-label: arrow header writing
+  font-family: 'Trebuchet MS', Sans-serif !important;
   margin: 0px 10px 0px 25px;
-  padding: -25px 10px -20px 10px; }
+  padding: 0px 10px 0px 10px; }
 
 .style02{ // ion-item: arrow header writinG
+  font-family: 'Trebuchet MS', Sans-serif;
   font-weight: bold;
-  font-size: 16px;
-  margin: 0px 5px 10px 5px;
+  font-size: 18px;
+  margin: 0px 5px 0px 5px;
   color: #7A7A7A; }
 
 .style11{ // ion-row: question one
+  font-family: 'Trebuchet MS', Sans-serif;
   font-weight: bold;
   font-size: 18px;
   margin: 5px 10px 5px 10px;
   color: #7A7A7A; }
 
 .style12{ // ion row: answer one
+  font-family: 'Trebuchet MS', Sans-serif;
   font-size: 16px;
   margin: 0px 10px 0px 10px;
   color: #7A7A7A; }
 
 .style21{ // ion-row: question two + group.svg
+  font-family: 'Trebuchet MS', Sans-serif;
   font-size: 18px;
   margin: 8px 10px 8px 10px;
   color: #7A7A7A; }
 
 .style22{ // ion-label: answer two
+  font-family: 'Trebuchet MS', Sans-serif !important;
   color: #F99531 !important; // portocaliu
   font-size: 20px !important;
   font-weight: bold;

@@ -22,7 +22,7 @@ export class NewrequestPage implements OnInit {
       this.displayMarket(); }
 
       else {console.log('cerere incompleta');
-        this.invalidRequestAlert(); }  }
+        this.invalidRequestAlert(); } }
 
   async invalidRequestAlert() {
     const alert = this.alertCtrl.create({
