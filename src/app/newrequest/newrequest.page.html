@@ -1,53 +1,46 @@
 <ion-content>
+  <app-topbar [paginatb]='paginacrt'> </app-topbar>
+
   <form #newrequestForm="ngForm">
     <ion-grid>
-        <ion-col>
+      <ion-col>
+        <ion-row class="margini0"> <img src="\assets\icon\Ellipse.svg" alt="FlexLogo"> </ion-row>
+        <ion-row> <p class="style11"> Want to borrow something? </p> </ion-row>
+        <ion-row class="margini3"> <p class="style12"> Insert a request to the market: </p> </ion-row>
 
-          <ion-item class="style02" lines="none" detail="false" href="http://localhost:8100/market">
-            <ion-icon name="arrow-back" slot="start" margin="2px"> </ion-icon>
-            <ion-label class="style01"> New Request </ion-label>
+        <ion-row class="margini1">
+          <ion-item lines="none">
+            <ion-input class="infield" name="title" type="text" placeholder="Add a Title" [(ngModel)]="title"> </ion-input>
           </ion-item>
+        </ion-row>
 
-          <ion-row class="margini0"> <img src="\assets\icon\Ellipse.svg" alt="FlexLogo"> </ion-row>
+        <ion-row class="margini1">
+          <ion-item lines="none">
+            <ion-input class="infield" name="category" type="text" placeholder="Category" [(ngModel)]="category"> </ion-input>
+          </ion-item>
+        </ion-row>
 
-          <ion-row> <p class="style11"> Want to borrow something? </p> </ion-row>
+        <ion-row class="margini1">
+          <ion-item lines="none">
+            <ion-input class="infield" name="description" type="text" placeholder="Description" [(ngModel)]="description"> </ion-input>
+          </ion-item>
+        </ion-row>
 
-          <ion-row class="margini3"> <p class="style12"> Insert a request to the market: </p> </ion-row>
+        <ion-row class="margini1">
+          <ion-item lines="none">
+            <ion-input class="infield" name="reqprice" type="text" placeholder="Requested Price" [(ngModel)]="reqprice"> </ion-input>
+          </ion-item>
+        </ion-row>
 
-          <ion-row class="margini1">
-            <ion-item lines="none">
-              <ion-input class="infield" name="title" type="text" placeholder="Add a Title" [(ngModel)]="title"> </ion-input>
-            </ion-item>
-          </ion-row>
+        <ion-row class="margini1">
+          <ion-item lines="none">
+            <ion-input class="infield" name="contactphone" type="tel" placeholder="Contact Phone" [(ngModel)]="contactphone"> </ion-input>
+          </ion-item>
+        </ion-row>
 
-          <ion-row class="margini1">
-            <ion-item lines="none">
-              <ion-input class="infield" name="category" type="text" placeholder="Category" [(ngModel)]="category"> </ion-input>
-            </ion-item>
-          </ion-row>
-
-          <ion-row class="margini1">
-            <ion-item lines="none">
-              <ion-input class="infield" name="description" type="text" placeholder="Description" [(ngModel)]="description"> </ion-input>
-            </ion-item>
-          </ion-row>
-
-          <ion-row class="margini1">
-            <ion-item lines="none">
-              <ion-input class="infield" name="reqprice" type="text" placeholder="Requested Price" [(ngModel)]="reqprice"> </ion-input>
-            </ion-item>
-          </ion-row>
-
-          <ion-row class="margini1">
-            <ion-item lines="none">
-              <ion-input class="infield" name="contactphone" type="tel" placeholder="Contact Phone" [(ngModel)]="contactphone"> </ion-input>
-            </ion-item>
-          </ion-row>
-
-          <ion-row class="margini1">
-            <ion-button class="bigbutton" (click)="newrequest()"> <p class="styleb"> INSERT REQUEST </p> </ion-button>
-          </ion-row>
-
+        <ion-row class="margini1">
+          <ion-button class="bigbutton" (click)="newrequest()"> <p class="styleb"> INSERT REQUEST </p> </ion-button>
+        </ion-row>
       </ion-col>
     </ion-grid>
   </form>

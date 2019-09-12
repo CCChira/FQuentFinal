@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../providers/auth-tools/auth-tools';
+import { Component, Input, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { AuthService } from '../../providers/auth-tools/auth-tools';
 
 @Component( {
   selector: 'app-newrequest',
@@ -35,4 +36,5 @@ export class NewrequestPage implements OnInit {
     this.router.navigateByUrl('market'); }
 
   ngOnInit() { }
+  paginacrt: string = 'New Request';
 }

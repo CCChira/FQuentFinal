@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
@@ -12,13 +12,6 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
 export class HomePage {
   constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) {}
 
-  public quitApp() {
-    // procedura de delogare si iesire
-  }
-
-  public gotoLogin() {
-    this.router.navigateByUrl('login'); }
-
-  public gotoRegister() {
-    this.router.navigateByUrl('register'); }
+  ngOnInit() { }
+  paginacrt: string = 'Home Page';
 }

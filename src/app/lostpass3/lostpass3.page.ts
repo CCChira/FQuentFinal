@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../../providers/auth-tools/auth-tools';
-import { AlertController } from '@ionic/angular';
+import { Component, Input, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { AuthService } from '../../providers/auth-tools/auth-tools';
 
 @Component({
   selector: 'app-lostpass3',
@@ -12,22 +12,39 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class Lostpass3Page implements OnInit {
   private password;
   private confirmpass;
+  paginacrt: string = 'Change Password';
+
   constructor(private afAuth: AngularFireAuth, public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
+  private validPassword(pass) {
+    const passwordFormat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d].{7,20}$/;
+    return pass.match(passwordFormat); }
+
   public changepass() {
-    const passwordFormat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d].{8,20}$/;
-    if (this.password.match(passwordFormat) && this.password === this.confirmpass) {
-      /*actiune lipsa pentru salvarea parolei noi*/
-      this.displayMarket(); }
 
-      else if (this.password.match(passwordFormat)) {
-        console.log('parole diferite');
-        this.invalidPassAlert(); }
-
-        else if (!this.password.match(passwordFormat)) {
-          console.log('parola slaba');
-          this.invalidPassAlert(); }
+    if (this.password) {
+      if (this.validPassword(this.password) && this.password === this.confirmpass) {
+        /* lipsa actiune pentru salvarea parolei noi si logarea imediata*/
+        console.log('good match')
+        this.validPassAlert();
+        return this.displayMarket(); }
+      else if (this.validPassword(this.password)) {
+        console.log('different passwords');
+        return this.invalidPassAlert(); }
+        else {
+          console.log('bad password');
+          return this.invalidPassAlert(); } }
+    else {
+      console.log('no password');
+      this.invalidPassAlert(); }
   }
+
+  async validPassAlert() {
+    const alert = this.alertCtrl.create({
+      header: 'The password was changed!',
+      message: 'You are logged now with the new password.',
+      buttons: ['OK'] });
+    (await alert).present(); }
 
   async invalidPassAlert() {
     const alert = this.alertCtrl.create({

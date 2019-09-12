@@ -1,176 +1,170 @@
 <ion-content>
+  <app-topbar [paginatb]='paginacrt'> </app-topbar>
+
   <form #marketForm="ngForm">
     <ion-grid>
-        <ion-col>
+      <ion-col>
+        <ion-row>
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Ryobi2.jpg" alt="Bormasina">
+              <p class="minitext"> Baciu </p>
+            </ion-card-content>
+          </ion-card>
 
-          <ion-item class="style02" lines="none" detail="false" href="http://localhost:8100/home">
-            <ion-icon name="arrow-back" slot="start" margin="2px"> </ion-icon>
-            <ion-label class="style01"> Market </ion-label>
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Blaupunkt2.jpg" alt="Bormasina">
+              <p class="minitext"> Marasti </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Bosch1.jpg" alt="Bormasina">
+              <p class="minitext"> Manastur </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Makita2.jpg" alt="Bormasina">
+              <p class="minitext"> Gheorghieni </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Blackdecker2.jpg" alt="Bormasina">
+              <p class="minitext"> Gruia </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Milwaukee.jpg" alt="Flex">
+              <p class="minitext"> Gheorghieni </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Ryobi.jpg" alt="Flex">
+              <p class="minitext"> Gruia </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Blackdecker4.jpg" alt="Flex">
+              <p class="minitext"> Baciu </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Blaupunkt.jpg" alt="Flex">
+              <p class="minitext"> Marasti </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Makita4.jpg" alt="Flex">
+              <p class="minitext"> Manastur </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Dewalt.jpg" alt="Filetanta">
+              <p class="minitext"> Marasti </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Blackdecker.jpg" alt="Filetanta">
+              <p class="minitext"> Intre Ape </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Bosch3.jpg" alt="Filetanta">
+              <p class="minitext"> Baciu </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Makita.jpg" alt="Filetanta">
+              <p class="minitext"> Manastur </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Status.jpg" alt="Filetanta">
+              <p class="minitext"> Gheorghieni </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Yikoda.jpg" alt="Filetanta">
+              <p class="minitext"> Gruia </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Blackdecker3.jpg" alt="Diverse">
+              <p class="minitext"> Floresti </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Bosch4.jpg" alt="Diverse">
+              <p class="minitext"> Someseni </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Dewalt2.jpg" alt="Diverse">
+              <p class="minitext"> Manastur </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Husqvarna.jpg" alt="Diverse">
+              <p class="minitext"> Gara </p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="thumbcard">
+            <ion-card-content class="thumbpad">
+              <img src="\assets\samples\Makita3.jpg" alt="Diverse">
+              <p class="minitext"> Gruia </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-row>
+
+        <ion-row>
+          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('newrequest')">
+            <ion-label class="style22"> Insert a request! </ion-label>
           </ion-item>
+        </ion-row>
 
-          <ion-row>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Ryobi2.jpg" alt="Bormasina">
-                <p class="minitext"> Baciu </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Blaupunkt2.jpg" alt="Bormasina">
-                <p class="minitext"> Marasti </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Bosch1.jpg" alt="Bormasina">
-                <p class="minitext"> Manastur </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Makita2.jpg" alt="Bormasina">
-                <p class="minitext"> Gheorghieni </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Blackdecker2.jpg" alt="Bormasina">
-                <p class="minitext"> Gruia </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Milwaukee.jpg" alt="Flex">
-                <p class="minitext"> Gheorghieni </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Ryobi.jpg" alt="Flex">
-                <p class="minitext"> Gruia </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Blackdecker4.jpg" alt="Flex">
-                <p class="minitext"> Baciu </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Blaupunkt.jpg" alt="Flex">
-                <p class="minitext"> Marasti </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Makita4.jpg" alt="Flex">
-                <p class="minitext"> Manastur </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Dewalt.jpg" alt="Filetanta">
-                <p class="minitext"> Marasti </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Blackdecker.jpg" alt="Filetanta">
-                <p class="minitext"> Intre Ape </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Bosch3.jpg" alt="Filetanta">
-                <p class="minitext"> Baciu </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Makita.jpg" alt="Filetanta">
-                <p class="minitext"> Manastur </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Status.jpg" alt="Filetanta">
-                <p class="minitext"> Gheorghieni </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Yikoda.jpg" alt="Filetanta">
-                <p class="minitext"> Gruia </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Blackdecker3.jpg" alt="Diverse">
-                <p class="minitext"> Floresti </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Bosch4.jpg" alt="Diverse">
-                <p class="minitext"> Someseni </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Dewalt2.jpg" alt="Diverse">
-                <p class="minitext"> Manastur </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Husqvarna.jpg" alt="Diverse">
-                <p class="minitext"> Gara </p>
-              </ion-card-content>
-            </ion-card>
-
-            <ion-card class="thumbcard">
-              <ion-card-content class="thumbpad">
-                <img src="\assets\samples\Makita3.jpg" alt="Diverse">
-                <p class="minitext"> Gruia </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-row>
-
-          <ion-row>
-            <ion-item class="linkstyle" detail="false" href="http://localhost:8100/newrequest">
-              <ion-label class="style22"> Insert a request! </ion-label>
-            </ion-item>
-          </ion-row>
-
-          <ion-row>
-            <ion-item class="linkstyle" detail="false" href="http://localhost:8100/newoffer">
-              <ion-label class="style22"> Insert an offer! </ion-label>
-            </ion-item>
-          </ion-row>
-
-        </ion-col>
+        <ion-row>
+          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('newoffer')">
+            <ion-label class="style22"> Insert an offer! </ion-label>
+          </ion-item>
+        </ion-row>
+      </ion-col>
     </ion-grid>
   </form>
 </ion-content>

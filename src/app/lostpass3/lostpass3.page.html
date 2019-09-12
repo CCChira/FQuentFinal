@@ -1,17 +1,11 @@
 <ion-content>
+  <app-topbar [paginatb]='paginacrt'> </app-topbar>
+
   <form #lostpass3Form="ngForm">
     <ion-grid>
       <ion-col>
-
-        <ion-item class="style02" lines="none" detail="false" href="http://localhost:8100/login">
-          <ion-icon name="arrow-back" slot="start" margin="2px"> </ion-icon>
-          <ion-label class="style01"> Reset Password </ion-label>
-        </ion-item>
-
         <ion-row class="margini0"> <img src="\assets\icon\Ellipse.svg" alt="FlexLogo"> </ion-row>
-
         <ion-row> <p class="style11"> Your reset code was correct. </p> </ion-row>
-
         <ion-row class="margini3"> <p class="style12"> Please enter a new password: </p> </ion-row>
 
         <ion-row class="margini1">
@@ -35,18 +29,24 @@
         </ion-row>
 
         <ion-row class="margini1">
-          <ion-button class="bigbutton" (click)="changepass()"> <p class="styleb"> CHANGE PASSWORD </p> </ion-button>
+          <ion-button class="bigbutton" (click)="changepass()"> <p class="styleb"> VALIDATE </p> </ion-button>
         </ion-row>
 
         <ion-row> <p class="style21"> Don't have an account? </p> </ion-row>
 
         <ion-row>
-          <ion-item class="linkstyle" detail="false" href="http://localhost:8100/register">
+          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('register')">
             <ion-label class="style22"> Sign Up! </ion-label>
           </ion-item>
         </ion-row>
 
-       </ion-col>
+        <ion-row> <p class="style21"> - or - </p> </ion-row>
+        <ion-row>
+          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('login')">
+            <ion-label class="style22"> Abort procedure! </ion-label>
+          </ion-item>
+        </ion-row>
+      </ion-col>
     </ion-grid>
   </form>
 </ion-content>

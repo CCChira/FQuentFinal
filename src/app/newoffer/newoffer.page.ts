@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../providers/auth-tools/auth-tools';
+import { Component, Input, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { NavController } from '@ionic/angular';
+import { AuthService } from '../../providers/auth-tools/auth-tools';
 
 @Component( {
   selector: 'app-newoffer',
@@ -17,7 +17,7 @@ export class NewofferPage implements OnInit {
   private description;
   private reqprice;
   private contactphone;
-  constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController, public navCtrl: NavController) { }
+  constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
   public newoffer() {
     if (true /*decizie lipsa pentru verificarea unei oferte noi*/ ) {
@@ -58,4 +58,5 @@ export class NewofferPage implements OnInit {
     this.uploadImage = null; }
 
   ngOnInit() { }
+  paginacrt: string = 'New Offer';
  }

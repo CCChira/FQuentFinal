@@ -13,9 +13,9 @@ export class AuthService {
     login(email, pass) {
         return this.afAuth.auth.signInWithEmailAndPassword(email, pass);
     }
-    /*loginGoogle(){
-        return this.googleplus.login({
-        })*/
+    loginGoogle() {
+        return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    }
     loginFacebook() {
         return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
     }
@@ -24,7 +24,9 @@ export class AuthService {
             this.state = state;
         });
     }
-
+    sendMail(mail) {
+   // lipsa procedura de trimis mail de recuperare   
+    }
     /*logOut() {
         this.googleplus.logout().then(() => {
             this.afAuth.auth.signOut();
@@ -34,4 +36,3 @@ export class AuthService {
         });
     }*/
 }
-

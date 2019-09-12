@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { AuthService } from '../../providers/auth-tools/auth-tools';
 import { AlertController } from '@ionic/angular';
+import { AuthService } from '../../providers/auth-tools/auth-tools';
 
 @Component({
   selector: 'app-lostpass2',
@@ -13,19 +14,31 @@ export class Lostpass2Page implements OnInit {
   private digit2;
   private digit3;
   private digit4;
+  paginacrt: string = 'Insert Code';
+
   constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
   public newpass() {
     if ( this.digit1 === "1" && this.digit2 === "2" && this.digit3 === "3" && this.digit4 === "4" /* lipsa decizie verificare cod*/ ) {
-      /*actiune lipsa dupa verificare cod*/
-      this.displayLospass3(); }
+      /* lipsa actiune dupa verificare cod*/
+      console.log('valid code');
+      this.validCodeAlert();
+      return this.displayLospass3(); }
+    else {
+      console.log('incorrect code');
+      this.invalidCodeAlert(); }
+  }
 
-      else {console.log('cod incorect');
-        this.invalidCodeAlert(); } }
+  async validCodeAlert() {
+    const alert = this.alertCtrl.create({
+      header: 'The code was good!',
+      message: 'You can now change your password.',
+      buttons: ['OK'] });
+    (await alert).present(); }
 
   async invalidCodeAlert() {
     const alert = this.alertCtrl.create({
-      header: 'Code Verifying Failed',
+      header: 'Code Verifying Failed!',
       message: 'You need to enter a valid code in order to change password.',
       buttons: ['TRY AGAIN'] });
     (await alert).present(); }

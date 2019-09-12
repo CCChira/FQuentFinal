@@ -1,16 +1,12 @@
 <ion-content>
+  <app-topbar [paginatb]='paginacrt'> </app-topbar>
+
   <form #searcherForm="ngForm">
     <ion-grid>
         <ion-col>
-
-          <ion-item class="style02" lines="none" detail="false" href="http://localhost:8100/home">
-            <ion-icon name="arrow-back" slot="start" margin="2px"> </ion-icon>
-            <ion-label class="style01"> Search </ion-label>
-          </ion-item>
-
-          <ion-row class="margini0"> <img src="\assets\icon\Ellipse.svg" alt="FlexLogo"> </ion-row>
-
-          <ion-row> <p class="style11"> Try our search: </p> </ion-row>
+          <ion-row> <p class="style11"> Try the general search: </p> </ion-row>
+          <ion-row> <ion-searchbar class="searcher" > </ion-searchbar> </ion-row>
+          <ion-row> <p class="style11"> Or use our refined search: </p> </ion-row>
 
           <ion-row class="margini1">
             <ion-item lines="none">
@@ -49,17 +45,16 @@
           <ion-row> <p class="style21"> Want to offer or request something? </p> </ion-row>
 
           <ion-row>
-            <ion-item class="linkstyle" detail="false" href="http://localhost:8100/newoffer">
+            <ion-item class="linkstyle" (click)="this.router.navigateByUrl('newoffer')">
               <ion-label class="style22"> Insert an offer! </ion-label>
             </ion-item>
           </ion-row>
 
           <ion-row>
-            <ion-item class="linkstyle" detail="false" href="http://localhost:8100/newrequest">
+            <ion-item class="linkstyle" (click)="this.router.navigateByUrl('newrequest')">
               <ion-label class="style22"> Insert a request! </ion-label>
             </ion-item>
           </ion-row>
-
         </ion-col>
     </ion-grid>
   </form>

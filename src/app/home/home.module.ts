@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-//import { IonSlides, IonSlide, IonContent } from '@ionic/angular';
+import { ToolerModule } from 'src/components/tooler.module';
 
 import { HomePage } from './home.page';
 
@@ -16,6 +16,7 @@ const routes: Routes=[ {
     CommonModule,
     FormsModule,
     IonicModule,
+    ToolerModule,
     RouterModule.forChild(routes) ],
   declarations: [HomePage] } )
 

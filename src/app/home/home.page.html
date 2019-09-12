@@ -1,7 +1,8 @@
 <ion-content>
+  <app-topbar [paginatb]='paginacrt'> </app-topbar>
+
   <ion-grid>
     <ion-col>
-
       <ion-slides pager>
         <ion-slide>
           <ion-card>
@@ -68,7 +69,6 @@
           </ion-card>
         </ion-slide>
 
-
         <ion-slide>
           <ion-card>
             <ion-card-header>
@@ -81,18 +81,25 @@
             </ion-card-content>
           </ion-card>
         </ion-slide>
-
       </ion-slides>
 
-      <ion-row class="margini0"> <ion-button class="bigbutton" (click)="gotoLogin()"> <p class="styleb"> LOGIN </p> </ion-button> </ion-row>
-      <ion-row class="margini0"> <ion-button class="bigbutton2" (click)="gotoRegister()"> <p class="styleb2"> REGISTER </p> </ion-button> </ion-row>
+      <ion-row class="margini0">
+        <ion-button class="bigbutton" (click)="this.router.navigateByUrl('login')">
+          <p class="styleb"> LOGIN </p>
+        </ion-button>
+      </ion-row>
+
+      <ion-row class="margini0">
+        <ion-button class="bigbutton2" (click)="this.router.navigateByUrl('register')">
+          <p class="styleb2"> REGISTER </p>
+        </ion-button>
+      </ion-row>
 
       <ion-row>
-        <ion-item class="linkstyle" detail="false" href="http://localhost:8100/market">
+        <ion-item class="linkstyle" (click)="this.router.navigateByUrl('market')">
           <ion-label class="style22"> Go to Market! </ion-label>
         </ion-item>
       </ion-row>
-
     </ion-col>
   </ion-grid>
 </ion-content>

@@ -1,10 +1,10 @@
 <ion-content>
+  <app-topbar [paginatb]='paginacrt'> </app-topbar>
+
   <form #registerForm="ngForm">
     <ion-grid>
       <ion-col>
-
         <ion-row class="margini2"> <img src="\assets\BinocluSexy.svg" alt="FlexLogo"> </ion-row>
-
         <ion-row> <p class="style11"> Register a new account: </p> </ion-row>
 
         <ion-row class="margini1">
@@ -48,14 +48,12 @@
         </ion-row>
 
         <ion-row class="margini1"> <ion-button class="bigbutton" (click)="register()"> <p class="styleb"> REGISTER </p> </ion-button> </ion-row>
-
         <ion-row class="style21"> <img src="\assets\Log In\Group Register.svg" alt="separator"> </ion-row>
 
         <ion-row>
           <ion-fab-button (click)="loginWithFacebook()"> <img src="\assets\icon\Facebook.png" alt="FacebookIcon"> </ion-fab-button>
           <ion-fab-button (click)="loginWithGoogle()"> <img src="\assets\icon\GI.png" alt="GoogleIcon"> </ion-fab-button>
         </ion-row>
-
       </ion-col>
     </ion-grid>
   </form>

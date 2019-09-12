@@ -14,7 +14,12 @@ const routes: Routes = [
   { path: 'market', loadChildren: './market/market.module#MarketPageModule' },
   { path: 'searcher', loadChildren: './searcher/searcher.module#SearcherPageModule' },
   { path: 'tooltop', loadChildren: './tooltop/tooltop.module#TooltopPageModule' },
-];
+  { path: 'mainpage', loadChildren: './mainpage/mainpage.module#MainpagePageModule' },
+  { path: 'aboutus', loadChildren: './aboutus/aboutus.module#AboutusPageModule' },
+  { path: 'activity', loadChildren: './activity/activity.module#ActivityPageModule' },
+  { path: 'helper', loadChildren: './helper/helper.module#HelperPageModule' },
+  { path: 'profiler', loadChildren: './profiler/profiler.module#ProfilerPageModule' },
+  ];
 
 @NgModule({
   imports: [ RouterModule.forRoot( routes, { preloadingStrategy: PreloadAllModules } ) ],

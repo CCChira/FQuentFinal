@@ -1,10 +1,10 @@
 <ion-content>
+  <app-topbar [paginatb]='paginacrt'> </app-topbar>
+
   <form #loginForm="ngForm">
     <ion-grid>
       <ion-col>
-
         <ion-row class="margini2"> <img src="\assets\BinocluSexy.svg" alt="FlexLogo"> </ion-row>
-
         <ion-row> <p class="style11"> Log in to your account: </p> </ion-row>
 
         <ion-row class="margini1">
@@ -27,8 +27,7 @@
           </ion-item>
         </ion-row>
 
-        <ion-row class="margini1"> <ion-button class="bigbutton" (click)="login()"> <p class="styleb"> LOGIN </p> </ion-button> </ion-row>
-
+        <ion-row class="margini1"> <ion-button class="bigbutton" (click)="logmein()"> <p class="styleb"> LOGIN </p> </ion-button> </ion-row>
         <ion-row class="style21"> <img src="\assets\Log In\Group Register.svg" alt="separator"> </ion-row>
 
         <ion-row>
@@ -37,13 +36,18 @@
         </ion-row>
 
         <ion-row> <p class="style21"> Don't have an account? </p> </ion-row>
-
         <ion-row>
-          <ion-item class="linkstyle" detail="false" href="http://localhost:8100/register">
+          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('register')">
             <ion-label class="style22"> Sign Up! </ion-label>
           </ion-item>
         </ion-row>
 
+        <ion-row> <p class="style21"> Did you lost your password? </p> </ion-row>
+        <ion-row>
+          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('lostpass1')">
+            <ion-label class="style22"> Recover password! </ion-label>
+          </ion-item>
+        </ion-row>
       </ion-col>
     </ion-grid>
   </form>

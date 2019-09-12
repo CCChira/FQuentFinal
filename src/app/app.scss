@@ -1,15 +1,19 @@
 // All pages - App Styles
+* {
+  font-family: 'Barlow', 'Trebuchet MS', Sans-serif !important; }
+// max-width: 395px;
+
 .margini0{ //ion-row: general logo
-  margin: 20px; }
+  margin: 20px 20px 10px 20px; }
 
 .margini1{ //ion-row: randuri de inserare + butoane validare
   margin: 12px; }
 
 .margini2{ //ion-row: specific page logos - binoclu
-  margin: 10px 47px 0px 10px; }
+  margin: 15px 47px 0px 10px; }
 
-.margini3{ //ion-row: specific page logos
-  margin: 10px 30px 10px 30px; }
+.margini3{ //ion-row: answer one
+  margin: 10px 12px 10px 12px; }
 
 .marginih{ //paragraph: in slides
   padding: 10px 10px 10px 10px; }
@@ -23,18 +27,16 @@
   width: 305px;
   height: 48px;
   font-size: 18px;
-  font-family: 'Trebuchet MS', Sans-serif;
   color: #7A7A7A;
   background: rgba(255, 255, 255, 0.6); //alb 60%, combinat cu fondul
   border: 1px solid rgba(0, 0, 0, 0.1); //gri 10%
   border-radius: 28px;
-  padding: 0px 8px 0px 58px !important; }
+  padding: 0px 2px 0px 58px !important; }
 
 .digitfield{ //ion-input: campurile de digits
   width: 44px;
   height: 44px;
   font-size: 110%;
-  font-family: 'Trebuchet MS', Sans-serif;
   color: #7A7A7A;
   text-align: center;
   background: rgba(255, 255, 255, 0.6); //alb 60%, combinat cu fondul
@@ -44,11 +46,11 @@
 
 .mydrop{ //img: lacrima
   top: 2px;
-  left: 1px;
   position: relative;
+  left: 1px;
   z-index: -1; }
 
-.figicon{ //figure: small icons
+.figicon{ //figure: small white icons
   margin: 0;
   position: absolute;
   z-index: 5; }
@@ -90,11 +92,9 @@ ion-card.thincard{ // carduri inguste
   margin: 10px 30px -5px 30px !important; }
 
 ion-card-header{ // setarea generala
-  font-family: 'Trebuchet MS', Sans-serif;
   padding: 10px 2px 0px 2px !important; }
 
 ion-card-content{ // setarea generala
-  font-family: 'Trebuchet MS', Sans-serif;
   padding: 13px 13px 13px 13px !important; }
 
 ion-card-content.thumbpad{ // carduri medii si mici
@@ -133,15 +133,17 @@ ion-card-subtitle{ // setarea generala
   opacity: 0.8; }
 
 ion-content{ // fondul tuturor ecranelor
-  --background: white; //rose ivory
+  --background: white;
   --margin: auto; }
 
 ion-item{ // setarea generala
   --background: white;
   --border-color: white;
-  --border-radius: 30px;
-  --shape: round;
+  --border-radius: 25px;
   --inner-padding-end: 0px;
+  --inner-border-width: 0px;
+  --justify-content: center !important;
+  --align-items: center !important;
   --padding-start: 0px; }
 
 ion-item.linkstyle{ // link orange + la 4 digits
@@ -149,12 +151,12 @@ ion-item.linkstyle{ // link orange + la 4 digits
   --background-focused: white; // la trecere cu Tab
   --background-activated: white; // la apasare
   --background-hover: white; // la trecere cu mouse
-  --border-radius: 30px;
-  --inner-padding: 0px 25px 0px 25px; }
+  --border-radius: 10px;
+  --inner-padding: 0px 10px 0px 10px; }
 
-ion-row{ // setarea generala
-  margin-top: 5px;
-  margin-bottom: 5px;
+ion-row{ // SETAREA GENERALA
+  margin-top: 0px;
+  margin-bottom: 0px;
   justify-content: center; }
 
 ion-col{ // setarea generala + la casutele de digits
@@ -165,90 +167,116 @@ ion-fab-button{ // Butoanele de FB si G+
   --background: clear; }
 
 ion-button{ // setarea generala
-  --border-radius: 75px;
+  --border-radius: 23px;
+  height: 45px;
   margin-top: 0px;
   margin-bottom: 0px; }
 
 .bigbutton{ // ion-button: butonul mare
   width: 305px;
-  height: 45px;
   --background: #37B77A;
   --background-activated: #2E9664; // la apasare
   --background-hover: #2E9664; } // la trecere cu mouse
 
 .bigbutton2{ // ion-button: butonul mare negativ
   width: 305px;
-  height: 45px;
   --background: #FFFFFF;
-  --background-activated: #2E9664; // la apasare
-  --background-hover: #2E9664;  // la trecere cu mouse
+  --background-activated: #E8E8E8; // la apasare
+  --background-hover: #E8E8E8;  // la trecere cu mouse
   border: 3px solid #37B77A;
-  border-radius: 28px; }
+  border-radius: 23px; }
 
 .addbutton{ // ion-button: butonul de "select image"
   width: 216px;
-  height: 45px;
   --background: #37B77A;
   --background-activated: #2E9664; // la apasare
   --background-hover: #2E9664; } // la trecere cu mouse
 
 .remvbutton{ // ion-button: butonul de "remove image"
   width: 80px;
-  height: 48px;
   --background: #37B77A;
   --background-activated: #2E9664; // la apasare
   --background-hover: #2E9664; } // la trecere cu mouse
 
+.smallbutton{ // ion-button: butonul de arrow si account
+  width: 42px;
+  --box-shadow: none;
+  --background: white;
+  --background-focused: #F8F8F8 !important; // la trecere cu Tab
+  --background-activated: #F8F8F8 !important; // la apasare
+  --background-hover: #F8F8F8 !important; } // la trecere cu mouse
+
 .styleb{ // p: scrisul pe butoane
-  font-family: 'Trebuchet MS', Sans-serif;
   font-weight: bold;
   font-size: 18px;
   color: white; }
 
 .styleb2{ // p: scrisul pe butoane negative
- font-family: 'Trebuchet MS', Sans-serif;
- font-weight: bold;
- font-size: 18px;
- color: #37B77A; /*verde*/ }
-
-.style01{ // ion-label: arrow header writing
-  font-family: 'Trebuchet MS', Sans-serif !important;
-  margin: 0px 10px 0px 25px;
-  padding: 0px 10px 0px 10px; }
-
-.style02{ // ion-item: arrow header writinG
-  font-family: 'Trebuchet MS', Sans-serif;
   font-weight: bold;
   font-size: 18px;
-  margin: 0px 5px 0px 5px;
-  color: #7A7A7A; }
+  color: #37B77A; /*verde*/ }
+
+.topbar{ // bara de sus
+  max-width: 400px; }
+
+.searcher{ // bara de search
+  padding: 0px !important;
+  max-width: 305px; }
+
+.style01{ // ion-icon: arrow
+  font-size: 24px;
+  margin: 0px;
+  color: #7A7A7A;
+  //display: none;
+  padding: 0px; }
+
+.style02{ // ion-label: header writing
+  font-weight: bold;
+  font-size: 20px !important;
+  text-align: center;
+  margin: auto;
+  color: #7A7A7A !important; }
 
 .style11{ // ion-row: question one
-  font-family: 'Trebuchet MS', Sans-serif;
   font-weight: bold;
   font-size: 18px;
-  margin: 5px 10px 5px 10px;
+  margin: 15px 10px 10px 10px;
   color: #7A7A7A; }
 
 .style12{ // ion row: answer one
-  font-family: 'Trebuchet MS', Sans-serif;
   font-size: 16px;
-  margin: 0px 10px 0px 10px;
+  width: 305px;
+  text-align: center;
+  margin: 0px 0px 5px 0px;
   color: #7A7A7A; }
 
 .style21{ // ion-row: question two + group.svg
-  font-family: 'Trebuchet MS', Sans-serif;
   font-size: 18px;
-  margin: 8px 10px 8px 10px;
+  margin: 8px 10px 0px 10px;
   color: #7A7A7A; }
 
 .style22{ // ion-label: answer two
-  font-family: 'Trebuchet MS', Sans-serif !important;
   color: #F99531 !important; // portocaliu
   font-size: 20px !important;
   font-weight: bold;
-  margin: 5px 10px 5px 10px; }
+  margin: 0px 10px 0px 10px; }
 
+.style23{ // ion-row: long description
+  font-size: 18px;
+  max-width: 385px;
+  margin: 8px 10px 0px 10px;
+  color: #7A7A7A; }
+
+.style1m{ // ion-label: menu
+  margin: 5px 0px 5px 0px; }
+
+.style2m{ // ion-icon: menu icons
+    slot: start;
+    width: 34px;
+    height: 34px;
+    margin: 0px 12px 0px 12px;
+    color: #7A7A7A;
+    padding: 1px; }
 // Put style rules here that you want to apply to the entire application. These
 // styles are for the entire app and not just one component. Additionally, this
 // file can hold Sass mixins, functions, and placeholder classes to be imported

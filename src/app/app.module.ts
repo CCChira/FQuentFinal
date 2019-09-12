@@ -14,7 +14,7 @@ import { AuthService } from '../providers/auth-tools/auth-tools';
 import { PasswordValidator } from '../validators/password.validator';
 import { EmailValidator } from '../validators/email.validator';
 import { ReactiveFormsModule } from '@angular/forms';
-/// import { AuthServiceModule } from '../providers/auth-tools/auth-tools';
+import { TopbarComponent } from 'src/components/topbar/topbar.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     EmailValidator,
     PasswordValidator,
     AuthService,
+    TopbarComponent,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

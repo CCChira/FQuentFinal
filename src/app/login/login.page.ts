@@ -1,12 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-/// import { AngularFireAuth } from '@angular/fire/auth';
+import { Component, Input, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { AuthService } from '../../providers/auth-tools/auth-tools';
-/// import 'rxjs/add/operator/first';
-// import { FormBuilder, FormGroup, Validators} from '@angular/forms';
-/// import { EmailValidator } from '../../validators/email.validator';
 import { AlertController } from '@ionic/angular';
-/// import { async } from '@angular/core/testing';
+import { AuthService } from '../../providers/auth-tools/auth-tools';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -14,54 +11,68 @@ import { AlertController } from '@ionic/angular';
 
 export class LoginPage implements OnInit {
   private email;
-  private pass;
-  constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
+  private password;
+  paginacrt: string = 'Login Page';
 
-  public login() {
-    function validMail(mail) {
-      const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-      return mail.match(mailformat); }
+  constructor(public authService: AuthService, private afAuth: AngularFireAuth, private router: Router, private alertCtrl: AlertController) { }
 
-    if (this.email && this.pass) {
+  public validMail(mail) {
+    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return mail.match(mailformat); }
+
+  public logmein() {
+    if (this.email && this.password) {
       let ok = true;
-      if (!validMail(this.email)) {
+      if (!this.validMail(this.email)) {
         ok = false;
-        this.invalidEmailAlert(); }
+        console.log('invalid email address')
+        return this.invalidEmailAlert(); }
 
-      this.authService.login(this.email, this.pass).then(response => {
+      else this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password).then(
+        (response) => {
           console.log(response);
-          this.displayMarket(); },   // tslint:disable-next-line: no-unused-expression
-
-      (error) => {
-        this.invalidEmailOrPassAlert();
-        console.log('invalid credentials');
-        console.log(error); }
-       ); }
-
-      else {console.log('fara email sau parola');
-        this.invalidEmailOrPassAlert(); }
+          this.loggedInAlert();
+          return this.displayMarket(); },
+        (error) => {
+          console.log('invalid credentials');
+          console.log(error);
+          return this.invalidEmailOrPassAlert(); }
+      );
+    }
+    else {
+      console.log('missing email or password');
+      this.invalidEmailOrPassAlert(); }
   }
 
   public loginWithFacebook() {
-    this.facebookAlert();
-    this.displayMarket();
-/*    this.authService.loginFacebook().then(
-      response => console.log(response),
-      er
-    )
-*/  }
-
-  public loginWithGoogle() {
-    this.googleAlert();
-    this.displayMarket();
+    this.authService.loginFacebook().then(
+      (response) => {
+        console.log(response);
+        this.loggedInAlert();
+        return this.displayMarket(); },
+      (error) => {
+        this.externlogAlert();
+        console.log('invalid FB credentials');
+        console.log(error); }
+    );
   }
 
-  public displayMarket() {
-    this.router.navigateByUrl('market'); }
+  public loginWithGoogle() {
+    this.authService.loginGoogle().then(
+      (response) => {
+        console.log(response);
+        this.loggedInAlert();
+        return this.displayMarket(); },
+    (error) => {
+      this.externlogAlert();
+      console.log('invalid G+ Credentials');
+      console.log(error); }
+     );
+  }
 
   async invalidEmailOrPassAlert() {
     const alert = this.alertCtrl.create({
-      header: 'Login Failed',
+      header: 'Login Failed!',
       message: 'You need to enter a valid email and password in order to log in.',
       buttons: ['TRY AGAIN'] } );
     (await alert).present(); }
@@ -73,19 +84,22 @@ export class LoginPage implements OnInit {
       buttons: ['TRY AGAIN'] });
     (await alert).present(); }
 
-  async facebookAlert() {
+  async loggedInAlert() {
+    const alert = this.alertCtrl.create({
+      header: 'Success!',
+      message: 'You are now logged in.',
+      buttons: ['OK'] });
+    (await alert).present(); }
+
+  async externlogAlert() {
       const alert = this.alertCtrl.create({
-        header: 'Service Unavailable',
+        header: 'Service Unavailable!',
         message: 'Something went wrong.',
         buttons: ['TRY AGAIN'] } );
       (await alert).present(); }
 
-  async googleAlert() {
-      const alert = this.alertCtrl.create({
-        header: 'Service Unavailable',
-        message: 'Something went wrong.',
-        buttons: ['TRY AGAIN'] } );
-      (await alert).present(); }
+  public displayMarket() {
+    this.router.navigateByUrl('market'); }
 
   ngOnInit() { }
 }
