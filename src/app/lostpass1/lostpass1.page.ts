@@ -11,7 +11,14 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
 
 export class Lostpass1Page implements OnInit {
   private email;
-  paginacrt: string = 'Request Code';
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt = 'Request Code';
+  private tBarIcon2Hide: boolean = true;
+  private fBarHide: boolean = true;
+  private fBarIcon1Hide: boolean = false;
+  private fBarTextCrt = '2019© by Flexiloquent™';
+  private fBarIcon2Hide: boolean = false;
 
   constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 

@@ -12,7 +12,14 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
 export class LoginPage implements OnInit {
   private email;
   private password;
-  paginacrt: string = 'Login Page';
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt = 'Login Page';
+  private tBarIcon2Hide: boolean = true;
+  private fBarHide: boolean = true;
+  private fBarIcon1Hide: boolean = false;
+  private fBarTextCrt = '2019© by Flexiloquent™';
+  private fBarIcon2Hide: boolean = false;
 
   constructor(public authService: AuthService, private afAuth: AngularFireAuth, private router: Router, private alertCtrl: AlertController) { }
 

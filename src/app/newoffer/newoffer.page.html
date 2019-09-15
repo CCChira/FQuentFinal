@@ -1,6 +1,6 @@
-<ion-content>
-  <app-topbar [paginatb]='paginacrt'> </app-topbar>
+<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
 
+<ion-content>
   <form #newofferForm="ngForm">
     <ion-grid>
       <ion-col>
@@ -58,9 +58,18 @@
         </ion-row>
 
         <ion-row class="margini1">
+          <ion-item lines="none">
+            <p class="style31"> Warranty included: &nbsp;&nbsp;</p>
+            <ion-checkbox name="warranty" [(ngModel)]="warranty"> </ion-checkbox>
+          </ion-item>
+        </ion-row>
+
+        <ion-row class="margini1">
           <ion-button class="bigbutton" (click)="newoffer()"> <p class="styleb"> INSERT OFFER </p> </ion-button>
         </ion-row>
       </ion-col>
     </ion-grid>
   </form>
 </ion-content>
+
+<app-footbar [hidden]='fBarHide' [fBarIcon1]='fBarIcon1Hide' [fBarText]='fBarTextCrt' [fBarIcon2]='fBarIcon2Hide'> </app-footbar>

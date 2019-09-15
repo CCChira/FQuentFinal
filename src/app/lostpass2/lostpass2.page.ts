@@ -14,7 +14,14 @@ export class Lostpass2Page implements OnInit {
   private digit2;
   private digit3;
   private digit4;
-  paginacrt: string = 'Insert Code';
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt = 'Insert Code';
+  private tBarIcon2Hide: boolean = true;
+  private fBarHide: boolean = true;
+  private fBarIcon1Hide: boolean = false;
+  private fBarTextCrt = '2019© by Flexiloquent™';
+  private fBarIcon2Hide: boolean = false;
 
   constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 

@@ -14,7 +14,14 @@ export class RegisterPage implements OnInit {
   private email;
   private password;
   private confirmpass;
-  paginacrt: string = 'Register Page';
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt = 'Register Page';
+  private tBarIcon2Hide: boolean = true;
+  private fBarHide: boolean = true;
+  private fBarIcon1Hide: boolean = false;
+  private fBarTextCrt = '2019© by Flexiloquent™';
+  private fBarIcon2Hide: boolean = false;
 
   constructor(public authService: AuthService, private afAuth: AngularFireAuth, private router: Router, private alertCtrl: AlertController) { }
 

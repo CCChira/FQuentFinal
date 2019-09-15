@@ -12,7 +12,14 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
 export class Lostpass3Page implements OnInit {
   private password;
   private confirmpass;
-  paginacrt: string = 'Change Password';
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt = 'Change Password';
+  private tBarIcon2Hide: boolean = true;
+  private fBarHide: boolean = true;
+  private fBarIcon1Hide: boolean = false;
+  private fBarTextCrt = '2019© by Flexiloquent™';
+  private fBarIcon2Hide: boolean = false;
 
   constructor(private afAuth: AngularFireAuth, public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 

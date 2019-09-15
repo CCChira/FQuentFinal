@@ -10,8 +10,16 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
   styleUrls: ['./tooltop.page.scss'], } )
 
 export class TooltopPage implements OnInit {
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt = 'Tools by Type';
+  private tBarIcon2Hide: boolean = false;
+  private fBarHide: boolean = false;
+  private fBarIcon1Hide: boolean = true;
+  private fBarTextCrt = 'Swipe categories';
+  private fBarIcon2Hide: boolean = true;
+
   constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
   ngOnInit() { }
-  paginacrt: string = 'Tools by Type';
 }

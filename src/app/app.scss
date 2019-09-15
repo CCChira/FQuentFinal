@@ -18,10 +18,18 @@
 .marginih{ //paragraph: in slides
   padding: 10px 10px 10px 10px; }
 
+.round{
+  border-radius: 100% !important; }
+
 .myicons{ //img: small icons
   width: 18px;
   height: 20px;
   margin-left: 14px; }
+
+.fakeicons{ //ion-icon: fake icons
+  width: 48px;
+  height: 48px;
+  color: #FFF; }
 
 .infield{ //ion-input: campurile de inserare
   width: 305px;
@@ -81,6 +89,12 @@ ion-card.medcard{ // carduri medii
   width: 240px !important;
   border-radius: 10px !important;
   margin: 5px 5px 5px 5px !important; }
+
+ion-card.roundcard{ // carduri rotunde
+  display: flex;
+  width: 240px !important;
+  border-radius: 120px !important;
+  margin: 10px 5px 10px 5px !important; }
 
 ion-card.thumbcard{ // carduri mici
   display: flex;
@@ -193,13 +207,15 @@ ion-button{ // setarea generala
   --background-hover: #2E9664; } // la trecere cu mouse
 
 .remvbutton{ // ion-button: butonul de "remove image"
-  width: 80px;
+  width: 60px;
   --background: #37B77A;
   --background-activated: #2E9664; // la apasare
   --background-hover: #2E9664; } // la trecere cu mouse
 
 .smallbutton{ // ion-button: butonul de arrow si account
-  width: 42px;
+  width: 45px !important;
+  height: 45px !important;
+  --border-radius: 23px !important;
   --box-shadow: none;
   --background: white;
   --background-focused: #F8F8F8 !important; // la trecere cu Tab
@@ -218,6 +234,16 @@ ion-button{ // setarea generala
 
 .topbar{ // bara de sus
   max-width: 400px; }
+
+.header-md:after { // bara de header - setare generala
+  bottom: -2px;
+  background-position: left 0 top 0px;
+  height: 2px; }
+
+.footer-md:before { // bara de footer - setare generala
+  top: -2px;
+  background-position: left 0 top 0;
+  height: 2px; }
 
 .searcher{ // bara de search
   padding: 0px !important;
@@ -265,6 +291,11 @@ ion-button{ // setarea generala
   font-size: 18px;
   max-width: 385px;
   margin: 8px 10px 0px 10px;
+  color: #7A7A7A; }
+
+.style31{ // text: la checkbox
+  font-size: 18px;
+  margin: 8px 10px 8px 10px;
   color: #7A7A7A; }
 
 .style1m{ // ion-label: menu

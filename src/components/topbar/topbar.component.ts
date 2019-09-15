@@ -11,7 +11,11 @@ import { NgModule } from '@angular/core';
 
 export class TopbarComponent implements OnInit {
   @Input()
-  public paginatb: any;
+    private tBarIcon1: boolean;
+  @Input()
+    private tBarText: any;
+  @Input()
+    private tBarIcon2: boolean;
 
   private name = 'Alessia Bidian';
   private email = 'alessia.bidian@yahoo.com';

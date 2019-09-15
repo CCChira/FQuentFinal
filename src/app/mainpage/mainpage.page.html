@@ -1,0 +1,28 @@
+<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+
+<ion-content>
+  <form #mainpageForm="ngForm">
+    <ion-grid>
+      <ion-col>
+
+
+
+        <ion-row> <ion-searchbar class="searcher" > </ion-searchbar> </ion-row>
+        <ion-slides>
+          <ion-slide>
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title> Search on map: </ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <img src="\assets\Map.jpg" alt="Map">
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<app-footbar [hidden]='fBarHide' [fBarIcon1]='fBarIcon1Hide' [fBarText]='fBarTextCrt' [fBarIcon2]='fBarIcon2Hide'> </app-footbar>

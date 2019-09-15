@@ -17,6 +17,16 @@ export class NewofferPage implements OnInit {
   private description;
   private reqprice;
   private contactphone;
+  private warranty: boolean = false;
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt = 'New Offer';
+  private tBarIcon2Hide: boolean = false;
+  private fBarHide: boolean = true;
+  private fBarIcon1Hide: boolean = false;
+  private fBarTextCrt = 'Put your offer on the market!';
+  private fBarIcon2Hide: boolean = false;
+
   constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
   public newoffer() {
@@ -58,5 +68,4 @@ export class NewofferPage implements OnInit {
     this.uploadImage = null; }
 
   ngOnInit() { }
-  paginacrt: string = 'New Offer';
  }

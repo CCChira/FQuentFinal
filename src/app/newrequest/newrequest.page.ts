@@ -15,6 +15,15 @@ export class NewrequestPage implements OnInit {
   private description;
   private reqprice;
   private contactphone;
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt = 'New Request';
+  private tBarIcon2Hide: boolean = false;
+  private fBarHide: boolean = true;
+  private fBarIcon1Hide: boolean = false;
+  private fBarTextCrt = 'Put your request on the market!';
+  private fBarIcon2Hide: boolean = false;
+
   constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
   public newrequest() {
@@ -36,5 +45,4 @@ export class NewrequestPage implements OnInit {
     this.router.navigateByUrl('market'); }
 
   ngOnInit() { }
-  paginacrt: string = 'New Request';
 }

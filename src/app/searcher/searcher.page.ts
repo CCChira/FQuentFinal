@@ -15,6 +15,15 @@ export class SearcherPage implements OnInit {
   private description;
   private maxprice;
   private searcharea;
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt = 'Search Page';
+  private tBarIcon2Hide: boolean = false;
+  private fBarHide: boolean = false;
+  private fBarIcon1Hide: boolean = true;
+  private fBarTextCrt = 'Hurry up! Best deals are hunted.';
+  private fBarIcon2Hide: boolean = true;
+
   constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
   public searchsome() {
@@ -36,5 +45,4 @@ export class SearcherPage implements OnInit {
     this.router.navigateByUrl('market'/*found page instead*/ ); }
 
   ngOnInit() { }
-  paginacrt: string = 'Search Page';
 }
