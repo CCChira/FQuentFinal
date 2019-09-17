@@ -1,15 +1,20 @@
 <div align="center">
+<form topbarForm="ngForm">
   <ion-header main class="topbar">
     <ion-toolbar>
       <ion-buttons>
         <ion-back-button class="show-back-button" [hidden]='tBarIcon1'> </ion-back-button>
         <ion-icon name="close" class="fakeicons" [hidden]='!tBarIcon1'> </ion-icon>
-        <ion-label class="style02"> {{ tBarText }} </ion-label>
+
+        <ion-label class="style02" [hidden]='tBarSearch'> {{ tBarText }} </ion-label>
+        <ion-searchbar class="searcher" [hidden]='!tBarSearch' name="searchinbar" [(ngModel)]="searchinbar"> </ion-searchbar>
+
         <ion-menu-button class="style01" [hidden]='tBarIcon2'> </ion-menu-button>
         <ion-icon name="close" class="fakeicons" [hidden]='!tBarIcon2'> </ion-icon>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
+  </form>
 </div>
 
 <ion-menu side="end">
@@ -46,17 +51,12 @@
       <ion-icon name="megaphone" class="style2m"></ion-icon>
       <ion-label class="style1m" (click)="this.router.navigateByUrl('newrequest')"> New Request </ion-label>
     </ion-item>
-
-    <ion-item>
-      <ion-icon name="search" class="style2m"></ion-icon>
-      <ion-label class="style1m" (click)="this.router.navigateByUrl('searcher')"> Search </ion-label>
-    </ion-item>
   </ion-footer>
 
 
   <ion-footer>
     <ion-item>
-      <ion-icon name="happy" class="style2m"></ion-icon>
+      <ion-icon src="\assets\icon\shop.svg" class="style2m"></ion-icon>
       <ion-label sclass="style1m" (click)="this.router.navigateByUrl('market')"> Market </ion-label>
     </ion-item>
 

@@ -19,6 +19,7 @@ export class MainpagePage implements OnInit {
   private tBarHide: boolean = false;
   private tBarIcon1Hide: boolean = false;
   private tBarTextCrt = 'Main Page';
+  private tBarSearchShow: boolean = true; // This page has 1 extra switch, for Search
   private tBarIcon2Hide: boolean = false;
   private fBarHide: boolean = false;
   private fBarIcon1Hide: boolean = true;

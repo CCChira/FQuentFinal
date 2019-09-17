@@ -21,7 +21,7 @@ export class NewofferPage implements OnInit {
   private tBarHide: boolean = false;
   private tBarIcon1Hide: boolean = false;
   private tBarTextCrt = 'New Offer';
-  private tBarIcon2Hide: boolean = false;
+  private tBarIcon2Hide: boolean = true;
   private fBarHide: boolean = true;
   private fBarIcon1Hide: boolean = false;
   private fBarTextCrt = 'Put your offer on the market!';

@@ -10,11 +10,12 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
   styleUrls: ['./searcher.page.scss'], } )
 
 export class SearcherPage implements OnInit {
-  private keyword;
-  private category;
-  private description;
-  private maxprice;
-  private searcharea;
+  private searchall;
+  private skeyword;
+  private scategory;
+  private sdescription;
+  private smaxprice;
+  private sarea;
   private tBarHide: boolean = false;
   private tBarIcon1Hide: boolean = false;
   private tBarTextCrt = 'Search Page';

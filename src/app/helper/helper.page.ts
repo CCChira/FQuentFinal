@@ -10,8 +10,8 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
   styleUrls: ['./helper.page.scss'], } )
 
 export class HelperPage implements OnInit {
-  private search1;
-  private search2;
+  private searchhelp;
+  private searchfaq;
   private tBarHide: boolean = false;
   private tBarIcon1Hide: boolean = false;
   private tBarTextCrt = 'Help and FAQ';

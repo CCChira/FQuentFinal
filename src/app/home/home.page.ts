@@ -10,7 +10,7 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
   styleUrls: ['home.page.scss'], })
 
 export class HomePage {
-  private tBarHide: boolean = false;
+  private tBarHide: boolean = true;
   private tBarIcon1Hide: boolean = true;
   private tBarTextCrt = 'Welcome to Our App!';
   private tBarIcon2Hide: boolean = true;

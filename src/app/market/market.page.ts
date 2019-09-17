@@ -21,5 +21,12 @@ export class MarketPage implements OnInit {
 
   constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
+  async popBon( bonTip: string, bonPret: string ) {
+      const alert = this.alertCtrl.create( {
+        header: bonTip,
+        message: bonPret,
+        buttons: ['OK'] } );
+      (await alert).present(); }
+
   ngOnInit() { }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 
@@ -12,6 +13,7 @@ import { FootbarComponent } from 'src/components/footbar/footbar.component';
   declarations: [ TopbarComponent, FootbarComponent ],
   imports: [
     CommonModule,
+    FormsModule,
     IonicModule ],
   exports: [ TopbarComponent, FootbarComponent ] })
 

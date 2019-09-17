@@ -18,7 +18,7 @@ export class NewrequestPage implements OnInit {
   private tBarHide: boolean = false;
   private tBarIcon1Hide: boolean = false;
   private tBarTextCrt = 'New Request';
-  private tBarIcon2Hide: boolean = false;
+  private tBarIcon2Hide: boolean = true;
   private fBarHide: boolean = true;
   private fBarIcon1Hide: boolean = false;
   private fBarTextCrt = 'Put your request on the market!';

@@ -20,7 +20,7 @@ export class ProfilerPage implements OnInit {
   private tBarHide: boolean = false;
   private tBarIcon1Hide: boolean = false;
   private tBarTextCrt = 'Edit Profile';
-  private tBarIcon2Hide: boolean = false;
+  private tBarIcon2Hide: boolean = true;
   private fBarHide: boolean = true;
   private fBarIcon1Hide: boolean = false;
   private fBarTextCrt = '';

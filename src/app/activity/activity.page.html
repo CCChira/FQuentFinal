@@ -7,11 +7,11 @@
         <ion-row class="margini0"> <img src="\assets\icon\Ellipse.svg" alt="FlexLogo"> </ion-row>
 
         <ion-row> <p class="style11"> My past offers: </p> </ion-row>
-        <ion-row> <ion-searchbar class="searcher"> </ion-searchbar> </ion-row>
+        <ion-row> <ion-searchbar class="searcher" name="searchmyoff" [(ngModel)]="searchmyoff"> </ion-searchbar> </ion-row>
         <ion-row> <p class="style23"> ... </p> </ion-row>
 
         <ion-row> <p class="style11"> My past requests: </p> </ion-row>
-        <ion-row> <ion-searchbar class="searcher"> </ion-searchbar> </ion-row>
+        <ion-row> <ion-searchbar class="searcher" name="searchmyreq" [(ngModel)]="searchmyreq"> </ion-searchbar> </ion-row>
         <ion-row> <p class="style23"> ... </p> </ion-row>
 
         <ion-row> <p class="style21"> Want to offer or request something? </p> </ion-row>

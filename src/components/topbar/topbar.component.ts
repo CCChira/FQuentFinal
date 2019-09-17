@@ -15,8 +15,11 @@ export class TopbarComponent implements OnInit {
   @Input()
     private tBarText: any;
   @Input()
+    private tBarSearch: any;
+  @Input()
     private tBarIcon2: boolean;
 
+  public searchinbar;
   private name = 'Alessia Bidian';
   private email = 'alessia.bidian@yahoo.com';
   private password;

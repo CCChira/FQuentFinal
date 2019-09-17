@@ -3,14 +3,14 @@
   font-family: 'Barlow', 'Trebuchet MS', Sans-serif !important; }
 // max-width: 395px;
 
-.margini0{ //ion-row: general logo
-  margin: 20px 20px 10px 20px; }
+.margini0{ //ion-row: log-uri
+  margin: 10px 15px 0px 15px; }
 
 .margini1{ //ion-row: randuri de inserare + butoane validare
   margin: 12px; }
 
 .margini2{ //ion-row: specific page logos - binoclu
-  margin: 15px 47px 0px 10px; }
+  margin: 5px 15px 0px 15px; }
 
 .margini3{ //ion-row: answer one
   margin: 10px 12px 10px 12px; }
@@ -86,13 +86,13 @@ ion-card{ // setarea generala
 
 ion-card.medcard{ // carduri medii
   display: flex;
-  width: 240px !important;
+  width: 200px !important;
   border-radius: 10px !important;
   margin: 5px 5px 5px 5px !important; }
 
 ion-card.roundcard{ // carduri rotunde
   display: flex;
-  width: 240px !important;
+  width: 150px !important;
   border-radius: 120px !important;
   margin: 10px 5px 10px 5px !important; }
 
@@ -296,6 +296,11 @@ ion-button{ // setarea generala
 .style31{ // text: la checkbox
   font-size: 18px;
   margin: 8px 10px 8px 10px;
+  color: #7A7A7A; }
+
+.style32{ // text: la popup
+  font-size: 18px;
+  margin: 0px;
   color: #7A7A7A; }
 
 .style1m{ // ion-label: menu
