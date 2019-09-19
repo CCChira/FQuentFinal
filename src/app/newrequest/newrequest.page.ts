@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { AuthService } from '../../providers/auth-tools/auth-tools';
+import { ModalController } from '@ionic/angular';
 
 @Component( {
   selector: 'app-newrequest',
@@ -15,24 +16,24 @@ export class NewrequestPage implements OnInit {
   private description;
   private reqprice;
   private contactphone;
-  private tBarHide: boolean = false;
-  private tBarIcon1Hide: boolean = false;
-  private tBarTextCrt = 'New Request';
-  private tBarIcon2Hide: boolean = true;
-  private fBarHide: boolean = true;
-  private fBarIcon1Hide: boolean = false;
-  private fBarTextCrt = 'Put your request on the market!';
-  private fBarIcon2Hide: boolean = false;
 
-  constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
+  constructor(private modalCtrl: ModalController, public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
   public newrequest() {
     if (true /*decizie lipsa pentru verificarea unei cereri noi*/ ) {
       /*actiune lipsa pentru validarea unei cereri noi*/
-      this.displayMarket(); }
+      this.dismissNewrequestModal();
+      this.validRequestAlert(); }
 
       else {console.log('cerere incompleta');
         this.invalidRequestAlert(); } }
+
+  async validRequestAlert() {
+    const alert = this.alertCtrl.create({
+      header: 'Request Inserted!',
+      message: 'Your request is now presented to the market.',
+      buttons: ['OK'] });
+    (await alert).present(); }
 
   async invalidRequestAlert() {
     const alert = this.alertCtrl.create({
@@ -41,8 +42,7 @@ export class NewrequestPage implements OnInit {
       buttons: ['TRY AGAIN'] });
     (await alert).present(); }
 
-  public displayMarket() {
-    this.router.navigateByUrl('market'); }
+  async dismissNewrequestModal() { await this.modalCtrl.dismiss() }
 
   ngOnInit() { }
 }

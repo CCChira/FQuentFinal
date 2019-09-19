@@ -233,16 +233,28 @@
           </ion-slide>
         </ion-slides>
 
-        <ion-row>
-          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('newrequest')">
-            <ion-label class="style22"> Insert a request! </ion-label>
-          </ion-item>
-        </ion-row>
+        <br>
 
         <ion-row>
-          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('newoffer')">
-            <ion-label class="style22"> Insert an offer! </ion-label>
-          </ion-item>
+          <ion-content>
+            <ion-fab horizontal="center" vertical="center" slot="fixed">
+              <ion-fab-button class="plus">
+                <ion-icon class="acticon" name="add"> </ion-icon>
+              </ion-fab-button>
+
+              <ion-fab-list side="start">
+                <ion-fab-button class="plus" (click)="displayOfrModal()">
+                  <ion-icon class="acticon" name="gift"> </ion-icon>
+                </ion-fab-button>
+              </ion-fab-list>
+
+              <ion-fab-list side="end">
+                <ion-fab-button class="plus" (click)="displayReqModal()">
+                  <ion-icon class="acticon" name="megaphone"> </ion-icon>
+                </ion-fab-button>
+              </ion-fab-list>
+            </ion-fab>
+          </ion-content>
         </ion-row>
       </ion-col>
     </ion-grid>

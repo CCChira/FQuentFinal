@@ -1,13 +1,24 @@
-<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+<div align="center">
+  <ion-header translucent class="topbar">
+    <ion-toolbar>
+
+      <ion-icon slot="start" class="fakeicons" name="close"> </ion-icon>
+
+      <ion-label class="style02"> Insert a New Request: </ion-label>
+
+      <ion-button class="smallbutton" slot="end" (click)="dismissNewrequestModal()">
+        <ion-icon class="style01" name="close"> </ion-icon>
+      </ion-button>
+
+    </ion-toolbar>
+  </ion-header>
+</div>
 
 <ion-content>
   <form #newrequestForm="ngForm">
     <ion-grid>
       <ion-col>
-        <ion-row class="margini0"> <img src="\assets\icon\Ellipse.svg" alt="FlexLogo"> </ion-row>
-        <ion-row> <p class="style11"> Want to borrow something? </p> </ion-row>
-        <ion-row class="margini3"> <p class="style12"> Insert a request to the market: </p> </ion-row>
-
+        <ion-row class="marginip"> <img src="\assets\Tools1.jpg" alt="Tools1"> </ion-row>
         <ion-row class="margini1">
           <ion-item lines="none">
             <ion-input class="infield" name="title" type="text" placeholder="Add a Title" [(ngModel)]="title"> </ion-input>
@@ -45,5 +56,3 @@
     </ion-grid>
   </form>
 </ion-content>
-
-<app-footbar [hidden]='fBarHide' [fBarIcon1]='fBarIcon1Hide' [fBarText]='fBarTextCrt' [fBarIcon2]='fBarIcon2Hide'> </app-footbar>

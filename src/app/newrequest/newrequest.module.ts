@@ -18,6 +18,7 @@ const routes: Routes=[ {
     IonicModule,
     ToolerModule,
     RouterModule.forChild(routes) ],
-  declarations: [NewrequestPage] } )
+  entryComponents: [ NewrequestPage ],
+  declarations: [ ] } )
 
-export class NewrequestPageModule {}
+export class NewrequestPageModule { }

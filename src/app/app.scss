@@ -18,6 +18,11 @@
 .marginih{ //paragraph: in slides
   padding: 10px 10px 10px 10px; }
 
+.marginip{ //ion-row: photos
+  margin: 0px auto 0px auto;
+  align: center !important;
+  max-width: 280px; }
+
 .round{
   border-radius: 100% !important; }
 
@@ -176,9 +181,14 @@ ion-row{ // SETAREA GENERALA
 ion-col{ // setarea generala + la casutele de digits
  --ion-grid-column-padding: 0px; }
 
-ion-fab-button{ // Butoanele de FB si G+
+ion-fab-button.fbgg{ // Butoanele de FB si G+
   margin: 10px 30px 20px 30px;
   --background: clear; }
+
+ion-fab-button.plus{ // Butoanele de +
+  width: 50px;
+  height: 50px;
+  margin: 12px; }
 
 ion-button{ // setarea generala
   --border-radius: 23px;
@@ -191,6 +201,11 @@ ion-button{ // setarea generala
   --background: #37B77A;
   --background-activated: #2E9664; // la apasare
   --background-hover: #2E9664; } // la trecere cu mouse
+
+.acticon{ // ion-icon: butonul mare
+  color: #37B77A;
+  font-size: 30px;
+  font-weight: bold; }
 
 .bigbutton2{ // ion-button: butonul mare negativ
   width: 305px;
@@ -216,6 +231,10 @@ ion-button{ // setarea generala
   width: 45px !important;
   height: 45px !important;
   --border-radius: 23px !important;
+  --padding-bottom: 0px;
+  --padding-end: 0px;
+  --padding-start: 0px;
+  --padding-top: 0px;
   --box-shadow: none;
   --background: white;
   --background-focused: #F8F8F8 !important; // la trecere cu Tab
@@ -250,10 +269,9 @@ ion-button{ // setarea generala
   max-width: 305px; }
 
 .style01{ // ion-icon: arrow
-  font-size: 24px;
+  font-size: 26px !important;
   margin: 0px;
-  color: #7A7A7A;
-  //display: none;
+  color: #7A7A7A !important;
   padding: 0px; }
 
 .style02{ // ion-label: header writing
@@ -262,6 +280,18 @@ ion-button{ // setarea generala
   text-align: center;
   margin: auto;
   color: #7A7A7A !important; }
+
+.style0f{ // ion-label: footbar writing
+  font-weight: bold;
+  font-size: 20px !important;
+  text-align: center;
+  margin: auto;
+  color: #3880FF !important; }
+
+.style10{ // ion-row: question one
+  font-weight: bold;
+  font-size: 18px;
+  color: #7A7A7A; }
 
 .style11{ // ion-row: question one
   font-weight: bold;
@@ -317,3 +347,18 @@ ion-button{ // setarea generala
 // styles are for the entire app and not just one component. Additionally, this
 // file can hold Sass mixins, functions, and placeholder classes to be imported
 // and used throughout the application.
+.sc-ion-modal-md-h {
+    --border-radius: 4px;
+//  --width: 300px;
+//  --height: 500px;
+    --ion-safe-area-top: 1%;
+    --ion-safe-area-bottom: 1%;
+    --ion-safe-area-right: 1%;
+    --ion-safe-area-left: 1%;
+    --width: 98%;
+    --max-width: 395px !important;
+    --height: 98%;
+    --min-height: 580px;
+    --max-height: auto;
+    --background: var(--ion-background-color,#fff);
+}

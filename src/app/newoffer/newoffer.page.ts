@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { AuthService } from '../../providers/auth-tools/auth-tools';
+import { ModalController } from '@ionic/angular';
 
 @Component( {
   selector: 'app-newoffer',
@@ -17,25 +18,24 @@ export class NewofferPage implements OnInit {
   private description;
   private reqprice;
   private contactphone;
-  private warranty: boolean = false;
-  private tBarHide: boolean = false;
-  private tBarIcon1Hide: boolean = false;
-  private tBarTextCrt = 'New Offer';
-  private tBarIcon2Hide: boolean = true;
-  private fBarHide: boolean = true;
-  private fBarIcon1Hide: boolean = false;
-  private fBarTextCrt = 'Put your offer on the market!';
-  private fBarIcon2Hide: boolean = false;
 
-  constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
+  constructor(private modalCtrl: ModalController, public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
   public newoffer() {
     if (true /*decizie lipsa pentru verificarea unei oferte noi*/ ) {
       /*actiune lipsa pentru validarea unei oferte noi*/
-      this.displayMarket(); }
+      this.dismissNewofferModal();
+      this.validOfferAlert(); }
 
       else {console.log('oferta incompleta');
         this.invalidOfferAlert(); } }
+
+  async validOfferAlert() {
+    const alert = this.alertCtrl.create({
+      header: 'Offer Inserted!',
+      message: 'Your offer is now presented to the market.',
+      buttons: ['OK'] });
+    (await alert).present(); }
 
   async invalidOfferAlert() {
     const alert = this.alertCtrl.create({
@@ -44,10 +44,7 @@ export class NewofferPage implements OnInit {
       buttons: ['TRY AGAIN'] });
     (await alert).present(); }
 
-  public displayMarket() {
-    this.router.navigateByUrl('market'); }
-
-  addPicture(fileLoader) {
+  private addPicture(fileLoader) {
     fileLoader.click();
     var that = this;
     fileLoader.onchange = function () {
@@ -61,11 +58,13 @@ export class NewofferPage implements OnInit {
       if (file) {
         reader.readAsDataURL(file); } } }
 
-  imageLoaded(){
+  private imageLoaded(){
     this.processing = false; }
 
-  removePic() {
+  private removePic() {
     this.uploadImage = null; }
+
+  async dismissNewofferModal() { await this.modalCtrl.dismiss() }
 
   ngOnInit() { }
  }

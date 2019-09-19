@@ -16,10 +16,13 @@ import { EmailValidator } from '../validators/email.validator';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TopbarComponent } from 'src/components/topbar/topbar.component';
 import { FootbarComponent } from 'src/components/footbar/footbar.component';
+import { NewofferPage } from 'src/app/newoffer/newoffer.page';
+import { NewrequestPage } from 'src/app/newrequest/newrequest.page';
+import { ToolerModule } from 'src/components/tooler.module';
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],
+  entryComponents: [ ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -27,6 +30,7 @@ import { FootbarComponent } from 'src/components/footbar/footbar.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    ToolerModule,
     ReactiveFormsModule
   ],
   providers: [
@@ -35,6 +39,8 @@ import { FootbarComponent } from 'src/components/footbar/footbar.component';
     AuthService,
     TopbarComponent,
     FootbarComponent,
+    NewofferPage,
+    NewrequestPage,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

@@ -9,8 +9,6 @@ const routes: Routes = [
   { path: 'lostpass1', loadChildren: './lostpass1/lostpass1.module#Lostpass1PageModule' },
   { path: 'lostpass2', loadChildren: './lostpass2/lostpass2.module#Lostpass2PageModule' },
   { path: 'lostpass3', loadChildren: './lostpass3/lostpass3.module#Lostpass3PageModule' },
-  { path: 'newoffer', loadChildren: './newoffer/newoffer.module#NewofferPageModule' },
-  { path: 'newrequest', loadChildren: './newrequest/newrequest.module#NewrequestPageModule' },
   { path: 'market', loadChildren: './market/market.module#MarketPageModule' },
   { path: 'searcher', loadChildren: './searcher/searcher.module#SearcherPageModule' },
   { path: 'tooltop', loadChildren: './tooltop/tooltop.module#TooltopPageModule' },

@@ -18,6 +18,7 @@ const routes: Routes=[ {
     IonicModule,
     ToolerModule,
     RouterModule.forChild(routes) ],
-  declarations: [NewofferPage] } )
+  entryComponents: [ NewofferPage ],
+  declarations: [ ] } )
 
-export class NewofferPageModule {}
+export class NewofferPageModule { }

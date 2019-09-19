@@ -1,11 +1,23 @@
-<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+<div align="center">
+  <ion-header translucent class="topbar">
+    <ion-toolbar>
+
+      <ion-icon slot="start" class="fakeicons" name="close"> </ion-icon>
+
+      <ion-label class="style02"> Insert a New Offer: </ion-label>
+
+      <ion-button class="smallbutton" slot="end" (click)="dismissNewofferModal()">
+        <ion-icon class="style01" name="close"> </ion-icon>
+      </ion-button>
+
+    </ion-toolbar>
+  </ion-header>
+</div>
 
 <ion-content>
   <form #newofferForm="ngForm">
     <ion-grid>
       <ion-col>
-        <ion-row> <p class="style11"> Insert a new offer: </p> </ion-row>
-
         <ion-row>
           <ion-card class="medcard">
             <ion-card-content class="thumbpad">
@@ -69,5 +81,3 @@
     </ion-grid>
   </form>
 </ion-content>
-
-<app-footbar [hidden]='fBarHide' [fBarIcon1]='fBarIcon1Hide' [fBarText]='fBarTextCrt' [fBarIcon2]='fBarIcon2Hide'> </app-footbar>
