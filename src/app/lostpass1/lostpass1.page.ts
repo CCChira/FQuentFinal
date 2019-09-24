@@ -20,13 +20,13 @@ export class Lostpass1Page implements OnInit {
   private fBarTextCrt = '2019© by Flexiloquent™';
   private fBarIcon2Hide: boolean = false;
 
-  constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
+  constructor(public authService: AuthService, private afAuth: AngularFireAuth, private router: Router, private alertCtrl: AlertController) { }
 
-  public validMail(mail) {
+  private validMail(mail) {
     const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return mail.match(mailformat); }
 
-  public getcode() {
+  private getcode() {
     if (this.email) {
       let ok = true;
       if (!this.validMail(this.email)) {
@@ -57,7 +57,7 @@ export class Lostpass1Page implements OnInit {
       buttons: ['OK'] });
     (await alert).present(); }
 
-  public displayLostpass2() {
+  private displayLostpass2() {
     this.router.navigateByUrl('lostpass2'); }
 
   ngOnInit() { }

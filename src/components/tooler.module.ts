@@ -11,18 +11,19 @@ import { TopbarComponent } from 'src/components/topbar/topbar.component';
 import { FootbarComponent } from 'src/components/footbar/footbar.component';
 import { NewofferPage } from 'src/app/newoffer/newoffer.page';
 import { NewrequestPage } from 'src/app/newrequest/newrequest.page';
+import { ArticolPage } from 'src/app/articol/articol.page';
 
 @NgModule({
-  declarations: [ TopbarComponent, FootbarComponent, NewofferPage, NewrequestPage ],
+  declarations: [ TopbarComponent, FootbarComponent, NewofferPage, NewrequestPage, ArticolPage ],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule ],
-  entryComponents: [ NewofferPage, NewrequestPage ],
-  exports: [ TopbarComponent, FootbarComponent, NewofferPage, NewrequestPage ] })
+  entryComponents: [ NewofferPage, NewrequestPage, ArticolPage ],
+  exports: [ TopbarComponent, FootbarComponent, NewofferPage, NewrequestPage, ArticolPage ] })
 
 export class ToolerModule implements OnInit {
-  constructor(private router: Router, public newofferPage: NewofferPage, public newrequestPage: NewrequestPage, public topbarComponent: TopbarComponent, public footbarComponent: FootbarComponent, private alertCtrl: AlertController) { }
+  constructor(private router: Router, public newofferPage: NewofferPage, public newrequestPage: NewrequestPage, articolPage: ArticolPage, public topbarComponent: TopbarComponent, public footbarComponent: FootbarComponent, private alertCtrl: AlertController) { }
 
   ngOnInit() {}
 }

@@ -34,23 +34,79 @@
 .fakeicons{ //ion-icon: fake icons
   width: 48px;
   height: 48px;
-  color: #FFF; }
+  color: #FFF; } // alb
 
 .infield{ //ion-input: campurile de inserare
   width: 305px;
   height: 48px;
   font-size: 18px;
-  color: #7A7A7A;
+  color: #7A7A7A; // gri
   background: rgba(255, 255, 255, 0.6); //alb 60%, combinat cu fondul
   border: 1px solid rgba(0, 0, 0, 0.1); //gri 10%
   border-radius: 28px;
   padding: 0px 2px 0px 58px !important; }
 
+.marginis{ //ion-row: randuri de inserare la search
+  margin: 6px; }
+
+.sfield{ //ion-input: campurile de cautare
+  width: 250px;
+  height: 48px;
+  font-size: 18px;
+  color: #7A7A7A; // gri
+  background: rgba(255, 255, 255, 0.6); //alb 60%, combinat cu fondul
+  border: 1px solid rgba(0, 0, 0, 0.1); //gri 10%
+  border-radius: 28px;
+  padding: 0px 5px 0px 20px !important; }
+
+.snote{ //ion-note: notele de langa campurile de cautare
+  width: 145px;
+  height: 42px;
+  font-size: 18px;
+  color: #7A7A7A; // gri
+  margin: auto !important;
+  padding: 10px 0px 10px 0px !important; }
+
+.marginia{ //ion-row: randuri de la prezentare articol
+  margin: 0px;
+  height: 44px; }
+
+.afield{ //ion-label: campurile de articol
+  width: 230px;
+  height: 34px !important;
+  font-size: 18px !important;
+  color: #7A7A7A !important; // gri
+  background: rgba(255, 255, 255, 0.6); //alb 60%, combinat cu fondul
+  border: 1px solid rgba(0, 0, 0, 0.1); //gri 10%
+  border-radius: 28px;
+  margin: 8px 0px 8px 0px !important;
+  padding: 2px 5px 2px 10px !important; }
+
+.xfield{ //ion-label: camp blank la articol
+  width: 198px;
+  height: 34px !important;
+  font-size: 18px !important;
+  color: #FFF; // alb
+  background: rgba(255, 255, 255, 0.0); //alb 100%, combinat cu fondul
+  border: 1px solid rgba(0, 0, 0, 0.0); //gri 0%
+  border-radius: 28px;
+  margin: 8px 0px 8px 0px !important;
+  padding: 2px 5px 2px 10px !important; }
+
+.anote{ //ion-note: notele de langa campurile de articol
+  width: 100px;
+  height: 34px;
+  font-size: 18px;
+  color: #7A7A7A; // gri
+  text-align: right;
+  margin: 8px 5px 8px 0px !important;
+  padding: 2px 0px 2px 0px !important; }
+
 .digitfield{ //ion-input: campurile de digits
   width: 44px;
   height: 44px;
   font-size: 110%;
-  color: #7A7A7A;
+  color: #7A7A7A; // gri
   text-align: center;
   background: rgba(255, 255, 255, 0.6); //alb 60%, combinat cu fondul
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -89,6 +145,18 @@ ion-card{ // setarea generala
   border-radius: 10px !important;
   margin: 10px 30px 10px 30px !important; }
 
+ion-card.biggercard{ // carduri marioace
+  display: flex;
+  width: 380px !important;
+  border-radius: 10px !important;
+  margin: 5px 5px 5px 5px !important; }
+
+ion-card.bigcard{ // carduri mari
+  display: flex;
+  width: 250px !important;
+  border-radius: 10px !important;
+  margin: 5px 5px 5px 5px !important; }
+
 ion-card.medcard{ // carduri medii
   display: flex;
   width: 200px !important;
@@ -97,8 +165,8 @@ ion-card.medcard{ // carduri medii
 
 ion-card.roundcard{ // carduri rotunde
   display: flex;
-  width: 150px !important;
-  border-radius: 120px !important;
+  width: 180px !important;
+  border-radius: 90px !important;
   margin: 10px 5px 10px 5px !important; }
 
 ion-card.thumbcard{ // carduri mici
@@ -106,6 +174,11 @@ ion-card.thumbcard{ // carduri mici
   width: 170px !important;
   border-radius: 5px !important;
   margin: 5px 5px 5px 5px !important; }
+
+ion-card.smallest{ // carduri foarte mici
+  width: 110px !important;
+  border-radius: 3px !important;
+  margin: 3px 3px 3px 3px !important; }
 
 ion-card.thincard{ // carduri inguste
   margin: 10px 30px -5px 30px !important; }
@@ -122,30 +195,48 @@ ion-card-content.thumbpad{ // carduri medii si mici
 ion-card-title{ // setarea generala
   font-size: 22px;
   font-weight: bold;
-  color: #37B77A;
+  color: #37B77A; // verde
   margin: 0px 5px 10px 5px; }
 
-ion-card-subtitle{ // setarea generala
+.subtext1{ // setarea subtitle home
   font-size: 16px;
-  color: #ADADAD;
+  color: #7A7A7A; // gri
   margin: 5px 5px -5px 5px; }
+
+.subtext2{ // subtitle thumbcard
+    font-size: 16px;
+    color: #7A7A7A; // gri
+    text-align: left;
+    margin: 5px 5px 5px 5px; }
+
+.subtext3{ // subtitle thumbcard
+  font-size: 12px;
+  color: #7A7A7A; // gri
+  text-align: left;
+  margin: 4px 4px 4px 4px; }
 
 .paratext{ // paragraph: in slides
   font-size: 18px !important;
-  color: #37B77A;
+  color: #37B77A; // verde
   margin: 10px 10px 15px 10px !important; }
 
 .minitext{ // paragraph: in slides
   font-size: 16px !important;
-  color: #37B77A;
+  color: #37B77A; // verde
+  text-align: center;
+  margin: 0px 5px -5px 5px !important; }
+
+.microtext{ // paragraph: in slides
+  font-size: 14px !important;
+  color: #37B77A; // verde
   text-align: center;
   margin: 0px 5px -5px 5px !important; }
 
 .swiper-pagination-bullet{ // punctele de la swipe
   width: 12px;
   height: 12px;
-  --bullet-background: #ADADAD;
-  --bullet-background-active: #F99531;
+  --bullet-background: #ADADAD; // gri
+  --bullet-background-active: #F99531; // orange
   margin: 12px 8px 10px 8px !important;
   display: inline-block;
   border-radius: 100%;
@@ -176,7 +267,12 @@ ion-item.linkstyle{ // link orange + la 4 digits
 ion-row{ // SETAREA GENERALA
   margin-top: 0px;
   margin-bottom: 0px;
+  display: flex;
   justify-content: center; }
+
+.searched{
+  max-width: 400px;
+  margin: auto; }
 
 ion-col{ // setarea generala + la casutele de digits
  --ion-grid-column-padding: 0px; }
@@ -186,6 +282,7 @@ ion-fab-button.fbgg{ // Butoanele de FB si G+
   --background: clear; }
 
 ion-fab-button.plus{ // Butoanele de +
+  --color: #37B77A; // verde
   width: 50px;
   height: 50px;
   margin: 12px; }
@@ -198,34 +295,43 @@ ion-button{ // setarea generala
 
 .bigbutton{ // ion-button: butonul mare
   width: 305px;
-  --background: #37B77A;
-  --background-activated: #2E9664; // la apasare
-  --background-hover: #2E9664; } // la trecere cu mouse
+  --background: #37B77A; // verde
+  --background-activated: #2E9664; // verde-tare - la apasare
+  --background-hover: #2E9664; } // verde-tare - la trecere cu mouse
 
 .acticon{ // ion-icon: butonul mare
-  color: #37B77A;
+  color: #37B77A; // verde
   font-size: 30px;
   font-weight: bold; }
 
 .bigbutton2{ // ion-button: butonul mare negativ
   width: 305px;
-  --background: #FFFFFF;
-  --background-activated: #E8E8E8; // la apasare
-  --background-hover: #E8E8E8;  // la trecere cu mouse
-  border: 3px solid #37B77A;
+  --background: #FFFFFF; // alb
+  --background-activated: #E8E8E8; // gri - la apasare
+  --background-hover: #E8E8E8;  // gri - la trecere cu mouse
+  border: 3px solid #37B77A; // verde
+  border-radius: 23px; }
+
+.bigbutton3{ // ion-button: butonul mare negativ
+  width: 305px;
+  --background: #FFFFFF; // alb
+  --background-activated: #E8E8E8; // gri - la apasare
+  --background-hover: #E8E8E8;  // gri - la trecere cu mouse
+  text-transform: none;
+  border: 3px solid #F99531; // verde
   border-radius: 23px; }
 
 .addbutton{ // ion-button: butonul de "select image"
-  width: 216px;
-  --background: #37B77A;
-  --background-activated: #2E9664; // la apasare
-  --background-hover: #2E9664; } // la trecere cu mouse
+  width: 185px;
+  --background: #37B77A; // verde
+  --background-activated: #2E9664; // verde-tare - la apasare
+  --background-hover: #2E9664; } // verde-tare - la trecere cu mouse
 
 .remvbutton{ // ion-button: butonul de "remove image"
   width: 60px;
-  --background: #37B77A;
-  --background-activated: #2E9664; // la apasare
-  --background-hover: #2E9664; } // la trecere cu mouse
+  --background: #37B77A; // verde
+  --background-activated: #2E9664; // verde-tare - la apasare
+  --background-hover: #2E9664; } // verde-tare - la trecere cu mouse
 
 .smallbutton{ // ion-button: butonul de arrow si account
   width: 45px !important;
@@ -237,9 +343,9 @@ ion-button{ // setarea generala
   --padding-top: 0px;
   --box-shadow: none;
   --background: white;
-  --background-focused: #F8F8F8 !important; // la trecere cu Tab
-  --background-activated: #F8F8F8 !important; // la apasare
-  --background-hover: #F8F8F8 !important; } // la trecere cu mouse
+  --background-focused: #F8F8F8 !important; // gri - la trecere cu Tab
+  --background-activated: #F8F8F8 !important; // gri - la apasare
+  --background-hover: #F8F8F8 !important; } // gri - la trecere cu mouse
 
 .styleb{ // p: scrisul pe butoane
   font-weight: bold;
@@ -249,7 +355,11 @@ ion-button{ // setarea generala
 .styleb2{ // p: scrisul pe butoane negative
   font-weight: bold;
   font-size: 18px;
-  color: #37B77A; /*verde*/ }
+  color: #37B77A; } // verde
+
+ .styleb3{ // p: scrisul pe butoane negative
+  font-size: 18px;
+  color: #F99531; } // orange
 
 .topbar{ // bara de sus
   max-width: 400px; }
@@ -271,7 +381,7 @@ ion-button{ // setarea generala
 .style01{ // ion-icon: arrow
   font-size: 26px !important;
   margin: 0px;
-  color: #7A7A7A !important;
+  color: #7A7A7A !important; // gri
   padding: 0px; }
 
 .style02{ // ion-label: header writing
@@ -279,40 +389,46 @@ ion-button{ // setarea generala
   font-size: 20px !important;
   text-align: center;
   margin: auto;
-  color: #7A7A7A !important; }
+  color: #7A7A7A !important; } // gri
 
-.style0f{ // ion-label: footbar writing
+.style0f{ // ion-label: footbar writing + FAB text
   font-weight: bold;
   font-size: 20px !important;
   text-align: center;
   margin: auto;
-  color: #3880FF !important; }
+  color: #37B77A !important; } // albastru
 
 .style10{ // ion-row: question one
   font-weight: bold;
   font-size: 18px;
-  color: #7A7A7A; }
+  color: #7A7A7A; } // gri
 
 .style11{ // ion-row: question one
   font-weight: bold;
   font-size: 18px;
   margin: 15px 10px 10px 10px;
-  color: #7A7A7A; }
+  color: #7A7A7A; } // gri
 
 .style12{ // ion row: answer one
   font-size: 16px;
   width: 305px;
   text-align: center;
   margin: 0px 0px 5px 0px;
-  color: #7A7A7A; }
+  color: #7A7A7A; } // gri
+
+.style2c{ // ion-card-title: question two + group.svg
+  margin-start: 10px !important;
+  margin-end: 10px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important; }
 
 .style21{ // ion-row: question two + group.svg
   font-size: 18px;
   margin: 8px 10px 0px 10px;
-  color: #7A7A7A; }
+  color: #7A7A7A; } // gri
 
 .style22{ // ion-label: answer two
-  color: #F99531 !important; // portocaliu
+  color: #F99531 !important; // orange
   font-size: 20px !important;
   font-weight: bold;
   margin: 0px 10px 0px 10px; }
@@ -321,17 +437,17 @@ ion-button{ // setarea generala
   font-size: 18px;
   max-width: 385px;
   margin: 8px 10px 0px 10px;
-  color: #7A7A7A; }
+  color: #7A7A7A; } // gri
 
 .style31{ // text: la checkbox
   font-size: 18px;
   margin: 8px 10px 8px 10px;
-  color: #7A7A7A; }
+  color: #7A7A7A; } // gri
 
 .style32{ // text: la popup
   font-size: 18px;
   margin: 0px;
-  color: #7A7A7A; }
+  color: #7A7A7A; } // gri
 
 .style1m{ // ion-label: menu
   margin: 5px 0px 5px 0px; }
@@ -341,8 +457,14 @@ ion-button{ // setarea generala
     width: 34px;
     height: 34px;
     margin: 0px 12px 0px 12px;
-    color: #7A7A7A;
+    color: #7A7A7A; // gri
     padding: 1px; }
+
+.style2k{ // ion-icon: checkbox
+  margin: 2px;
+  color: #7A7A7A; // gri
+  padding: 1px; }
+
 // Put style rules here that you want to apply to the entire application. These
 // styles are for the entire app and not just one component. Additionally, this
 // file can hold Sass mixins, functions, and placeholder classes to be imported
@@ -355,10 +477,9 @@ ion-button{ // setarea generala
     --ion-safe-area-bottom: 1%;
     --ion-safe-area-right: 1%;
     --ion-safe-area-left: 1%;
-    --width: 98%;
+    --width: 88%;
     --max-width: 395px !important;
-    --height: 98%;
+    --height: 94%;
     --min-height: 580px;
     --max-height: auto;
-    --background: var(--ion-background-color,#fff);
-}
+    --background: var(--ion-background-color,#FFF); } // alb

@@ -28,15 +28,15 @@ export class ProfilerPage implements OnInit {
 
   constructor(private afAuth: AngularFireAuth, public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
-  public changedata() {
-  // lipsa
-  this.displayMarket() }
+  private changedata() {
+    // lipsa
+    this.displayMarket() }
 
   private validPassword(pass) {
     const passwordFormat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d].{7,20}$/;
     return pass.match(passwordFormat); }
 
-  public changepass() {
+  private changepass() {
     if (this.password) {
       if (this.validPassword(this.password) && this.password === this.confirmpass) {
         /* lipsa actiune pentru salvarea parolei noi*/
@@ -68,26 +68,27 @@ export class ProfilerPage implements OnInit {
       buttons: ['TRY AGAIN'] });
     (await alert).present(); }
 
-  public displayMarket() {
+  private displayMarket() {
     this.router.navigateByUrl('market'); }
 
-  addPicture(fileLoader) {
+  private addPicture(fileLoader) {
     fileLoader.click();
     var that = this;
     fileLoader.onchange = function () {
       var file = fileLoader.files[0];
       var reader = new FileReader();
+
       reader.addEventListener("load", function () {
         that.processing = true;
         that.uploadImage = reader.result; }, false);
-      if (file) {
-        reader.readAsDataURL(file); } }
-  }
 
-  imageLoaded(){
+      if (file) {
+        reader.readAsDataURL(file); } } }
+
+  private imageLoaded(){
     this.processing = false; }
 
-  removePic() {
+  private removePic() {
     this.uploadImage = null; }
 
   ngOnInit() { }

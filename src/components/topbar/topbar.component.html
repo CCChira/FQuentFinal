@@ -7,7 +7,7 @@
           <ion-icon name="close" class="fakeicons" [hidden]='!tBarIcon1'> </ion-icon>
 
           <ion-label class="style02" [hidden]='tBarSearch'> {{ tBarText }} </ion-label>
-          <ion-searchbar class="searcher" [hidden]='!tBarSearch' name="searchinbar" [(ngModel)]="searchinbar"> </ion-searchbar>
+          <ion-searchbar class="searcher" [hidden]='!tBarSearch' placeholder="Search market" align='left' name="searchTermBar" [(ngModel)]="searchTermBar" (ionInput)="Trimite()"> </ion-searchbar>
 
           <ion-menu-button class="style01" [hidden]='tBarIcon2'> </ion-menu-button>
           <ion-icon name="close" class="fakeicons" [hidden]='!tBarIcon2'> </ion-icon>
@@ -55,13 +55,6 @@
     <ion-item>
       <ion-icon name="map" class="style2m"> </ion-icon>
       <ion-label sclass="style1m" (click)="this.router.navigateByUrl('mainpage')"> On map </ion-label>
-    </ion-item>
-  </ion-footer>
-
-  <ion-footer>
-    <ion-item>
-      <ion-icon src="\assets\icon\search.svg" class="style2m"> </ion-icon>
-      <ion-label sclass="style1m" (click)="this.router.navigateByUrl('searcher')"> Refined Search </ion-label>
     </ion-item>
   </ion-footer>
 

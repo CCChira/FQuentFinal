@@ -18,6 +18,7 @@ const routes: Routes=[ {
     IonicModule,
     ToolerModule,
     RouterModule.forChild(routes) ],
+  entryComponents: [ ],
   declarations: [ActivityPage] } )
 
 export class ActivityPageModule {}

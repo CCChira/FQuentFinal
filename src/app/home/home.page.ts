@@ -1,8 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
-import { AuthService } from '../../providers/auth-tools/auth-tools';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +16,7 @@ export class HomePage {
   private fBarTextCrt = '2019© by Flexiloquent™';
   private fBarIcon2Hide: boolean = false;
 
-  constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) {}
+  constructor(private router: Router) {}
 
   ngOnInit() { }
 }

@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { AuthService } from '../../providers/auth-tools/auth-tools';
 import { ModalController } from '@ionic/angular';
 
 @Component( {
@@ -19,15 +17,17 @@ export class NewofferPage implements OnInit {
   private reqprice;
   private contactphone;
 
-  constructor(private modalCtrl: ModalController, public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
+  constructor(private modalCtrl: ModalController, private router: Router, private alertCtrl: AlertController) { }
 
-  public newoffer() {
+  private newoffer() {
     if (true /*decizie lipsa pentru verificarea unei oferte noi*/ ) {
       /*actiune lipsa pentru validarea unei oferte noi*/
+      console.log('oferta inserata');
       this.dismissNewofferModal();
       this.validOfferAlert(); }
 
       else {console.log('oferta incompleta');
+        this.dismissNewofferModal();
         this.invalidOfferAlert(); } }
 
   async validOfferAlert() {
@@ -64,7 +64,8 @@ export class NewofferPage implements OnInit {
   private removePic() {
     this.uploadImage = null; }
 
-  async dismissNewofferModal() { await this.modalCtrl.dismiss() }
+  async dismissNewofferModal() {
+    await this.modalCtrl.dismiss() }
 
   ngOnInit() { }
  }

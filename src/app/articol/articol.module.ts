@@ -3,21 +3,20 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ToolerModule } from 'src/components/tooler.module';
 
-import { SearcherPage } from './searcher.page';
+import { ArticolPage } from './articol.page';
 
 const routes: Routes=[ {
     path: '',
-    component: SearcherPage } ];
+    component: ArticolPage } ];
 
 @NgModule( {
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ToolerModule,
     RouterModule.forChild(routes) ],
-  declarations: [SearcherPage] } )
+  entryComponents: [ ArticolPage ],
+  declarations: [ ] } )
 
-export class SearcherPageModule {}
+export class ArticolPageModule {}

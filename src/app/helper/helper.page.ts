@@ -1,8 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
-import { AuthService } from '../../providers/auth-tools/auth-tools';
 
 @Component( {
   selector: 'app-helper',
@@ -21,10 +18,7 @@ export class HelperPage implements OnInit {
   private fBarTextCrt = '';
   private fBarIcon2Hide: boolean = true;
 
-  constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
-
-  public displayFound() {
-    this.router.navigateByUrl('market'); }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
 }

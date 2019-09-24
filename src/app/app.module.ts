@@ -18,7 +18,9 @@ import { TopbarComponent } from 'src/components/topbar/topbar.component';
 import { FootbarComponent } from 'src/components/footbar/footbar.component';
 import { NewofferPage } from 'src/app/newoffer/newoffer.page';
 import { NewrequestPage } from 'src/app/newrequest/newrequest.page';
+import { ArticolPage } from 'src/app/articol/articol.page';
 import { ToolerModule } from 'src/components/tooler.module';
+import { DataService } from 'src/app/data.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,6 +43,9 @@ import { ToolerModule } from 'src/components/tooler.module';
     FootbarComponent,
     NewofferPage,
     NewrequestPage,
+    ArticolPage,
+    DataService,
+    DataService,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

@@ -23,9 +23,9 @@ export class Lostpass2Page implements OnInit {
   private fBarTextCrt = '2019© by Flexiloquent™';
   private fBarIcon2Hide: boolean = false;
 
-  constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
+  constructor(public authService: AuthService, private afAuth: AngularFireAuth, private router: Router, private alertCtrl: AlertController) { }
 
-  public newpass() {
+  private newpass() {
     if ( this.digit1 === "1" && this.digit2 === "2" && this.digit3 === "3" && this.digit4 === "4" /* lipsa decizie verificare cod*/ ) {
       /* lipsa actiune dupa verificare cod*/
       console.log('valid code');
@@ -50,7 +50,7 @@ export class Lostpass2Page implements OnInit {
       buttons: ['TRY AGAIN'] });
     (await alert).present(); }
 
-  public displayLospass3() {
+  private displayLospass3() {
     this.router.navigateByUrl('lostpass3'); }
 
   ngOnInit() { }

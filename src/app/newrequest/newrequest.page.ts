@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { AuthService } from '../../providers/auth-tools/auth-tools';
 import { ModalController } from '@ionic/angular';
 
 @Component( {
@@ -17,15 +15,17 @@ export class NewrequestPage implements OnInit {
   private reqprice;
   private contactphone;
 
-  constructor(private modalCtrl: ModalController, public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
+  constructor(private modalCtrl: ModalController, private router: Router, private alertCtrl: AlertController) { }
 
-  public newrequest() {
+  private newrequest() {
     if (true /*decizie lipsa pentru verificarea unei cereri noi*/ ) {
       /*actiune lipsa pentru validarea unei cereri noi*/
+      console.log('cerere inserata');
       this.dismissNewrequestModal();
       this.validRequestAlert(); }
 
       else {console.log('cerere incompleta');
+        this.dismissNewrequestModal();
         this.invalidRequestAlert(); } }
 
   async validRequestAlert() {
@@ -42,7 +42,8 @@ export class NewrequestPage implements OnInit {
       buttons: ['TRY AGAIN'] });
     (await alert).present(); }
 
-  async dismissNewrequestModal() { await this.modalCtrl.dismiss() }
+  async dismissNewrequestModal() {
+    await this.modalCtrl.dismiss() }
 
   ngOnInit() { }
 }

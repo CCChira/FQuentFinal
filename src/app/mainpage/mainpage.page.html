@@ -1,18 +1,84 @@
-<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarSearch]='tBarSearchShow' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+<app-topbar #topbardata (topbarModif)='Cautare($event)' [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarSearch]='tBarSearchShow' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
 
 <ion-content>
   <form #mainpageForm="ngForm">
     <ion-grid>
-      <ion-col>
+
+        <ion-row class="marginih">
+          <div [hidden]='!refinedHide'>
+            <ion-button class="bigbutton3" text-transform="none" (click)="ShowRefined()" (click)="topbardata.Reseteaza()">
+              <p class="styleb3"> Switch to &nbsp; <b>Refined Search</b></p>
+            </ion-button>
+          </div>
+
+          <div [hidden]='refinedHide'>
+            <ion-button class="bigbutton3" (click)="ShowRefined()">
+              <p class="styleb3" text-transform="none"> Switch to &nbsp; <b>General Search</b></p>
+            </ion-button>
+          </div>
+        </ion-row>
+
+        <div [hidden]='refinedHide'>
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Transaction type: </ion-note>
+              <ion-input class="sfield" name="sGen" placeholder="Request / Offer" [(ngModel)]="sGen" (input)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Limit area: </ion-note>
+              <ion-input class="sfield" name="sArea" placeholder="Search Area" [(ngModel)]="sArea" (ionInput)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Tool's category: </ion-note>
+              <ion-input class="sfield" name="sCategory" placeholder="Tool Category" [(ngModel)]="sCategory" (ionInput)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Tool's description: </ion-note>
+              <ion-input class="sfield" name="sDescription" placeholder="Description" [(ngModel)]="sDescription" (ionInput)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Max price/day: </ion-note>
+              <ion-input class="sfield" name="sMaxprice" placeholder="Maximum Price" [(ngModel)]="sMaxprice" (ionInput)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
+        </div>
+
         <ion-row>
           <ion-slides>
             <ion-slide>
               <ion-card>
                 <ion-card-header>
-                  <ion-card-title> Search on map: </ion-card-title>
+                  <ion-card-title class="style2c" > Search on map: </ion-card-title>
                 </ion-card-header>
                 <ion-card-content>
                   <img src="\assets\Map.jpg" alt="Map">
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+          </ion-slides>
+        </ion-row>
+
+        <ion-row>
+          <ion-slides scrollbar slidesPerView='3'>
+            <ion-slide *ngFor="let articol of bazaFiltrata">
+              <ion-card class="smallest">
+                <ion-card-content class="thumbpad" (click)="displayArtModal(articol.gen, articol.titlu, articol.srcimg, articol.zona, articol.categorie, articol.descriere, articol.contact, articol.pretpezi, articol.garantie)">
+                  <ion-card-subtitle class="subtext3"> {{articol.categorie}} </ion-card-subtitle>
+                  <img  src={{articol.srcimg}} alt={{articol.categorie}}>
+                  <p class="microtext"> {{articol.zona}} </p>
                 </ion-card-content>
               </ion-card>
             </ion-slide>
@@ -42,7 +108,7 @@
             </ion-fab>
           </ion-content>
         </ion-row>
-      </ion-col>
+
     </ion-grid>
   </form>
 </ion-content>

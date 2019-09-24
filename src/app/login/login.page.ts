@@ -23,11 +23,11 @@ export class LoginPage implements OnInit {
 
   constructor(public authService: AuthService, private afAuth: AngularFireAuth, private router: Router, private alertCtrl: AlertController) { }
 
-  public validMail(mail) {
+  private validMail(mail) {
     const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return mail.match(mailformat); }
 
-  public logmein() {
+  private logmein() {
     if (this.email && this.password) {
       let ok = true;
       if (!this.validMail(this.email)) {
@@ -51,7 +51,7 @@ export class LoginPage implements OnInit {
       this.invalidEmailOrPassAlert(); }
   }
 
-  public loginWithFacebook() {
+  private loginWithFacebook() {
     this.authService.loginFacebook().then(
       (response) => {
         console.log(response);
@@ -64,7 +64,7 @@ export class LoginPage implements OnInit {
     );
   }
 
-  public loginWithGoogle() {
+  private loginWithGoogle() {
     this.authService.loginGoogle().then(
       (response) => {
         console.log(response);
@@ -105,7 +105,7 @@ export class LoginPage implements OnInit {
         buttons: ['TRY AGAIN'] } );
       (await alert).present(); }
 
-  public displayMarket() {
+  private displayMarket() {
     this.router.navigateByUrl('market'); }
 
   ngOnInit() { }

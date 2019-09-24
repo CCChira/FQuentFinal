@@ -1,158 +1,73 @@
-<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+<app-topbar #topbardata (topbarModif)='Cautare($event)' [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarSearch]='tBarSearchShow' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
 
 <ion-content>
   <form #marketForm="ngForm">
     <ion-grid>
       <ion-col>
-        <ion-row>
-          <ion-card class="thumbcard" (click)="this.popBon( 'Bormasina', '100 LEI' )">
-            <ion-card-content class="thumbpad">
-              <img id="img01" src="\assets\samples\Ryobi2.jpg"  alt="Bormasina">
-              <p class="minitext" id="cart01"> Baciu </p>
-            </ion-card-content>
-          </ion-card>
 
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Blaupunkt2.jpg" alt="Bormasina">
-              <p class="minitext"> Marasti </p>
-            </ion-card-content>
-          </ion-card>
+        <ion-row class="marginih">
+          <div [hidden]='!refinedHide'>
+            <ion-button class="bigbutton3" text-transform="none" (click)="ShowRefined()" (click)="topbardata.Reseteaza()">
+              <p class="styleb3"> Switch to &nbsp; <b>Refined Search</b></p>
+            </ion-button>
+          </div>
 
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Bosch1.jpg" alt="Bormasina">
-              <p class="minitext"> Manastur </p>
-            </ion-card-content>
-          </ion-card>
+          <div [hidden]='refinedHide'>
+            <ion-button class="bigbutton3" (click)="ShowRefined()">
+              <p class="styleb3" text-transform="none"> Switch to &nbsp; <b>General Search</b></p>
+            </ion-button>
+          </div>
+        </ion-row>
 
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Makita2.jpg" alt="Bormasina">
-              <p class="minitext"> Gheorghieni </p>
-            </ion-card-content>
-          </ion-card>
+        <div [hidden]='refinedHide'>
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Transaction type: </ion-note>
+              <ion-input class="sfield" name="sGen" placeholder="Request / Offer" [(ngModel)]="sGen" (input)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
 
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Blackdecker2.jpg" alt="Bormasina">
-              <p class="minitext"> Gruia </p>
-            </ion-card-content>
-          </ion-card>
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Limit area: </ion-note>
+              <ion-input class="sfield" name="sArea" placeholder="Search Area" [(ngModel)]="sArea" (ionInput)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
 
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Milwaukee.jpg" alt="Flex">
-              <p class="minitext"> Gheorghieni </p>
-            </ion-card-content>
-          </ion-card>
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Tool's category: </ion-note>
+              <ion-input class="sfield" name="sCategory" placeholder="Tool Category" [(ngModel)]="sCategory" (ionInput)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
 
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Ryobi.jpg" alt="Flex">
-              <p class="minitext"> Gruia </p>
-            </ion-card-content>
-          </ion-card>
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Tool's description: </ion-note>
+              <ion-input class="sfield" name="sDescription" placeholder="Description" [(ngModel)]="sDescription" (ionInput)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
 
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Blackdecker4.jpg" alt="Flex">
-              <p class="minitext"> Baciu </p>
-            </ion-card-content>
-          </ion-card>
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Max price/day: </ion-note>
+              <ion-input class="sfield" name="sMaxprice" placeholder="Maximum Price" [(ngModel)]="sMaxprice" (ionInput)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
+        </div>
 
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Blaupunkt.jpg" alt="Flex">
-              <p class="minitext"> Marasti </p>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Makita4.jpg" alt="Flex">
-              <p class="minitext"> Manastur </p>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Dewalt.jpg" alt="Filetanta">
-              <p class="minitext"> Marasti </p>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Blackdecker.jpg" alt="Filetanta">
-              <p class="minitext"> Intre Ape </p>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Bosch3.jpg" alt="Filetanta">
-              <p class="minitext"> Baciu </p>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Makita.jpg" alt="Filetanta">
-              <p class="minitext"> Manastur </p>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Status.jpg" alt="Filetanta">
-              <p class="minitext"> Gheorghieni </p>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Yikoda.jpg" alt="Filetanta">
-              <p class="minitext"> Gruia </p>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Blackdecker3.jpg" alt="Diverse">
-              <p class="minitext"> Floresti </p>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Bosch4.jpg" alt="Diverse">
-              <p class="minitext"> Someseni </p>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Dewalt2.jpg" alt="Diverse">
-              <p class="minitext"> Manastur </p>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Husqvarna.jpg" alt="Diverse">
-              <p class="minitext"> Gara </p>
-            </ion-card-content>
-          </ion-card>
-
-          <ion-card class="thumbcard">
-            <ion-card-content class="thumbpad">
-              <img src="\assets\samples\Makita3.jpg" alt="Diverse">
-              <p class="minitext"> Gruia </p>
+        <ion-row class="searched">
+          <ion-card *ngFor="let articol of bazaFiltrata" class="thumbcard">
+            <ion-card-content class="thumbpad" (click)="displayArtModal(articol.gen, articol.titlu, articol.srcimg, articol.zona, articol.categorie, articol.descriere, articol.contact, articol.pretpezi, articol.garantie)">
+              <ion-card-subtitle class="subtext2"> {{articol.categorie}} </ion-card-subtitle>
+              <img  src={{articol.srcimg}} alt={{articol.categorie}}>
+              <p class="minitext"> {{articol.zona}} </p>
             </ion-card-content>
           </ion-card>
         </ion-row>
 
+        <br>
+        <ion-row> <p class="style0f"> Want to offer or request something? </p> </ion-row>
         <br><br>
 
         <ion-row>
@@ -175,7 +90,6 @@
               </ion-fab-list>
             </ion-fab>
           </ion-content>
-
         </ion-row>
       </ion-col>
     </ion-grid>

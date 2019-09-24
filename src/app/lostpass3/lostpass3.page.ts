@@ -27,7 +27,7 @@ export class Lostpass3Page implements OnInit {
     const passwordFormat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d].{7,20}$/;
     return pass.match(passwordFormat); }
 
-  public changepass() {
+  private changepass() {
 
     if (this.password) {
       if (this.validPassword(this.password) && this.password === this.confirmpass) {
@@ -60,7 +60,7 @@ export class Lostpass3Page implements OnInit {
       buttons: ['TRY AGAIN'] });
     (await alert).present(); }
 
-  public displayMarket() {
+  private displayMarket() {
     this.router.navigateByUrl('market'); }
 
   ngOnInit() { }

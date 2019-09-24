@@ -25,15 +25,15 @@ export class RegisterPage implements OnInit {
 
   constructor(public authService: AuthService, private afAuth: AngularFireAuth, private router: Router, private alertCtrl: AlertController) { }
 
-  public validMail(mail) {
+  private validMail(mail) {
     const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return mail.match(mailformat); }
 
-  public validPassword(pass) {
+  private validPassword(pass) {
     const passwordFormat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d].{7,20}$/;
     return pass.match(passwordFormat); }
 
-  public register() {
+  private register() {
   if (this.email && this.password) {
     if (this.validPassword(this.password) && this.validMail(this.email) && this.password === this.confirmpass) {
       this.afAuth.auth.createUserWithEmailAndPassword(this.email, this.password).then(
@@ -58,7 +58,7 @@ export class RegisterPage implements OnInit {
    return this.invalidEmailAlert(); }
   }
 
-  public loginWithFacebook() {
+  private loginWithFacebook() {
     this.authService.loginFacebook().then(
       (response) => {
         console.log(response);
@@ -71,7 +71,7 @@ export class RegisterPage implements OnInit {
     );
   }
 
-  public loginWithGoogle() {
+  private loginWithGoogle() {
     this.authService.loginGoogle().then(
       (response) => {
         console.log(response);
@@ -112,7 +112,7 @@ export class RegisterPage implements OnInit {
       buttons: ['TRY AGAIN'] });
     (await alert).present(); }
 
-  public displayMarket() {
+  private displayMarket() {
     this.router.navigateByUrl('market'); }
 
   ngOnInit() { }
