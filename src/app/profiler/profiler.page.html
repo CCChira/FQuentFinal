@@ -7,11 +7,29 @@
         <ion-row> <p class="style11"> Update your informations: </p> </ion-row>
 
         <ion-row>
-          <ion-card class="roundcard">
+          <ion-card class="medcard" [hidden]='!cardSwitch'>
             <ion-card-content class="thumbpad">
               <span *ngIf="uploadImage === null"> <img class="round" id="initialImage" src="\assets\icon\Camera.jpg" /> </span>
               <span *ngIf="uploadImage != null"> <img class="round" id="checkinImage" [src]="uploadImage" (load)="imageLoaded()" /> </span>
               <span *ngIf="processing"> <ion-spinner> </ion-spinner> <h1>Processing...</h1> </span>
+              <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+                <ion-fab-button class="plus" (click)="Mareste()">
+                  <ion-icon src="\assets\icon\zoom-in.svg" class="acticon"> </ion-icon>
+                </ion-fab-button>
+              </ion-fab>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="biggercard" [hidden]='cardSwitch'>
+            <ion-card-content class="thumbpad">
+              <span *ngIf="uploadImage === null"> <img class="round" id="initialImage" src="\assets\icon\Camera.jpg" /> </span>
+              <span *ngIf="uploadImage != null"> <img class="round" id="checkinImage" [src]="uploadImage" (load)="imageLoaded()" /> </span>
+              <span *ngIf="processing"> <ion-spinner> </ion-spinner> <h1>Processing...</h1> </span>
+              <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+                <ion-fab-button class="plus" (click)="Mareste()">
+                  <ion-icon src="\assets\icon\zoom-out.svg" class="acticon"> </ion-icon>
+                </ion-fab-button>
+              </ion-fab>
             </ion-card-content>
           </ion-card>
         </ion-row>

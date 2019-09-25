@@ -17,7 +17,7 @@ export class NewrequestPage implements OnInit {
 
   constructor(private modalCtrl: ModalController, private router: Router, private alertCtrl: AlertController) { }
 
-  private newrequest() {
+  private newRequest() {
     if (true /*decizie lipsa pentru verificarea unei cereri noi*/ ) {
       /*actiune lipsa pentru validarea unei cereri noi*/
       console.log('cerere inserata');

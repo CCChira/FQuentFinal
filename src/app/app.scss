@@ -24,7 +24,7 @@
   max-width: 280px; }
 
 .round{
-  border-radius: 100% !important; }
+  border-radius: 40px !important; }
 
 .myicons{ //img: small icons
   width: 18px;
@@ -148,26 +148,20 @@ ion-card{ // setarea generala
 ion-card.biggercard{ // carduri marioace
   display: flex;
   width: 380px !important;
-  border-radius: 10px !important;
+  border-radius: 50px !important;
   margin: 5px 5px 5px 5px !important; }
 
 ion-card.bigcard{ // carduri mari
   display: flex;
   width: 250px !important;
-  border-radius: 10px !important;
+  border-radius: 50px !important;
   margin: 5px 5px 5px 5px !important; }
 
 ion-card.medcard{ // carduri medii
   display: flex;
-  width: 200px !important;
-  border-radius: 10px !important;
-  margin: 5px 5px 5px 5px !important; }
-
-ion-card.roundcard{ // carduri rotunde
-  display: flex;
-  width: 180px !important;
-  border-radius: 90px !important;
-  margin: 10px 5px 10px 5px !important; }
+  width: 190px !important;
+  border-radius: 50px !important;
+  margin: 6px !important; }
 
 ion-card.thumbcard{ // carduri mici
   display: flex;
@@ -419,6 +413,7 @@ ion-button{ // setarea generala
 .style2c{ // ion-card-title: question two + group.svg
   margin-start: 10px !important;
   margin-end: 10px !important;
+  text-align: center;
   margin-top: 0px !important;
   margin-bottom: 0px !important; }
 
@@ -438,6 +433,11 @@ ion-button{ // setarea generala
   max-width: 385px;
   margin: 8px 10px 0px 10px;
   color: #7A7A7A; } // gri
+
+.style24{ // ion-label: answer two
+  color: #F99531 !important; // orange
+  font-size: 20px !important;
+  margin: 0px 10px 0px 10px; }
 
 .style31{ // text: la checkbox
   font-size: 18px;

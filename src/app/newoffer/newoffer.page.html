@@ -19,11 +19,28 @@
     <ion-grid>
       <ion-col>
         <ion-row>
-          <ion-card class="medcard">
+          <ion-card class="medcard" [hidden]='!cardSwitch'>
             <ion-card-content class="thumbpad">
-              <span *ngIf="uploadImage === null"> <img id="initialImage" src="\assets\icon\Camera.jpg" /> </span>
-              <span *ngIf="uploadImage != null"> <img id="checkinImage" [src]="uploadImage" (load)="imageLoaded()" /> </span>
+              <span *ngIf="uploadImage === null"> <img id="initialImage" class="round" src="\assets\icon\Camera.jpg" /> </span>
+              <span *ngIf="uploadImage != null"> <img id="checkinImage" class="round" [src]="uploadImage" (load)="imageLoaded()" /> </span>
               <span *ngIf="processing"> <ion-spinner> </ion-spinner> <h1>Processing...</h1> </span>
+              <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+                <ion-fab-button class="plus" (click)="Mareste()">
+                  <ion-icon src="\assets\icon\zoom-in.svg" class="acticon"> </ion-icon>
+                </ion-fab-button>
+              </ion-fab>
+            </ion-card-content>
+          </ion-card>
+          <ion-card class="biggercard" [hidden]='cardSwitch'>
+            <ion-card-content class="thumbpad">
+              <span *ngIf="uploadImage === null"> <img id="initialImage" class="round" src="\assets\icon\Camera.jpg" /> </span>
+              <span *ngIf="uploadImage != null"> <img id="checkinImage" class="round" [src]="uploadImage" (load)="imageLoaded()" /> </span>
+              <span *ngIf="processing"> <ion-spinner> </ion-spinner> <h1>Processing...</h1> </span>
+              <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+                <ion-fab-button class="plus" (click)="Mareste()">
+                  <ion-icon src="\assets\icon\zoom-out.svg" class="acticon"> </ion-icon>
+                </ion-fab-button>
+              </ion-fab>
             </ion-card-content>
           </ion-card>
         </ion-row>
@@ -75,7 +92,7 @@
         </ion-row>
 
         <ion-row class="margini1">
-          <ion-button class="bigbutton" (click)="newoffer()"> <p class="styleb"> INSERT OFFER </p> </ion-button>
+          <ion-button class="bigbutton" (click)="newOffer()"> <p class="styleb"> INSERT OFFER </p> </ion-button>
         </ion-row>
       </ion-col>
     </ion-grid>

@@ -19,7 +19,14 @@ export class NewofferPage implements OnInit {
 
   constructor(private modalCtrl: ModalController, private router: Router, private alertCtrl: AlertController) { }
 
-  private newoffer() {
+  private cardSwitch: boolean = true;
+  private Mareste() {
+    this.cardSwitch = !this.cardSwitch; }
+
+  private resetCardSwitch() {
+    this.cardSwitch = true; }
+
+  private newOffer() {
     if (true /*decizie lipsa pentru verificarea unei oferte noi*/ ) {
       /*actiune lipsa pentru validarea unei oferte noi*/
       console.log('oferta inserata');
@@ -28,7 +35,8 @@ export class NewofferPage implements OnInit {
 
       else {console.log('oferta incompleta');
         this.dismissNewofferModal();
-        this.invalidOfferAlert(); } }
+        this.invalidOfferAlert(); };
+      this.resetCardSwitch(); }
 
   async validOfferAlert() {
     const alert = this.alertCtrl.create({
@@ -56,16 +64,20 @@ export class NewofferPage implements OnInit {
         that.uploadImage = reader.result; }, false);
 
       if (file) {
-        reader.readAsDataURL(file); } } }
+        reader.readAsDataURL(file); } };
+    this.resetCardSwitch(); }
 
   private imageLoaded(){
-    this.processing = false; }
+    this.processing = false;
+    this.resetCardSwitch(); }
 
   private removePic() {
-    this.uploadImage = null; }
+    this.uploadImage = null;
+    this.resetCardSwitch(); }
 
   async dismissNewofferModal() {
-    await this.modalCtrl.dismiss() }
+    await this.modalCtrl.dismiss();
+    this.resetCardSwitch(); }
 
   ngOnInit() { }
  }

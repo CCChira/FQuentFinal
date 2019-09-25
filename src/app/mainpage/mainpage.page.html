@@ -4,19 +4,15 @@
   <form #mainpageForm="ngForm">
     <ion-grid>
 
-        <ion-row class="marginih">
-          <div [hidden]='!refinedHide'>
-            <ion-button class="bigbutton3" text-transform="none" (click)="ShowRefined()" (click)="topbardata.Reseteaza()">
-              <p class="styleb3"> Switch to &nbsp; <b>Refined Search</b></p>
-            </ion-button>
-          </div>
+      <ion-row height="44px">
+        <ion-item class="linkstyle" [hidden]='!refinedHide' (click)="ShowRefined()" (click)="topbardata.Reseteaza()">
+          <ion-label class="style24"> Switch to &nbsp; <b> Refined Search </b> </ion-label>
+        </ion-item>
 
-          <div [hidden]='refinedHide'>
-            <ion-button class="bigbutton3" (click)="ShowRefined()">
-              <p class="styleb3" text-transform="none"> Switch to &nbsp; <b>General Search</b></p>
-            </ion-button>
-          </div>
-        </ion-row>
+        <ion-item class="linkstyle" [hidden]='refinedHide' (click)="ShowRefined()">
+          <ion-label class="style24"> Switch to &nbsp; <b> General Search </b> </ion-label>
+        </ion-item>
+      </ion-row>
 
         <div [hidden]='refinedHide'>
           <ion-row class="marginis">
@@ -47,7 +43,6 @@
             </ion-item>
           </ion-row>
 
-
           <ion-row class="marginis">
             <ion-item lines="none">
               <ion-note class="snote" slot="start"> Max price/day: </ion-note>
@@ -57,22 +52,18 @@
         </div>
 
         <ion-row>
-          <ion-slides>
-            <ion-slide>
-              <ion-card>
-                <ion-card-header>
-                  <ion-card-title class="style2c" > Search on map: </ion-card-title>
-                </ion-card-header>
-                <ion-card-content>
-                  <img src="\assets\Map.jpg" alt="Map">
-                </ion-card-content>
-              </ion-card>
-            </ion-slide>
-          </ion-slides>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title class="style2c" > Search on map: </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <img src="\assets\Map.jpg" alt="Map">
+            </ion-card-content>
+          </ion-card>
         </ion-row>
 
-        <ion-row>
-          <ion-slides scrollbar slidesPerView='3'>
+        <ion-row class="searched">
+          <ion-slides effectCube>
             <ion-slide *ngFor="let articol of bazaFiltrata">
               <ion-card class="smallest">
                 <ion-card-content class="thumbpad" (click)="displayArtModal(articol.gen, articol.titlu, articol.srcimg, articol.zona, articol.categorie, articol.descriere, articol.contact, articol.pretpezi, articol.garantie)">
@@ -85,7 +76,7 @@
           </ion-slides>
         </ion-row>
 
-        <br>
+        <br><br>
 
         <ion-row>
           <ion-content>

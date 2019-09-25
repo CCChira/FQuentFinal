@@ -31,7 +31,7 @@
         <ion-row>
           <ion-card class="bigcard" [hidden]='!cardSwitch'>
             <ion-card-content class="thumbpad">
-              <img src={{srcimgArt}} alt={{categorieArt}}/>
+              <img class="round" src={{srcimgArt}} alt={{categorieArt}}/>
             </ion-card-content>
             <ion-fab horizontal="end" vertical="bottom" slot="fixed">
               <ion-fab-button class="plus" (click)="Mareste()">
@@ -42,7 +42,7 @@
 
           <ion-card class="biggercard" [hidden]='cardSwitch'>
             <ion-card-content class="thumbpad">
-              <img src={{srcimgArt}} alt={{categorieArt}}/>
+              <img class="round" src={{srcimgArt}} alt={{categorieArt}}/>
             </ion-card-content>
           <ion-fab horizontal="end" vertical="bottom" slot="fixed">
             <ion-fab-button class="plus" (click)="Mareste()">
