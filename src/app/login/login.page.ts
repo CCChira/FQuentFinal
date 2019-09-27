@@ -36,8 +36,8 @@ export class LoginPage implements OnInit {
         return this.invalidEmailAlert(); }
 
       else this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password).then(
-        (response) => {
-          console.log(response);
+        (response)  => {
+          console.log('logged in with local ID');
           this.loggedInAlert();
           return this.displayMarket(); },
         (error) => {
@@ -53,29 +53,27 @@ export class LoginPage implements OnInit {
 
   private loginWithFacebook() {
     this.authService.loginFacebook().then(
-      (response) => {
-        console.log(response);
+      (res) => {
+        console.log('logged in with FB');
         this.loggedInAlert();
         return this.displayMarket(); },
-      (error) => {
+      (res2) => {
         this.externlogAlert();
         console.log('invalid FB credentials');
-        console.log(error); }
-    );
-  }
+        console.log(res2); }
+    ); }
 
   private loginWithGoogle() {
     this.authService.loginGoogle().then(
-      (response) => {
-        console.log(response);
+      (res) => {
+        console.log('logged in with G+');
         this.loggedInAlert();
         return this.displayMarket(); },
-    (error) => {
-      this.externlogAlert();
-      console.log('invalid G+ Credentials');
-      console.log(error); }
-     );
-  }
+      (res2) => {
+        this.externlogAlert();
+        console.log('invalid G+ Credentials');
+        console.log(res2); }
+      ); }
 
   async invalidEmailOrPassAlert() {
     const alert = this.alertCtrl.create({

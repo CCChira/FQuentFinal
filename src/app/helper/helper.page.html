@@ -10,14 +10,14 @@
 
         <ion-row> <p class="style11"> Help issues: </p> </ion-row>
         <ion-row>
-          <ion-searchbar class="searcher" name="searchhelp" [(ngModel)]="searchhelp"> </ion-searchbar>
+          <ion-searchbar class="searcher" name="searchhelp" [(ngModel)]="searchhelp" debounce="50"> </ion-searchbar>
         </ion-row>
         <ion-row> <p class="style23"> ... </p> </ion-row>
         <br>
 
         <ion-row> <p class="style11"> Selection of FAQs: </p> </ion-row>
         <ion-row>
-          <ion-searchbar class="searcher" name="searchfaq" [(ngModel)]="searchfaq"> </ion-searchbar>
+          <ion-searchbar class="searcher" name="searchfaq" [(ngModel)]="searchfaq" debounce="50"> </ion-searchbar>
         </ion-row>
         <ion-row> <p class="style23"> ... </p> </ion-row>
         <br>

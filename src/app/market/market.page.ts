@@ -25,15 +25,10 @@ export class MarketPage implements OnInit {
   private fBarTextCrt = 'Hurry up! Deals are hunted.';
   private fBarIcon2Hide: boolean = true;
 
-  public bazaDate = [ ];
+  private bazaDate = [ ];
 
   constructor(private dataService: DataService, private modalCtrl: ModalController, private router: Router) {
-    this.bazaDate = this.dataService.getBaza(); }
-
-  private bazaFiltrata = [];
-
-  SetGlobalData() {
-    this.dataService.setBaza(this.bazaDate);  }
+    this.bazaDate = this.dataService.getBazaDate(); }
 
   private serchInit: string = '';
   private sGen: string = '';
@@ -53,9 +48,10 @@ export class MarketPage implements OnInit {
     this.sMaxprice = 1000;
     this.bazaFiltrata = this.bazaDate; }
 
+  private bazaFiltrata = [];
   private Cautare(termen){
     this.bazaFiltrata = this.bazaDate.filter(oriceart => {
-      return (oriceart.gen.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.zona.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.categorie.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.descriere.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.pretpezi <= termen); } ); }
+      return ((oriceart.pretpezi <= parseInt(termen, 10)) || oriceart.gen.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.zona.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.categorie.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.descriere.toLowerCase().indexOf(termen.toLowerCase()) > -1); } ); }
 
   private Rafinare() {
     this.bazaFiltrata = this.bazaDate.filter(item => {

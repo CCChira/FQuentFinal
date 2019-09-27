@@ -1,240 +1,79 @@
-<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+<app-topbar #topbardata (topbarModif)='Cautare($event)' [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarSearch]='tBarSearchShow' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
 
 <ion-content>
   <form #tooltopForm="ngForm">
     <ion-grid>
       <ion-col>
-        <div class="setaridiv">
-           <ion-card class="thincard">
-             <ion-card-header class="marginih">
-               <ion-card-title align="center"> Masini de gaurit: </ion-card-title>
-             </ion-card-header>
-           </ion-card>
+
+        <ion-row height="44px">
+          <ion-item class="linkstyle" [hidden]='!refinedHide' (click)="ShowRefined()" (click)="topbardata.Reseteaza()">
+            <ion-label class="style24"> Switch to &nbsp; <b> Refined Search </b> </ion-label>
+          </ion-item>
+
+          <ion-item class="linkstyle" [hidden]='refinedHide' (click)="ShowRefined()">
+            <ion-label class="style24"> Switch to &nbsp; <b> General Search </b> </ion-label>
+          </ion-item>
+        </ion-row>
+
+        <div [hidden]='refinedHide'>
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Transaction type: </ion-note>
+              <ion-input class="sfield" name="sGen" placeholder="Request / Offer" [(ngModel)]="sGen" debounce="50" (keydown)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Limit area: </ion-note>
+              <ion-input class="sfield" name="sArea" placeholder="Search Area" [(ngModel)]="sArea" debounce="50" (keydown)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Tool's category: </ion-note>
+              <ion-input class="sfield" name="sCategory" placeholder="Tool Category" [(ngModel)]="sCategory" debounce="50" (keydown)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Tool's description: </ion-note>
+              <ion-input class="sfield" name="sDescription" placeholder="Description" [(ngModel)]="sDescription" debounce="50" (keydown)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="marginis">
+            <ion-item lines="none">
+              <ion-note class="snote" slot="start"> Max price/day: </ion-note>
+              <ion-input class="sfield" name="sMaxprice" placeholder="Maximum Price" [(ngModel)]="sMaxprice" debounce="50" (keydown)="Rafinare()"> </ion-input>
+            </ion-item>
+          </ion-row>
         </div>
 
-        <ion-slides pager>
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Ryobi2.jpg" alt="Bormasina">
-                <p class="paratext"> Cartierul Baciu </p>
-              </ion-card-content>
+        <div *ngFor="let categ of Indexare()">
+          <div class="setaridiv" >
+            <ion-card class="thincard">
+              <ion-card-header class="marginih">
+                <ion-card-title align="center" font-size="26px !important">{{categ}} </ion-card-title>
+              </ion-card-header>
             </ion-card>
-          </ion-slide>
+          </div>
 
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Blaupunkt2.jpg" alt="Bormasina">
-                <p class="paratext"> Cartierul Marasti </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Bosch1.jpg" alt="Bormasina">
-                <p class="paratext"> Cartierul Manastur </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Makita2.jpg" alt="Bormasina">
-                <p class="paratext"> Cartierul Gheorghieni </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Blackdecker2.jpg" alt="Bormasina">
-                <p class="paratext"> Cartierul Gruia </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-        </ion-slides>
-
-        <div class="setaridiv">
-          <ion-card class="thincard">
-            <ion-card-header class="marginih">
-              <ion-card-title align="center"> Flexuri: </ion-card-title>
-            </ion-card-header>
-          </ion-card>
+          <ion-slides pager class="grouped">
+            <ion-slide *ngFor="let articol of this.separaBaza(categ)">
+              <ion-card class="maxicard">
+                <ion-card-content (click)="displayArtModal(articol.gen, articol.titlu, articol.srcimg, articol.zona, articol.categorie, articol.descriere, articol.contact, articol.pretpezi, articol.garantie)">
+                  <ion-card-subtitle class="subtext4"> {{articol.categorie}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{articol.pretpezi}} &nbsp;&nbsp; lei/zi </ion-card-subtitle>
+                  <img  src={{articol.srcimg}} alt={{articol.categorie}}>
+                  <p class="bottomtext"> {{articol.zona}} </p>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+          </ion-slides>
         </div>
-
-        <ion-slides pager>
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Milwaukee.jpg" alt="Flex">
-                <p class="paratext"> Cartierul Gheorghieni </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Ryobi.jpg" alt="Flex">
-                <p class="paratext"> Cartierul Iris </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Blackdecker4.jpg" alt="Flex">
-                <p class="paratext"> Cartierul Baciu </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Blaupunkt.jpg" alt="Flex">
-                <p class="paratext"> Cartierul Marasti </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Makita4.jpg" alt="Flex">
-                <p class="paratext"> Cartierul Manastur </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-        </ion-slides>
-
-        <div class="setaridiv">
-          <ion-card class="thincard">
-            <ion-card-header class="marginih">
-              <ion-card-title align="center"> Filetante: </ion-card-title>
-            </ion-card-header>
-          </ion-card>
-        </div>
-
-        <ion-slides pager>
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Dewalt.jpg" alt="Filetanta">
-                <p class="paratext"> Cartierul Marasti </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Blackdecker.jpg" alt="Filetanta">
-                <p class="paratext"> Cartierul Intre Ape </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Bosch3.jpg" alt="Filetanta">
-                <p class="paratext"> Cartierul Baciu </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Makita.jpg" alt="Filetanta">
-                <p class="paratext"> Cartierul Manastur </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Status.jpg" alt="Filetanta">
-                <p class="paratext"> Cartierul Gheorghieni </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Yikoda.jpg" alt="Filetanta">
-                <p class="paratext"> Cartierul Gruia </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-        </ion-slides>
-
-        <div class="setaridiv">
-          <ion-card class="thincard">
-            <ion-card-header class="marginih">
-              <ion-card-title align="center"> Diverse: </ion-card-title>
-            </ion-card-header>
-          </ion-card>
-        </div>
-
-        <ion-slides pager>
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Blackdecker3.jpg" alt="Diverse">
-                <p class="paratext"> Cartierul Floresti </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Bosch4.jpg" alt="Diverse">
-                <p class="paratext"> Cartierul Someseni </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Dewalt2.jpg" alt="Diverse">
-                <p class="paratext"> Cartierul Manastur </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Husqvarna.jpg" alt="Diverse">
-                <p class="paratext"> Cartierul Gara </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card>
-              <ion-card-content>
-                <img src="\assets\samples\Makita3.jpg" alt="Diverse">
-                <p class="paratext"> Cartierul Gruia </p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-        </ion-slides>
-
         <br>
-
         <ion-row>
           <ion-content>
             <ion-fab horizontal="center" vertical="center" slot="fixed">

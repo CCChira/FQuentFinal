@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { AuthService } from '../../providers/auth-tools/auth-tools';
 
 @Component({
   selector: 'app-footbar',
@@ -14,6 +15,8 @@ export class FootbarComponent implements OnInit {
     private fBarText: any;
   @Input()
     private fBarIcon2: boolean;
+  @Input()
+    private fBarPhoto: any;
 
   constructor(private router: Router) { }
 

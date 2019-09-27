@@ -18,35 +18,35 @@
           <ion-row class="marginis">
             <ion-item lines="none">
               <ion-note class="snote" slot="start"> Transaction type: </ion-note>
-              <ion-input class="sfield" name="sGen" placeholder="Request / Offer" [(ngModel)]="sGen" (input)="Rafinare()"> </ion-input>
+              <ion-input class="sfield" name="sGen" placeholder="Request / Offer" [(ngModel)]="sGen" debounce="50" (keydown)="Rafinare()"> </ion-input>
             </ion-item>
           </ion-row>
 
           <ion-row class="marginis">
             <ion-item lines="none">
               <ion-note class="snote" slot="start"> Limit area: </ion-note>
-              <ion-input class="sfield" name="sArea" placeholder="Search Area" [(ngModel)]="sArea" (ionInput)="Rafinare()"> </ion-input>
+              <ion-input class="sfield" name="sArea" placeholder="Search Area" [(ngModel)]="sArea" debounce="50" (keydown)="Rafinare()"> </ion-input>
             </ion-item>
           </ion-row>
 
           <ion-row class="marginis">
             <ion-item lines="none">
               <ion-note class="snote" slot="start"> Tool's category: </ion-note>
-              <ion-input class="sfield" name="sCategory" placeholder="Tool Category" [(ngModel)]="sCategory" (ionInput)="Rafinare()"> </ion-input>
+              <ion-input class="sfield" name="sCategory" placeholder="Tool Category" [(ngModel)]="sCategory" debounce="50" (keydown)="Rafinare()"> </ion-input>
             </ion-item>
           </ion-row>
 
           <ion-row class="marginis">
             <ion-item lines="none">
               <ion-note class="snote" slot="start"> Tool's description: </ion-note>
-              <ion-input class="sfield" name="sDescription" placeholder="Description" [(ngModel)]="sDescription" (ionInput)="Rafinare()"> </ion-input>
+              <ion-input class="sfield" name="sDescription" placeholder="Description" [(ngModel)]="sDescription" debounce="50" (keydown)="Rafinare()"> </ion-input>
             </ion-item>
           </ion-row>
 
           <ion-row class="marginis">
             <ion-item lines="none">
               <ion-note class="snote" slot="start"> Max price/day: </ion-note>
-              <ion-input class="sfield" name="sMaxprice" placeholder="Maximum Price" [(ngModel)]="sMaxprice" (ionInput)="Rafinare()"> </ion-input>
+              <ion-input class="sfield" name="sMaxprice" placeholder="Maximum Price" [(ngModel)]="sMaxprice" debounce="50" (keydown)="Rafinare()"> </ion-input>
             </ion-item>
           </ion-row>
         </div>
@@ -62,19 +62,22 @@
           </ion-card>
         </ion-row>
 
-        <ion-row class="searched">
-          <ion-slides effectCube>
-            <ion-slide *ngFor="let articol of bazaFiltrata">
-              <ion-card class="smallest">
-                <ion-card-content class="thumbpad" (click)="displayArtModal(articol.gen, articol.titlu, articol.srcimg, articol.zona, articol.categorie, articol.descriere, articol.contact, articol.pretpezi, articol.garantie)">
-                  <ion-card-subtitle class="subtext3"> {{articol.categorie}} </ion-card-subtitle>
-                  <img  src={{articol.srcimg}} alt={{articol.categorie}}>
-                  <p class="microtext"> {{articol.zona}} </p>
-                </ion-card-content>
-              </ion-card>
-            </ion-slide>
-          </ion-slides>
-        </ion-row>
+        <div [hidden]='resultHide'>
+          <ion-row>
+            <ion-item class="linkstyle">
+              <ion-label class="style24"> Top results: &nbsp; </ion-label>
+            </ion-item>
+          </ion-row>
+          <ion-row class="searched">
+            <ion-card class="smallest"  *ngFor="let articol of bazaFiltrata | slice:0:3">
+              <ion-card-content class="thumbpad" (click)="displayArtModal(articol.gen, articol.titlu, articol.srcimg, articol.zona, articol.categorie, articol.descriere, articol.contact, articol.pretpezi, articol.garantie)">
+                <ion-card-subtitle class="subtext3"> {{articol.categorie}} </ion-card-subtitle>
+                <img  src={{articol.srcimg}} alt={{articol.categorie}}>
+                <p class="microtext"> {{articol.zona}} </p>
+              </ion-card-content>
+            </ion-card>
+          </ion-row>
+        </div>
 
         <br><br>
 

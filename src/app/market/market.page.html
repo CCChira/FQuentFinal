@@ -18,35 +18,35 @@
           <ion-row class="marginis">
             <ion-item lines="none">
               <ion-note class="snote" slot="start"> Transaction type: </ion-note>
-              <ion-input class="sfield" name="sGen" placeholder="Request / Offer" [(ngModel)]="sGen" (input)="Rafinare()"> </ion-input>
+              <ion-input class="sfield" name="sGen" placeholder="Request / Offer" [(ngModel)]="sGen" debounce="50" (keydown)="Rafinare()"> </ion-input>
             </ion-item>
           </ion-row>
 
           <ion-row class="marginis">
             <ion-item lines="none">
               <ion-note class="snote" slot="start"> Limit area: </ion-note>
-              <ion-input class="sfield" name="sArea" placeholder="Search Area" [(ngModel)]="sArea" (ionInput)="Rafinare()"> </ion-input>
+              <ion-input class="sfield" name="sArea" placeholder="Search Area" [(ngModel)]="sArea" debounce="50" (keydown)="Rafinare()"> </ion-input>
             </ion-item>
           </ion-row>
 
           <ion-row class="marginis">
             <ion-item lines="none">
               <ion-note class="snote" slot="start"> Tool's category: </ion-note>
-              <ion-input class="sfield" name="sCategory" placeholder="Tool Category" [(ngModel)]="sCategory" (ionInput)="Rafinare()"> </ion-input>
+              <ion-input class="sfield" name="sCategory" placeholder="Tool Category" [(ngModel)]="sCategory" debounce="50" (keydown)="Rafinare()"> </ion-input>
             </ion-item>
           </ion-row>
 
           <ion-row class="marginis">
             <ion-item lines="none">
               <ion-note class="snote" slot="start"> Tool's description: </ion-note>
-              <ion-input class="sfield" name="sDescription" placeholder="Description" [(ngModel)]="sDescription" (ionInput)="Rafinare()"> </ion-input>
+              <ion-input class="sfield" name="sDescription" placeholder="Description" [(ngModel)]="sDescription" debounce="50" (keydown)="Rafinare()"> </ion-input>
             </ion-item>
           </ion-row>
 
           <ion-row class="marginis">
             <ion-item lines="none">
               <ion-note class="snote" slot="start"> Max price/day: </ion-note>
-              <ion-input class="sfield" name="sMaxprice" placeholder="Maximum Price" [(ngModel)]="sMaxprice" (ionInput)="Rafinare()"> </ion-input>
+              <ion-input class="sfield" name="sMaxprice" placeholder="Maximum Price" [(ngModel)]="sMaxprice" debounce="50" (keydown)="Rafinare()"> </ion-input>
             </ion-item>
           </ion-row>
         </div>

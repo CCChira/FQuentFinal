@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable()
 export class DataService {
 
-  private bazaDateServer = [
+  public bazaDateServer = [
     {"id":1, "iduser":1, "gen":"Offer", "titlu":"Dau", "srcimg":"/assets/samples/Ryobi2.jpg", "zona":"Baciu", "categorie":"Bormasina", "descriere":"foarte compacta", "contact":"0725123456", "pretpezi":75, "garantie":true},
     {"id":22, "iduser":6, "gen":"Offer", "titlu":"Am nevoie", "srcimg":"/assets/samples/Dewalt2.jpg", "zona":"Manastur", "categorie":"Diverse", "descriere":"necesita capse GW M16", "contact":"0752238274", "pretpezi":30, "garantie":true},
     {"id":4, "iduser":2, "gen":"Offer", "titlu":"Dau", "srcimg":"/assets/samples/Makita2.jpg", "zona":"Gheorghieni", "categorie":"Bormasina", "descriere":"cu percutie", "contact":"0731457065", "pretpezi":60, "garantie":true},
@@ -32,11 +32,30 @@ export class DataService {
     {"id":24, "iduser":5, "gen":"Offer", "titlu":"Caut", "srcimg":"/assets/samples/Makita3.jpg", "zona":"Gruia", "categorie":"Diverse", "descriere":"nu are protectie", "contact":"0796567946", "pretpezi":90, "garantie":true},
   ];
 
+  public bazaIDServer = [
+    {"idUser":1, "iName":"Alessia Bidian", "iEmail":"alessia.bidian@gmail.com", "iPassword":"1*Alessia", "iPhone":"0723147497", "iLocation":"Marasti", "srcimg":"/assets/isamples/Alessia.jpg"},
+    {"idUser":2, "iName":"Ana Metes", "iEmail":"ametes2002@gmail.com", "iPassword":"1*AnaMetes", "iPhone":"0744233142", "iLocation":"Cordos", "srcimg":"/assets/isamples/Ana.jpg"},
+    {"idUser":3, "iName":"Andrea Kovacs", "iEmail":"andreakovacs3@gmail.com", "iPassword":"1*Andreea", "iPhone":"0759321453", "iLocation":"Gheorghieni", "srcimg":"/assets/isamples/Andrea.jpg"},
+    {"idUser":4, "iName":"Cristi Chira", "iEmail":"chira.cristian621@gmail.com", "iPassword":"1*Cristian", "iPhone":"0762578911", "iLocation":"Manastur", "srcimg":"/assets/isamples/Cristi.jpg"},
+    {"idUser":5, "iName":"Antonio Suciu", "iEmail":"suciu.antonio@gmail.com", "iPassword":"1*Antonio", "iPhone":"0736257814", "iLocation":"Gheorghieni", "srcimg":"/assets/isamples/Antonio.jpg"},
+    {"idUser":6, "iName":"Tudor Roman", "iEmail":"romantudor03@yahoo.com", "iPassword":"1*TudorR", "iPhone":"0758347998", "iLocation":"Centru", "srcimg":"/assets/isamples/Tudor.jpg"},
+  ];
+
+//  SetGlobalData() {
+//    this.dataService.setBaza(this.bazaDate);  }
+
   constructor() { }
 
-  setBaza( baza ) {
+  public setBazaDate( baza ) {
      this.bazaDateServer = baza; }
 
-  getBaza() {
+  public getBazaDate() {
    return this.bazaDateServer; }
+
+  public setBazaID( baza ) {
+    this.bazaIDServer = baza; }
+
+  public getBazaID() {
+    return this.bazaIDServer; }
+
 }

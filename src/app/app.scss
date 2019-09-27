@@ -24,7 +24,7 @@
   max-width: 280px; }
 
 .round{
-  border-radius: 40px !important; }
+  border-radius: 10px !important; }
 
 .myicons{ //img: small icons
   width: 18px;
@@ -145,22 +145,28 @@ ion-card{ // setarea generala
   border-radius: 10px !important;
   margin: 10px 30px 10px 30px !important; }
 
+ion-card.maxicard{ // carduri maxime...
+  display: flex;
+  width: 400px;
+  border-radius: 10px !important;
+  margin: 10px 20px 10px 20px !important; }
+
 ion-card.biggercard{ // carduri marioace
   display: flex;
   width: 380px !important;
-  border-radius: 50px !important;
+  border-radius: 20px !important;
   margin: 5px 5px 5px 5px !important; }
 
 ion-card.bigcard{ // carduri mari
   display: flex;
   width: 250px !important;
-  border-radius: 50px !important;
+  border-radius: 20px !important;
   margin: 5px 5px 5px 5px !important; }
 
 ion-card.medcard{ // carduri medii
   display: flex;
   width: 190px !important;
-  border-radius: 50px !important;
+  border-radius: 20px !important;
   margin: 6px !important; }
 
 ion-card.thumbcard{ // carduri mici
@@ -175,7 +181,7 @@ ion-card.smallest{ // carduri foarte mici
   margin: 3px 3px 3px 3px !important; }
 
 ion-card.thincard{ // carduri inguste
-  margin: 10px 30px -5px 30px !important; }
+  margin: 10px 20px -5px 20px !important; }
 
 ion-card-header{ // setarea generala
   padding: 10px 2px 0px 2px !important; }
@@ -187,7 +193,7 @@ ion-card-content.thumbpad{ // carduri medii si mici
   padding: 10px 10px 10px 10px !important; }
 
 ion-card-title{ // setarea generala
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
   color: #37B77A; // verde
   margin: 0px 5px 10px 5px; }
@@ -209,10 +215,25 @@ ion-card-title{ // setarea generala
   text-align: left;
   margin: 4px 4px 4px 4px; }
 
+.subtext4{ // subtitle thumbcard
+  font-size: 22px;
+  font-weight: bold !important;
+  text-transform: none;
+  color: #7A7A7A; // gri
+  text-align: left;
+  margin: 4px 4px 4px 4px; }
+
 .paratext{ // paragraph: in slides
   font-size: 18px !important;
   color: #37B77A; // verde
   margin: 10px 10px 15px 10px !important; }
+
+.bottomtext{ // paragraph: in slides
+  font-size: 24px !important;
+  font-weight: bold !important;
+  color: #37B77A; // verde
+  text-align: right;
+  margin: 5px 10px 20px 10px !important; }
 
 .minitext{ // paragraph: in slides
   font-size: 16px !important;
@@ -264,9 +285,13 @@ ion-row{ // SETAREA GENERALA
   display: flex;
   justify-content: center; }
 
-.searched{
+.searched{  // ion-row - carduri mici rezultate la cautare
   max-width: 400px;
   margin: auto; }
+
+.grouped{  // ion-row - carduri mici rezultate la cautare
+  max-width: 450px;
+   }
 
 ion-col{ // setarea generala + la casutele de digits
  --ion-grid-column-padding: 0px; }
@@ -276,7 +301,6 @@ ion-fab-button.fbgg{ // Butoanele de FB si G+
   --background: clear; }
 
 ion-fab-button.plus{ // Butoanele de +
-  --color: #37B77A; // verde
   width: 50px;
   height: 50px;
   margin: 12px; }
@@ -294,7 +318,6 @@ ion-button{ // setarea generala
   --background-hover: #2E9664; } // verde-tare - la trecere cu mouse
 
 .acticon{ // ion-icon: butonul mare
-  color: #37B77A; // verde
   font-size: 30px;
   font-weight: bold; }
 
@@ -430,12 +453,13 @@ ion-button{ // setarea generala
 
 .style23{ // ion-row: long description
   font-size: 18px;
-  max-width: 385px;
+  max-width: 380px;
   margin: 8px 10px 0px 10px;
   color: #7A7A7A; } // gri
 
 .style24{ // ion-label: answer two
   color: #F99531 !important; // orange
+  max-width: 380px;
   font-size: 20px !important;
   margin: 0px 10px 0px 10px; }
 
@@ -471,8 +495,6 @@ ion-button{ // setarea generala
 // and used throughout the application.
 .sc-ion-modal-md-h {
     --border-radius: 4px;
-//  --width: 300px;
-//  --height: 500px;
     --ion-safe-area-top: 1%;
     --ion-safe-area-bottom: 1%;
     --ion-safe-area-right: 1%;

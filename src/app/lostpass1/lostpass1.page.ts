@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { AuthService } from '../../providers/auth-tools/auth-tools';
@@ -20,7 +19,7 @@ export class Lostpass1Page implements OnInit {
   private fBarTextCrt = '2019© by Flexiloquent™';
   private fBarIcon2Hide: boolean = false;
 
-  constructor(public authService: AuthService, private afAuth: AngularFireAuth, private router: Router, private alertCtrl: AlertController) { }
+  constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
   private validMail(mail) {
     const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;

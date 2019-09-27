@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { AuthService } from '../../providers/auth-tools/auth-tools';
 
 @Component({
   selector: 'app-topbar',
@@ -19,10 +20,11 @@ export class TopbarComponent implements OnInit {
 
   @Output()
     topbarModif = new EventEmitter();
-  private searchTermBar: string = '';
-  private Trimite(){
+
+  public searchTermBar: string = '';
+  public Trimite(){
     this.topbarModif.emit(this.searchTermBar); }
-  private Reseteaza(){
+  public Reseteaza(){
     this.searchTermBar = ''; }
 
   private name = 'Alessia Bidian';

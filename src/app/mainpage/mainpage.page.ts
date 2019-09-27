@@ -25,15 +25,12 @@ export class MainpagePage implements OnInit {
   private fBarTextCrt = 'Add Offers or Requests!';
   private fBarIcon2Hide: boolean = true;
 
-  public bazaDate = [ ];
+  private bazaDate = [ ];
 
   constructor(private dataService: DataService, private modalCtrl: ModalController, private router: Router) {
-    this.bazaDate = this.dataService.getBaza(); }
+    this.bazaDate = this.dataService.getBazaDate(); }
 
   private bazaFiltrata = [];
-
-  SetGlobalData() {
-    this.dataService.setBaza(this.bazaDate);  }
 
   private serchInit: string = '';
   private sGen: string = '';
@@ -42,10 +39,12 @@ export class MainpagePage implements OnInit {
   private sDescription: string = '';
   private sMaxprice: number = 1000;
   private refinedHide: boolean = true;
+  private resultHide: boolean = true;
 
   private ShowRefined() {
     this.tBarSearchShow = !this.tBarSearchShow;
     this.refinedHide = !this.refinedHide;
+    this.resultHide = true;
     this.sGen = '';
     this.sArea = '';
     this.sCategory = '';
@@ -54,10 +53,12 @@ export class MainpagePage implements OnInit {
     this.bazaFiltrata = this.bazaDate; }
 
   private Cautare(termen){
+    this.resultHide = false;
     this.bazaFiltrata = this.bazaDate.filter(oriceart => {
-      return (oriceart.gen.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.zona.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.categorie.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.descriere.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.pretpezi <= termen); } ); }
+      return ((oriceart.pretpezi <= parseInt(termen, 10)) || oriceart.gen.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.zona.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.categorie.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.descriere.toLowerCase().indexOf(termen.toLowerCase()) > -1); } ); }
 
   private Rafinare() {
+    this.resultHide = false;
     this.bazaFiltrata = this.bazaDate.filter(item => {
       return (item.gen.toLowerCase().indexOf(this.sGen.toLowerCase()) > -1) && (item.zona.toLowerCase().indexOf(this.sArea.toLowerCase()) > -1) && (item.categorie.toLowerCase().indexOf(this.sCategory.toLowerCase()) > -1) && (item.descriere.toLowerCase().indexOf(this.sDescription.toLowerCase()) > -1) && (item.pretpezi <= this.sMaxprice); } ); }
 

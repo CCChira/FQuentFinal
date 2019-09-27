@@ -7,7 +7,7 @@
           <ion-icon name="close" class="fakeicons" [hidden]='!tBarIcon1'> </ion-icon>
 
           <ion-label class="style02" [hidden]='tBarSearch'> {{ tBarText }} </ion-label>
-          <ion-searchbar class="searcher" [hidden]='!tBarSearch' placeholder="Search market" align='left' name="searchTermBar" [(ngModel)]="searchTermBar" (ionInput)="Trimite()"> </ion-searchbar>
+          <ion-searchbar class="searcher" [hidden]='!tBarSearch' placeholder="Search market" align='left' name="searchTermBar" [(ngModel)]="searchTermBar" debounce="50" (click)="Trimite()" (keydown)="Trimite()"> </ion-searchbar>
 
           <ion-menu-button class="style01" [hidden]='tBarIcon2'> </ion-menu-button>
           <ion-icon name="close" class="fakeicons" [hidden]='!tBarIcon2'> </ion-icon>

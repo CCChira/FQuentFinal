@@ -10,13 +10,13 @@
 
         <ion-row> <p class="style11"> My past offers: </p> </ion-row>
         <ion-row>
-          <ion-searchbar class="searcher" name="searchmyoff" [(ngModel)]="searchmyoff"> </ion-searchbar>
+          <ion-searchbar class="searcher" name="searchmyoff" [(ngModel)]="searchmyoff" debounce="50"> </ion-searchbar>
         </ion-row>
         <ion-row> <p class="style23"> ... </p> </ion-row>
 
         <ion-row> <p class="style11"> My past requests: </p> </ion-row>
         <ion-row>
-          <ion-searchbar class="searcher" name="searchmyreq" [(ngModel)]="searchmyreq"> </ion-searchbar>
+          <ion-searchbar class="searcher" name="searchmyreq" [(ngModel)]="searchmyreq" debounce="50"> </ion-searchbar>
         </ion-row>
         <ion-row> <p class="style23"> ... </p> </ion-row>
 
