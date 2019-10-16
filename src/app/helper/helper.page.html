@@ -1,0 +1,35 @@
+<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+
+<ion-content>
+  <form #helperForm="ngForm">
+    <ion-grid>
+      <ion-col>
+        <ion-row class="margini0"> <img src="\assets\icon\Ellipse.svg" alt="FlexLogo"> </ion-row>
+
+        <ion-row> <p class="style11"> Help issues: </p> </ion-row>
+        <ion-row> <ion-searchbar class="searcher" name="searchhelp" [(ngModel)]="searchhelp"> </ion-searchbar> </ion-row>
+        <ion-row> <p class="style23"> ... </p> </ion-row>
+
+        <ion-row> <p class="style11"> Selection of FAQs: </p> </ion-row>
+        <ion-row> <ion-searchbar class="searcher" name="searchfaq" [(ngModel)]="searchfaq"> </ion-searchbar> </ion-row>
+        <ion-row> <p class="style23"> ... </p> </ion-row>
+
+        <ion-row> <p class="style21"> Want to offer or request something? </p> </ion-row>
+
+        <ion-row>
+          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('newoffer')">
+            <ion-label class="style22"> Insert an offer! </ion-label>
+          </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('newrequest')">
+            <ion-label class="style22"> Insert a request! </ion-label>
+          </ion-item>
+        </ion-row>
+      </ion-col>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<app-footbar [hidden]='fBarHide' [fBarIcon1]='fBarIcon1Hide' [fBarText]='fBarTextCrt' [fBarIcon2]='fBarIcon2Hide'> </app-footbar>

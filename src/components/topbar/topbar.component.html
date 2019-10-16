@@ -1,0 +1,91 @@
+<div align="center">
+  <form topbarForm="ngForm">
+    <ion-header main class="topbar">
+      <ion-toolbar>
+          <ion-buttons>
+          <ion-back-button class="show-back-button style01" [hidden]='tBarIcon1'> </ion-back-button>
+          <ion-icon name="close" class="fakeicons" [hidden]='!tBarIcon1'> </ion-icon>
+
+          <ion-label class="style02" [hidden]='tBarSearch'> {{ tBarText }} </ion-label>
+          <ion-searchbar class="searcher" [hidden]='!tBarSearch' name="searchinbar" [(ngModel)]="searchinbar"> </ion-searchbar>
+
+          <ion-menu-button class="style01" [hidden]='tBarIcon2'> </ion-menu-button>
+          <ion-icon name="close" class="fakeicons" [hidden]='!tBarIcon2'> </ion-icon>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+  </form>
+</div>
+
+<ion-menu side="end">
+  <ion-header>
+     <ion-toolbar translucent margin="10px 0px">
+       <img src="\assets\Log In\UserEllipse.svg" alt="FlexLogo" slot="start">
+         <ion-title style="font-weight: bold; line-height: 35px;"> {{ this.name }} </ion-title>
+         <ion-title style="font-size: 15px; line-height: 28px;"> {{ this.phone }} </ion-title>
+         <ion-title style="font-size: 15px; line-height: 30px;"> {{ this.email }} </ion-title>
+     </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-icon name="person" class="style2m"></ion-icon>
+        <ion-label class="style1m" (click)="this.router.navigateByUrl('profiler')"> Edit Profile </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon src="\assets\icon\hand-shake.svg" class="style2m"> </ion-icon>
+        <ion-label class="style1m" (click)="this.router.navigateByUrl('activity')"> My Activity </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer>
+    <ion-item>
+      <ion-icon src="\assets\icon\shop.svg" class="style2m"> </ion-icon>
+      <ion-label sclass="style1m" (click)="this.router.navigateByUrl('market')"> Market </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="help" class="style2m"> </ion-icon>
+      <ion-label sclass="style1m" (click)="this.router.navigateByUrl('tooltop')"> By category </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="map" class="style2m"> </ion-icon>
+      <ion-label sclass="style1m" (click)="this.router.navigateByUrl('mainpage')"> On map </ion-label>
+    </ion-item>
+  </ion-footer>
+
+  <ion-footer>
+    <ion-item>
+      <ion-icon src="\assets\icon\search.svg" class="style2m"> </ion-icon>
+      <ion-label sclass="style1m" (click)="this.router.navigateByUrl('searcher')"> Refined Search </ion-label>
+    </ion-item>
+  </ion-footer>
+
+  <ion-footer>
+    <ion-item>
+      <ion-icon name="settings" class="style2m"> </ion-icon>
+      <ion-label sclass="style1m" (click)="this.router.navigateByUrl('settings')"> Settings </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="help-circle-outline" class="style2m"></ion-icon>
+      <ion-label class="style1m" (click)="this.router.navigateByUrl('helper')"> Help & FAQ </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon src="\assets\icon\about.svg" class="style2m"> </ion-icon>
+      <ion-label class="style1m" (click)="this.router.navigateByUrl('aboutus')"> About us</ion-label>
+    </ion-item>
+  </ion-footer>
+
+  <ion-footer>
+    <ion-item>
+      <ion-icon name="log-out" class="style2m"> </ion-icon>
+      <ion-label class="style1m" (click)="this.router.navigateByUrl('home')"> LogOut </ion-label>
+    </ion-item>
+  </ion-footer>
+</ion-menu>

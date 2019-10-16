@@ -1,0 +1,36 @@
+<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+
+<ion-content>
+  <form #lostpass1Form="ngForm">
+    <ion-grid>
+      <ion-col>
+        <ion-row class="margini0"> <img width="295px" src="\assets\doodleP.svg" alt="FlexLogo"> </ion-row>
+        <ion-row> <p class="style11"> Forgot your password? </p> </ion-row>
+        <ion-row class="margini3"> <p class="style12"> We will send a verification code to your registered email. </p> </ion-row>
+
+        <ion-row class="margini1">
+          <ion-item lines="none">
+            <figure class="figicon">
+               <img class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima">
+               <img class="myicons" src="\assets\Log In\email.svg" alt="mail">
+            </figure>
+            <ion-input class="infield" name="email" type="email" placeholder="Email" [(ngModel)]="email"> </ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row class="margini1"> <ion-button class="bigbutton" (click)="getcode()"> <p class="styleb"> SEND CODE </p> </ion-button> </ion-row>
+        <br><br><br><br><br>
+        <ion-row> <p class="style21"> Don't have an account? </p> </ion-row>
+
+        <ion-row>
+          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('register')">
+            <ion-label class="style22"> Sign Up! </ion-label>
+          </ion-item>
+        </ion-row>
+
+      </ion-col>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<app-footbar [hidden]='fBarHide' [fBarIcon1]='fBarIcon1Hide' [fBarText]='fBarTextCrt' [fBarIcon2]='fBarIcon2Hide'> </app-footbar>

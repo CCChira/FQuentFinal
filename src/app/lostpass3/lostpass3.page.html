@@ -1,0 +1,48 @@
+<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+
+<ion-content>
+  <form #lostpass3Form="ngForm">
+    <ion-grid>
+      <ion-col>
+        <ion-row class="margini0"> <img width="295px" src="\assets\doodleP.svg" alt="FlexLogo"> </ion-row>
+        <ion-row> <p class="style11"> Your reset code was correct. </p> </ion-row>
+        <ion-row class="margini3"> <p class="style12"> Please enter a new password: </p> </ion-row>
+
+        <ion-row class="margini1">
+          <ion-item lines="none">
+            <figure class="figicon">
+              <img class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima">
+              <img class="myicons" src="\assets\Log In\padlock.svg" alt="pass">
+            </figure>
+            <ion-input class="infield" name="password" type="password" placeholder="Password" [(ngModel)]="password"> </ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row class="margini1">
+          <ion-item lines="none">
+            <figure class="figicon">
+              <img class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima">
+              <img class="myicons" src="\assets\Log In\padlock.svg" alt="pass">
+            </figure>
+            <ion-input class="infield" name="confirm" type="password" placeholder="Confirm Password" [(ngModel)]="confirmpass"> </ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row class="margini1">
+          <ion-button class="bigbutton" (click)="changepass()"> <p class="styleb"> CHANGE PASSWORD </p> </ion-button>
+        </ion-row>
+        <br><br><br>
+        <ion-row> <p class="style21"> Don't have an account? </p> </ion-row>
+
+        <ion-row>
+          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('register')">
+            <ion-label class="style22"> Sign Up! </ion-label>
+          </ion-item>
+        </ion-row>
+
+      </ion-col>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<app-footbar [hidden]='fBarHide' [fBarIcon1]='fBarIcon1Hide' [fBarText]='fBarTextCrt' [fBarIcon2]='fBarIcon2Hide'> </app-footbar>

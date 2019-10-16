@@ -1,0 +1,63 @@
+<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+
+<ion-content>
+  <form #searcherForm="ngForm">
+    <ion-grid>
+        <ion-col>
+          <ion-row> <p class="style11"> Try the general search: </p> </ion-row>
+          <ion-row> <ion-searchbar class="searcher" name="searchall" [(ngModel)]="searchall"> </ion-searchbar> </ion-row>
+          <ion-row> <p class="style11"> Or use our refined search: </p> </ion-row>
+
+          <ion-row class="margini1">
+            <ion-item lines="none">
+              <ion-input class="infield" name="skeyword" type="text" placeholder="Keyword" [(ngModel)]="skeyword"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="margini1">
+            <ion-item lines="none">
+              <ion-input class="infield" name="scategory" type="text" placeholder="Category" [(ngModel)]="scategory"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="margini1">
+            <ion-item lines="none">
+              <ion-input class="infield" name="sdescription" type="text" placeholder="Description" [(ngModel)]="sdescription"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="margini1">
+            <ion-item lines="none">
+              <ion-input class="infield" name="smaxprice" type="text" placeholder="Maximum Price" [(ngModel)]="smaxprice"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="margini1">
+            <ion-item lines="none">
+              <ion-input class="infield" name="sarea" type="text" placeholder="Search Area" [(ngModel)]="sarea"> </ion-input>
+            </ion-item>
+          </ion-row>
+
+          <ion-row class="margini1">
+            <ion-button class="bigbutton" (click)="searchsome()"> <p class="styleb"> SEARCH MARKET </p> </ion-button>
+          </ion-row>
+
+          <ion-row> <p class="style21"> Want to offer or request something? </p> </ion-row>
+
+          <ion-row>
+            <ion-item class="linkstyle" (click)="this.router.navigateByUrl('newoffer')">
+              <ion-label class="style22"> Insert an offer! </ion-label>
+            </ion-item>
+          </ion-row>
+
+          <ion-row>
+            <ion-item class="linkstyle" (click)="this.router.navigateByUrl('newrequest')">
+              <ion-label class="style22"> Insert a request! </ion-label>
+            </ion-item>
+          </ion-row>
+        </ion-col>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<app-footbar [hidden]='fBarHide' [fBarIcon1]='fBarIcon1Hide' [fBarText]='fBarTextCrt' [fBarIcon2]='fBarIcon2Hide'> </app-footbar>

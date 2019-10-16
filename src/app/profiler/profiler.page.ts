@@ -1,0 +1,95 @@
+import { Component, Input, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { AuthService } from '../../providers/auth-tools/auth-tools';
+
+@Component( {
+  selector: 'app-profiler',
+  templateUrl: './profiler.page.html',
+  styleUrls: ['./profiler.page.scss'], } )
+
+export class ProfilerPage implements OnInit {
+  public processing: boolean;
+  public uploadImage = null;
+  public name;
+  public phone;
+  public email;
+  public password;
+  public confirmpass;
+  public tBarHide: boolean = false;
+  public tBarIcon1Hide: boolean = false;
+  public tBarTextCrt = 'Edit Profile';
+  public tBarIcon2Hide: boolean = true;
+  public fBarHide: boolean = true;
+  public fBarIcon1Hide: boolean = false;
+  public fBarTextCrt = '';
+  public fBarIcon2Hide: boolean = false;
+  public location;
+  constructor(public afAuth: AngularFireAuth, public authService: AuthService, public router: Router, public alertCtrl: AlertController) { }
+
+  public changedata() {
+  // lipsa
+  this.displayMarket();
+}
+
+  public validPassword(pass) {
+    const passwordFormat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d].{7,20}$/;
+    return pass.match(passwordFormat); }
+
+  public changepass() {
+    if (this.password) {
+      if (this.validPassword(this.password) && this.password === this.confirmpass) {
+        /* lipsa actiune pentru salvarea parolei noi*/
+        console.log('good match')
+        this.validPassAlert();
+        return this.displayMarket(); }
+      else if (this.validPassword(this.password)) {
+        console.log('different passwords');
+        return this.invalidPassAlert(); }
+        else {
+          console.log('bad password');
+          return this.invalidPassAlert(); } }
+    else {
+      console.log('no password');
+      this.invalidPassAlert(); }
+  }
+
+  async validPassAlert() {
+    const alert = this.alertCtrl.create({
+      header: 'The password was changed!',
+      message: 'You are logged now with the new password.',
+      buttons: ['OK'] });
+    (await alert).present(); }
+
+  async invalidPassAlert() {
+    const alert = this.alertCtrl.create({
+      header: 'Password change failed!',
+      message: 'Passwords must include at least 8 alphanumeric characters (lowercase, uppercase letters and numbers) and they have to be identical.',
+      buttons: ['TRY AGAIN'] });
+    (await alert).present(); }
+
+  public displayMarket() {
+    this.router.navigateByUrl('market'); }
+
+  addPicture(fileLoader) {
+    fileLoader.click();
+    var that = this;
+    fileLoader.onchange = function () {
+      var file = fileLoader.files[0];
+      var reader = new FileReader();
+      reader.addEventListener("load", function () {
+        that.processing = true;
+        that.uploadImage = reader.result; }, false);
+      if (file) {
+        reader.readAsDataURL(file); } }
+  }
+
+  imageLoaded(){
+    this.processing = false; }
+
+  removePic() {
+    this.uploadImage = null; }
+
+  ngOnInit() { }
+}

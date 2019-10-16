@@ -1,0 +1,35 @@
+<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+
+<ion-content>
+  <form #lostpass2Form="ngForm">
+    <ion-grid>
+      <ion-col>
+        <ion-row class="margini0"> <img width="295px" src="\assets\doodleP.svg" alt="FlexLogo"> </ion-row>
+        <ion-row> <p class="style11"> Please enter the Verification Code. </p> </ion-row>
+        <ion-row class="margini3"> <p class="style12"> We have sent a verification code to your registered email. </p> </ion-row>
+
+        <ion-row>
+          <ion-item class="linkstyle" lines="none">
+              <ion-col> <ion-input class="digitfield" name="digit1" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" [(ngModel)]="digit1"> </ion-input> </ion-col>
+              <ion-col> <ion-input class="digitfield" name="digit2" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" [(ngModel)]="digit2"> </ion-input> </ion-col>
+              <ion-col> <ion-input class="digitfield" name="digit3" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" [(ngModel)]="digit3"> </ion-input> </ion-col>
+              <ion-col> <ion-input class="digitfield" name="digit4" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" [(ngModel)]="digit4"> </ion-input> </ion-col>
+          </ion-item>
+        </ion-row>
+
+        <ion-row class="margini1"> <ion-button class="bigbutton" (click)="newpass()"> <p class="styleb"> VERIFY CODE </p> </ion-button> </ion-row>
+        <br><br><br><br>
+        <ion-row> <p class="style21"> Don't have an account? </p> </ion-row>
+
+        <ion-row>
+          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('register')">
+            <ion-label class="style22"> Sign Up! </ion-label>
+          </ion-item>
+        </ion-row>
+
+      </ion-col>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<app-footbar [hidden]='fBarHide' [fBarIcon1]='fBarIcon1Hide' [fBarText]='fBarTextCrt' [fBarIcon2]='fBarIcon2Hide'> </app-footbar>

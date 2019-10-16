@@ -1,0 +1,7 @@
+{
+  "name": "DPITmain",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

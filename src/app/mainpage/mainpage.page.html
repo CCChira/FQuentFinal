@@ -1,0 +1,50 @@
+<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarSearch]='tBarSearchShow' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+
+<ion-content>
+  <form #mainpageForm="ngForm">
+    <ion-grid>
+      <ion-col>
+        <ion-row>
+          <ion-slides>
+            <ion-slide>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title> Search on map: </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <img src="\assets\Map.jpg" alt="Map">
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+          </ion-slides>
+        </ion-row>
+
+        <br>
+
+        <ion-row>
+          <ion-content>
+            <ion-fab horizontal="center" vertical="center" slot="fixed">
+              <ion-fab-button class="plus">
+                <ion-icon class="acticon" name="add"> </ion-icon>
+              </ion-fab-button>
+
+              <ion-fab-list side="start">
+                <ion-fab-button class="plus" (click)="displayOfrModal()">
+                  <ion-icon class="acticon" name="gift"> </ion-icon>
+                </ion-fab-button>
+              </ion-fab-list>
+
+              <ion-fab-list side="end">
+                <ion-fab-button class="plus" >
+                  <ion-icon class="acticon" name="megaphone"> </ion-icon>
+                </ion-fab-button>
+              </ion-fab-list>
+            </ion-fab>
+          </ion-content>
+        </ion-row>
+      </ion-col>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<app-footbar [hidden]='fBarHide' [fBarIcon1]='fBarIcon1Hide' [fBarText]='fBarTextCrt' [fBarIcon2]='fBarIcon2Hide'> </app-footbar>

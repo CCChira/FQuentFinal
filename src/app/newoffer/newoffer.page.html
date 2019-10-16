@@ -1,0 +1,77 @@
+<div align="center">
+  <ion-header translucent class="topbar">
+    <ion-toolbar>
+
+      <ion-icon slot="start" class="fakeicons" name="close"> </ion-icon>
+
+      <ion-label class="style02"> Insert a New Offer: </ion-label>
+
+      <ion-button class="smallbutton" slot="end" (click)="dismissNewofferModal()">
+        <ion-icon class="style01" name="close"> </ion-icon>
+      </ion-button>
+
+    </ion-toolbar>
+  </ion-header>
+</div>
+
+<ion-content>
+  <form #newofferForm="ngForm">
+    <ion-grid>
+      <ion-col>
+        <ion-row class="margini1">
+          <input type="file" id="fileLoader" #fileLoader name="files" title="Load File" hidden />
+          <ion-button class="addbutton" icon-left>
+            <ion-icon name="camera"> </ion-icon>
+            <p class="styleb"> &nbsp;&nbsp;SELECT IMAGE </p>
+          </ion-button>
+          <ion-button class="remvbutton" icon-left [disabled]="uploadImage === null">
+            <ion-icon name="trash"> </ion-icon>
+          </ion-button>
+        </ion-row>
+
+        <ion-row class="margini1">
+          <ion-item lines="none">
+            <ion-input  class="infield" name="title" type="text" placeholder="Add a Title" [(ngModel)]="title"> </ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row class="margini1">
+          <ion-item lines="none">
+            <ion-input class="infield" name="category" type="text" placeholder="Category" [(ngModel)]="category"> </ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row class="margini1">
+          <ion-item lines="none">
+            <ion-input class="infield" name="description" type="text" placeholder="Description" [(ngModel)]="description"> </ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row class="margini1">
+          <ion-item lines="none">
+            <ion-input class="infield" name="proposedprice" type="text" placeholder="Requested Price" [(ngModel)]="proposedprice"> </ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row class="margini1">
+          <ion-item lines="none">
+            <ion-input class="infield" name="contactphone" type="tel" placeholder="Contact Phone" [(ngModel)]="contactphone"> </ion-input>
+          </ion-item>
+        </ion-row>
+        <ion-row class="margini1">
+            <ion-item lines="none">
+              <ion-input class="infield" name="type" type="text" placeholder="Type: Offer/Request" [(ngModel)]="type"> </ion-input>
+            </ion-item>
+          </ion-row>
+        <ion-row class="margini1">
+            <p class="style31"> Warranty included: &nbsp;&nbsp;</p>
+            <ion-checkbox name="warranty" [(ngModel)]="warranty" style="margin-top: 10px;"> </ion-checkbox>
+        </ion-row>
+
+        <ion-row class="margini1">
+          <ion-button class="bigbutton" (click)="newoffer()"> <p class="styleb"> INSERT OFFER </p> </ion-button>
+        </ion-row>
+      </ion-col>
+    </ion-grid>
+  </form>
+</ion-content>
