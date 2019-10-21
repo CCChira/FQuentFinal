@@ -5,19 +5,19 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ToolerModule } from 'src/components/tooler.module';
 
-import { SearcherPage } from './searcher.page';
+import { SharemapPage } from './sharemap.page';
 
-const routes: Routes=[ {
+const routes: Routes = [{
     path: '',
-    component: SearcherPage } ];
+    component: SharemapPage }];
 
-@NgModule( {
+@NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     ToolerModule,
     RouterModule.forChild(routes) ],
-  declarations: [SearcherPage] } )
+  declarations: [SharemapPage] })
 
-export class SearcherPageModule {}
+export class SharemapPageModule {}

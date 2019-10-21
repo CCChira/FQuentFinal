@@ -10,22 +10,22 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
   styleUrls: ['./lostpass2.page.scss'], })
 
 export class Lostpass2Page implements OnInit {
-  public digit1;
-  public digit2;
-  public digit3;
-  public digit4;
-  public tBarHide: boolean = false;
-  public tBarIcon1Hide: boolean = false;
-  public tBarTextCrt = 'Insert Code';
-  public tBarIcon2Hide: boolean = true;
-  public fBarHide: boolean = true;
-  public fBarIcon1Hide: boolean = false;
-  public fBarTextCrt = '2019© by Flexiloquent™';
-  public fBarIcon2Hide: boolean = false;
+  private digit1: string = '';
+  private digit2: string = '';
+  private digit3: string = '';
+  private digit4: string = '';
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt: string = 'Insert Code';
+  private tBarIcon2Hide: boolean = true;
+  private fBarHide: boolean = true;
+  private fBarIcon1Hide: boolean = false;
+  private fBarTextCrt: string = '2019© by Flexiloquent™';
+  private fBarIcon2Hide: boolean = false;
 
-  constructor(public authService: AuthService, public router: Router, public alertCtrl: AlertController) { }
+  constructor(public authService: AuthService, private afAuth: AngularFireAuth, private router: Router, private alertCtrl: AlertController) { }
 
-  public newpass() {
+  private newpass() {
     if ( this.digit1 === "1" && this.digit2 === "2" && this.digit3 === "3" && this.digit4 === "4" /* lipsa decizie verificare cod*/ ) {
       /* lipsa actiune dupa verificare cod*/
       console.log('valid code');
@@ -50,8 +50,7 @@ export class Lostpass2Page implements OnInit {
       buttons: ['TRY AGAIN'] });
     (await alert).present(); }
 
-  public displayLospass3() {
-    this.router.navigateByUrl('lostpass3'); }
+  private displayLospass3() { this.router.navigateByUrl('lostpass3'); }
 
   ngOnInit() { }
 }

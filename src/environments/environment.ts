@@ -10,8 +10,7 @@ export const environment = {
     databaseURL: 'https://fq-dpit.firebaseio.com',
     projectId: 'fq-dpit',
     storageBucket: '',
-    messagingSenderId: '175195017436'
-  }
+    messagingSenderId: '175195017436' }
 };
 
 /*

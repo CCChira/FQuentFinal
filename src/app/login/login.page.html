@@ -4,42 +4,35 @@
   <form #loginForm="ngForm">
     <ion-grid>
       <ion-col>
-        <ion-row class="marginip"> <img src="\assets\doodleL.svg" alt="FlexLogo"> </ion-row>
+        <ion-row class="margini2"> <img width="295px" src="\assets\doodleR.svg" alt="FlexLogo"> </ion-row>
         <ion-row> <p class="style11"> Log in to your account: </p> </ion-row>
 
         <ion-row class="margini1">
           <ion-item lines="none">
-            <figure class="figicon">
-              <img class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima">
-              <img class="myicons" src="\assets\Log In\email.svg" alt="mail">
-            </figure>
+            <div class="figicon">
+              <ion-icon class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima"> </ion-icon>
+              <ion-icon class="myicons" src="\assets\icon\email.svg" alt="mail"> </ion-icon>
+            </div>
             <ion-input class="infield" name="email" type="email" placeholder="Email" [(ngModel)]="email"> </ion-input>
           </ion-item>
         </ion-row>
 
         <ion-row class="margini1">
           <ion-item lines="none">
-            <figure class="figicon">
-              <img class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima">
-              <img class="myicons" src="\assets\Log In\padlock.svg" alt="pass">
-            </figure>
+            <div class="figicon">
+              <ion-icon class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima"> </ion-icon>
+              <ion-icon class="myicons" src="\assets\icon\padlock.svg"> </ion-icon>
+            </div>
             <ion-input class="infield" name="password" type="password" placeholder="Password" [(ngModel)]="password"> </ion-input>
           </ion-item>
         </ion-row>
 
         <ion-row class="margini1"> <ion-button class="bigbutton" (click)="logmein()"> <p class="styleb"> LOGIN </p> </ion-button> </ion-row>
-        <ion-row class="style21"> <img src="\assets\Log In\Group Register.svg" alt="separator"> </ion-row>
+        <ion-row class="style21"> <img src="\assets\icon\Group Register.svg" alt="separator"> </ion-row>
 
         <ion-row>
             <ion-fab-button class="fbgg" (click)="loginWithFacebook()"> <img src="\assets\icon\Facebook.png" alt="FacebookIcon"> </ion-fab-button>
             <ion-fab-button class="fbgg" (click)="loginWithGoogle()"> <img src="\assets\icon\GI.png" alt="GoogleIcon"> </ion-fab-button>
-        </ion-row>
-
-        <ion-row> <p class="style21"> Don't have an account? </p> </ion-row>
-        <ion-row>
-          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('register')">
-            <ion-label class="style22"> Sign Up! </ion-label>
-          </ion-item>
         </ion-row>
 
         <ion-row> <p class="style21"> Did you lost your password? </p> </ion-row>

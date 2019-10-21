@@ -1,6 +1,3 @@
 import { FormControl } from '@angular/forms';
 
-export class EmailValidator {
-
-
-}
+export class EmailValidator { }

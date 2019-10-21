@@ -4,10 +4,10 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ToolerModule } from 'src/components/tooler.module';
-import { NewofferPage } from 'src/app/newoffer/newoffer.page';
+
 import { TooltopPage } from './tooltop.page';
 
-const routes: Routes= [ {
+const routes: Routes=[ {
     path: '',
     component: TooltopPage } ];
 
@@ -18,7 +18,6 @@ const routes: Routes= [ {
     IonicModule,
     ToolerModule,
     RouterModule.forChild(routes) ],
-  entryComponents: [NewofferPage],
   declarations: [TooltopPage] } )
 
 export class TooltopPageModule {}

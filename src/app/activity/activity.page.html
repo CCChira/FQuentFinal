@@ -1,31 +1,45 @@
-<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+<app-topbar #topbardata (menuModif)='ShowHideFAB($event)' [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
 
 <ion-content>
   <form #activityForm="ngForm">
     <ion-grid>
       <ion-col>
-        <ion-row class="margini0"> <img src="\assets\icon\Ellipse.svg" alt="FlexLogo"> </ion-row>
+        <br>
+        <ion-row class="margini2"> <img width="295px" src="\assets\doodleB.svg" alt="FlexLogo"> </ion-row>
+        <br>
 
         <ion-row> <p class="style11"> My past offers: </p> </ion-row>
-        <ion-row> <ion-searchbar class="searcher" name="searchmyoff" [(ngModel)]="searchmyoff"> </ion-searchbar> </ion-row>
+        <ion-row>      </ion-row>
         <ion-row> <p class="style23"> ... </p> </ion-row>
 
         <ion-row> <p class="style11"> My past requests: </p> </ion-row>
-        <ion-row> <ion-searchbar class="searcher" name="searchmyreq" [(ngModel)]="searchmyreq"> </ion-searchbar> </ion-row>
+        <ion-row>      </ion-row>
         <ion-row> <p class="style23"> ... </p> </ion-row>
 
-        <ion-row> <p class="style21"> Want to offer or request something? </p> </ion-row>
+        <br>
+        <ion-row> <p class="style0f"> Want to offer or request something? </p> </ion-row>
+        <br><br><br>
 
         <ion-row>
-          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('newoffer')">
-            <ion-label class="style22"> Insert an offer! </ion-label>
-          </ion-item>
-        </ion-row>
+          <ion-content>
+            <ion-fab horizontal="center" vertical="bottom" edge slot="fixed" [hidden]='hideFAB'>
+              <ion-fab-button class="fabplus1">
+                <ion-icon name="add"> </ion-icon>
+              </ion-fab-button>
 
-        <ion-row>
-          <ion-item class="linkstyle" (click)="this.router.navigateByUrl('newrequest')">
-            <ion-label class="style22"> Insert a request! </ion-label>
-          </ion-item>
+              <ion-fab-list side="start">
+                <ion-fab-button class="fabplus23" (click)="displayOfrModal()">
+                  <ion-icon class="acticon" name="gift"> </ion-icon>
+                </ion-fab-button>
+              </ion-fab-list>
+
+              <ion-fab-list side="end">
+                <ion-fab-button class="fabplus23" (click)="displayReqModal()">
+                  <ion-icon class="acticon" name="megaphone"> </ion-icon>
+                </ion-fab-button>
+              </ion-fab-list>
+            </ion-fab>
+          </ion-content>
         </ion-row>
       </ion-col>
     </ion-grid>

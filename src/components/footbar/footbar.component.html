@@ -1,13 +1,19 @@
-<div align="center">
+<form footbarForm="ngForm">
   <ion-footer main class="topbar">
-    <ion-toolbar>
+    <ion-toolbar color="#FFF">
       <ion-buttons>
-        <ion-menu-button class="style01" [hidden]='fBarIcon1'> </ion-menu-button>
-        <ion-icon name="close" class="fakeicons" [hidden]='!fBarIcon1'> </ion-icon>
+        <ion-menu-button class="style011" [hidden]='fBarIcon1'> </ion-menu-button>
+        <ion-button class="smallbutton" [hidden]='!fBarIcon1'>
+          <ion-icon name="close" class="style013"> </ion-icon>
+        </ion-button>
+
         <ion-label class="style0f"> {{ fBarText }} </ion-label>
-        <ion-button class="smallbutton" [hidden]='fBarIcon2'> <p class="style01"> ? </p> </ion-button>
-        <ion-icon name="close" class="fakeicons" [hidden]='!fBarIcon2'> </ion-icon>
+
+        <ion-back-button class="show-back-button style011" [hidden]='fBarIcon2'> </ion-back-button>
+        <ion-button class="smallbutton style013" [hidden]='!fBarIcon2'>
+          <ion-icon name="close"> </ion-icon>
+        </ion-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-footer>
-</div>
+</form>

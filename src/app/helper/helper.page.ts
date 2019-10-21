@@ -1,8 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
-import { AuthService } from '../../providers/auth-tools/auth-tools';
 
 @Component( {
   selector: 'app-helper',
@@ -10,21 +7,18 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
   styleUrls: ['./helper.page.scss'], } )
 
 export class HelperPage implements OnInit {
-  public searchhelp;
-  public searchfaq;
-  public tBarHide: boolean = false;
-  public tBarIcon1Hide: boolean = false;
-  public tBarTextCrt = 'Help and FAQ';
-  public tBarIcon2Hide: boolean = false;
-  public fBarHide: boolean = false;
-  public fBarIcon1Hide: boolean = true;
-  public fBarTextCrt = '';
-  public fBarIcon2Hide: boolean = true;
+  private searchhelp: string = '';
+  private searchfaq: string = '';
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt: string = 'Help and FAQ';
+  private tBarIcon2Hide: boolean = false;
+  private fBarHide: boolean = false;
+  private fBarIcon1Hide: boolean = true;
+  private fBarTextCrt: string = '2019© by Flexiloquent™';
+  private fBarIcon2Hide: boolean = true;
 
-  constructor(public authService: AuthService, public router: Router, public alertCtrl: AlertController) { }
-
-  public displayFound() {
-    this.router.navigateByUrl('market'); }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
 }

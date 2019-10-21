@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '../../providers/auth-tools/auth-tools';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
@@ -15,23 +15,30 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['./newoffer.page.scss'], } )
 
 export class NewofferPage implements OnInit {
-  public processing: boolean;
-  public uploadImage = null;
-  public type: string;
-  public title;
-  public category;
-  public description;
-  public proposedprice;
-  public warranty;
-  public contactphone;
-  public email;
-  // tslint:disable-next-line: max-line-length
-  constructor(public modalCtrl: ModalController, public authService: AuthService, public router: Router, public alertCtrl: AlertController, public gLocation: Geolocation, public offerService: OfferService, public userService: UserService, public afAuth: AngularFireAuth) { }
+  private processing: boolean = false;
+  private offerImg = null;
+  public type: string = '';
+  private title: string = '';
+  private category: string = '';
+  private description: string = '';
+  private reqprice: string = '';  ///
+  public proposedprice: string = '';  ///
+  private contactphone: string = '';
+  private warranty: boolean = false;
+  public email: string = '';
 
-  public newoffer() {
-    if (this.title && this.category && this.description && this.proposedprice && this.contactphone &&  this.type) {
+  constructor(private modalCtrl: ModalController, public authService: AuthService, private router: Router, private alertCtrl: AlertController,
+    public gLocation: Geolocation, public offerService: OfferService, public userService: UserService, public afAuth: AngularFireAuth) { }
+
+  private cardSwitch: boolean = true;
+  private Mareste() { this.cardSwitch = !this.cardSwitch; }
+
+  private resetCardSwitch() { this.cardSwitch = true; }
+
+  private newOffer() {
+    if (this.title && this.category && this.description && this.proposedprice && this.contactphone &&  this.type ) {
       /*actiune lipsa pentru validarea unei oferte noi*/
-      console.log('aici');
+      console.log('aici sunt');
       let latitude;
       let longitude;
       this.gLocation.getCurrentPosition().then((position) => {
@@ -47,8 +54,7 @@ export class NewofferPage implements OnInit {
               contactphone: this.contactphone,
               firstCoord: latitude,
               email: this.userService.getEmail(),
-              secondCoord: longitude
-            });
+              secondCoord: longitude });
           }
           if(this.type === 'request'){
             this.offerService.setOffer({
@@ -60,54 +66,56 @@ export class NewofferPage implements OnInit {
               contactphone: this.contactphone,
               firstCoord: latitude,
               email: this.userService.getEmail(),
-              secondCoord: longitude
-            });
-          }
-       });
+              secondCoord: longitude });
+          }  } );
       console.log(this.offerService);
-      //this.displayMarket();
+      //  this.displayMarket();
       this.dismissNewofferModal();
-    } else {this.invalidOfferAlert(); }
-  }
-  async  validOfferAlert() {
+      this.validOfferAlert(); }
+
+      else {
+        console.log('oferta incompleta');
+        this.dismissNewofferModal();
+        this.invalidOfferAlert(); };
+      this.resetCardSwitch(); }
+
+  async validOfferAlert() {
     const alert = this.alertCtrl.create({
       header: 'Offer Inserted!',
       message: 'Your offer is now presented to the market.',
       buttons: ['OK'] });
     (await alert).present(); }
+
   async invalidOfferAlert() {
     const alert = this.alertCtrl.create({
       header: 'Offer Insert Failed',
       message: 'You need to enter all fields of the offer form in order to insert it in the market.',
       buttons: ['TRY AGAIN'] });
     (await alert).present(); }
-  public displayMarket() {
-    this.router.navigateByUrl('market');
-  }
-  async dismissNewofferModal() { await this.modalCtrl.dismiss(); }
-/*
-      // tslint:disable-next-line: align
-  /*addPicture(fileLoader) {
+
+  private addPicture(fileLoader) {
     fileLoader.click();
-    const that = this;
-    fileLoader.onchange = function() {
-      const file = fileLoader.files[0];
-      const reader = new FileReader();
-
-      reader.addEventListener('load', function() {
+    var that = this;
+    fileLoader.onchange = function () {
+      var file = fileLoader.files[0];
+      var reader = new FileReader();
+      reader.addEventListener('load', function () {
         that.processing = true;
-        that.uploadImage = reader.result; }, false);
+        that.offerImg = reader.result; }, false);
+      if (file) { reader.readAsDataURL(file); } };
+    this.resetCardSwitch(); }
 
-      if (file) {
-        reader.readAsDataURL(file); } }; }
+  private imageLoaded(){
+    this.processing = false;
+    this.resetCardSwitch(); }
 
-  imageLoaded() {
-  public imageLoaded(){
-    this.processing = false; }
+  private removePic() {
+    this.offerImg = null;
+    this.resetCardSwitch(); }
 
-  public removePic() {
-    this.uploadImage = null; }
-*/
-ngOnInit() {
-}
-}
+  async dismissNewofferModal() {
+    await this.modalCtrl.dismiss();
+    this.resetCardSwitch(); }
+
+  ngOnInit() { }
+ }

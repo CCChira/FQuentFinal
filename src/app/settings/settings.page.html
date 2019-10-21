@@ -1,0 +1,45 @@
+<app-topbar [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+
+<ion-content>
+  <form #settingsForm="ngForm">
+    <ion-grid>
+      <ion-col>
+        <br>
+        <ion-row class="margini2"> <img width="295px" src="\assets\shapes.svg" alt="FlexLogo"> </ion-row>
+        <br>
+        <ion-row> <p class="style11"> Improve your user experience by customizing this theme's colors: </p> </ion-row>
+
+        <ion-row>
+          <ion-item> <ion-toggle [checked]='toggSwitch1' (ionChange)="switchThem1()" class="switch01"> </ion-toggle> </ion-item>
+          <ion-item> <ion-label class="style02" > &nbsp;&nbsp; General text </ion-label> </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-item> <ion-toggle [checked]='toggSwitch2' (ionChange)="switchThem2()" class="switch02"> </ion-toggle> </ion-item>
+          <ion-item> <ion-label class="style0f"> &nbsp;&nbsp;&nbsp; Info Text &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </ion-label> </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-item> <ion-toggle [checked]='toggSwitch3' (ionChange)="switchThem3()" class="switch03"> </ion-toggle> </ion-item>
+          <ion-item> <ion-button class="samplebutton"> <p class="styleb2">&nbsp;&nbsp;BUTTONS </p> </ion-button> </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-item> <ion-toggle [checked]='toggSwitch4' (ionChange)="switchThem4()" class="switch04"> </ion-toggle> </ion-item>
+          <ion-item> <ion-label class="style02" > &nbsp; Background </ion-label> </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-item> <ion-toggle [checked]='toggSwitch5' (ionChange)="switchThem5()" class="switch05"> </ion-toggle> </ion-item>
+          <ion-item class="linkstyle"> <ion-label class="style22"> &nbsp;Other text </ion-label> </ion-item>
+        </ion-row>
+
+        <br>
+        <ion-row class="margini2"> <img width="295px" src="\assets\shapes.svg" alt="FlexLogo"> </ion-row>
+        <br>
+      </ion-col>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<app-footbar [hidden]='fBarHide' [fBarIcon1]='fBarIcon1Hide' [fBarText]='fBarTextCrt' [fBarIcon2]='fBarIcon2Hide'> </app-footbar>

@@ -1,13 +1,71 @@
 // All pages - App Styles
+:root{
+  --colorScrisGen: var(--clrScrisGen, #7A7A7A); // --text, GRI inchis
+  --colorChenare: var(--clrChenare, #CCCCCC); // --chenare, GRI deschis
+
+  --colorScrisAgr: var(--clrScrisAgr, #37B77A); // --scrisuri, VERDE crud
+  --colorScrisCrd: var(--clrScrisCrd, #37B77A); // scris, VERDE
+
+  --colorButon1: var(--clrButon1, #37B77A); // --buton, VERDE crud
+  --colorActBut1: var(--clrActBut1, #2E9664); // --la selectie buton, VERDE inchis
+  --colorButon2: var(--clrButon1, #37B77A); // --buton, VERDE crud
+
+  --colorActBut2: #F0F0F0; // --la selectie buton negativ, fond GRI light
+
+  --colorFond: var(--clrFond, #FFF9FE); // fond, ALB-ROZ
+
+  --colorScrisLnk: var(--clrScrisLnk, #F99531); } // scris, ORANGE
+
+[tema1="modif"]{
+  --clrScrisGen: #75577F; // MOV
+  --clrChenare: #C5A4CF; } // mov deschis
+
+[tema2="modif"]{
+  --clrScrisAgr: #6175FF; // ALBASTRU electric
+  --clrScrisCrd: #6175FF; } // ALBASTRU electric
+
+[tema3="modif"]{
+  --clrButon1: #6175FF; // BLEUMARIN
+  --clrActBut1: #557AC5; } // BLEUMARIN inchis
+
+[tema4="modif"]{
+  --clrFond: #F7FDFF; } // BLEU deschis
+
+[tema5="modif"]{
+  --clrScrisLnk: #EF1866; } // ROSU moale
+
+ion-toggle{
+  --background: #CCCCCC;
+  --background-checked: #CCCCCC; }
+
+.switch01{
+  --handle-background: var(--colorScrisGen);
+  --handle-background-checked: var(--colorScrisGen); }
+
+.switch02{
+  --handle-background: var(--colorScrisAgr);
+  --handle-background-checked: var(--colorScrisAgr); }
+
+.switch03{
+  --handle-background: var(--colorButon1);
+  --handle-background-checked: var(--colorButon1); }
+
+.switch04{
+  --handle-background: var(--colorFond);
+  --handle-background-checked: var(--colorFond); }
+
+.switch05{
+  --handle-background: var(--colorScrisLnk);
+  --handle-background-checked: var(--colorScrisLnk); }
+
 * {
   font-family: 'Barlow', 'Trebuchet MS', Sans-serif !important; }
-// max-width: 395px;
 
 .margini0{ //ion-row: log-uri
   margin: 10px 15px 0px 15px; }
 
 .margini1{ //ion-row: randuri de inserare + butoane validare
-  margin: 12px; }
+  margin: 8px; }
 
 .margini2{ //ion-row: specific page logos - binoclu
   margin: 5px 15px 0px 15px; }
@@ -20,64 +78,134 @@
 
 .marginip{ //ion-row: photos
   margin: 0px auto 0px auto;
-  align: center !important;
   max-width: 280px; }
 
 .round{
-  border-radius: 100% !important; }
+  border-radius: 10px !important; }
+
+.infield{ //ion-input: campurile de inserare
+  width: 305px;
+  height: 48px;
+  font-size: 18px;
+  color: var(--colorScrisGen); // gri
+  background: var(--colorFond); //alb
+  opacity: 0.9;
+  border: 1px solid var(--colorChenare); //gri chenar
+  border-radius: 28px;
+  padding: 0px 2px 0px 58px !important; }
+
+.marginis{ //ion-row: randuri de inserare la search
+  margin: 6px; }
+
+.sfield{ //ion-input: campurile de cautare
+  width: 250px;
+  height: 48px;
+  font-size: 18px;
+  color: var(--colorScrisGen); // gri
+  background: var(--colorFond); //alb
+  opacity: 0.9;
+  border: 1px solid var(--colorChenare); //gri chenar
+  border-radius: 28px;
+  padding: 0px 5px 0px 20px !important; }
+
+.snote{ //ion-note: notele de langa campurile de cautare
+  width: 145px;
+  height: 42px;
+  font-size: 18px;
+  color: var(--colorScrisGen); // gri
+  margin: auto !important;
+  padding: 10px 0px 10px 0px !important; }
+
+.marginia{ //ion-row: randuri de la prezentare articol
+  margin: 0px;
+  height: 44px; }
+
+.afield{ //ion-label: campurile de articol
+  width: 230px;
+  height: 34px !important;
+  font-size: 18px !important;
+  color: var(--colorScrisGen) !important; // gri
+  background: var(--colorFond); //alb
+  opacity: 0.9;
+  border: 1px solid var(--colorChenare); //gri chenar
+  border-radius: 28px;
+  margin: 8px 0px 8px 0px !important;
+  padding: 2px 5px 2px 10px !important; }
+
+.xfield{ //ion-label: camp blank la articol
+  width: 198px;
+  height: 34px !important;
+  font-size: 18px !important;
+  color: var(--colorFond); // alb
+  background: var(--colorFond); //alb
+  opacity: 0.9;
+  border: 1px solid var(--colorFond); //alb fond
+  border-radius: 28px;
+  margin: 8px 0px 8px 0px !important;
+  padding: 2px 5px 2px 10px !important; }
+
+.anote{ //ion-note: notele de langa campurile de articol
+  width: 100px;
+  height: 34px;
+  font-size: 18px;
+  color: var(--colorScrisGen); // gri
+  text-align: right;
+  margin: 8px 5px 8px 0px !important;
+  padding: 2px 0px 2px 0px !important; }
+
+.digitfield{ //ion-input: campurile de digits
+  width: 44px;
+  height: 44px;
+  font-size: 110%;
+  color: var(--colorScrisGen); // gri
+  text-align: center;
+  background: var(--colorFond); //alb
+  opacity: 0.9;
+  border: 1px solid var(--colorChenare); //gri chenar
+  margin: 0px 12px 0px 12px;
+  padding: 10px 4px 10px 4px !important; }
+
+.mydrop{ //img: lacrima
+  color: var(--colorButon1) !important;;
+  font-size: 54px !important;
+  top: 1.6px;
+  position: relative;
+  left: 1px;
+  z-index: -1; }
+
+.figicon{ //figure: small white icons la inputuri
+  margin: 0;
+  position: absolute;
+  z-index: 5; }
+
+.figicon ion-icon{
+  margin: 0; }
+
+.figicon ion-icon:last-child{
+  height: 20px;
+  left: 50%;
+  margin: -10px 0 0 -12px;
+  position: absolute;
+  fill: var(--colorFond) !important;
+  top: 50%;
+  width: 18px; }
 
 .myicons{ //img: small icons
   width: 18px;
   height: 20px;
   margin-left: 14px; }
 
-.fakeicons{ //ion-icon: fake icons
-  width: 48px;
-  height: 48px;
-  color: #FFF; }
+.style011{ // ion-button: arrow si menu
+  font-size: 32px;
+  color: var(--colorScrisGen) !important; }// gri
 
-.infield{ //ion-input: campurile de inserare
-  width: 305px;
-  height: 48px;
-  font-size: 18px;
-  color: #7A7A7A;
-  background: rgba(255, 255, 255, 0.6); //alb 60%, combinat cu fondul
-  border: 1px solid rgba(0, 0, 0, 0.1); //gri 10%
-  border-radius: 28px;
-  padding: 0px 2px 0px 58px !important; }
+.style012{ // ion-icon: alte iconite din toolbar
+  font-size: 32px !important;
+  color: var(--colorScrisGen) !important; }// gri
 
-.digitfield{ //ion-input: campurile de digits
-  width: 44px;
-  height: 44px;
-  font-size: 110%;
-  color: #7A7A7A;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.6); //alb 60%, combinat cu fondul
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 0px 12px 0px 12px;
-  padding: 10px 4px 10px 4px !important; }
-
-.mydrop{ //img: lacrima
-  top: 2px;
-  position: relative;
-  left: 1px;
-  z-index: -1; }
-
-.figicon{ //figure: small white icons
-  margin: 0;
-  position: absolute;
-  z-index: 5; }
-
-.figicon img{
-  margin: 0; }
-
-.figicon img:last-child{
-  height: 20px;
-  left: 50%;
-  margin: -10px 0 0 -11px;
-  position: absolute;
-  top: 50%;
-  width: 18px; }
+.style013{ // ion-icon: iconite fake din toolbar
+  font-size: 32px !important;
+  color: var(--colorFond) !important; }// gri
 
 .setaridiv{ // div: setarea la thincard
   display: flex;
@@ -89,26 +217,43 @@ ion-card{ // setarea generala
   border-radius: 10px !important;
   margin: 10px 30px 10px 30px !important; }
 
-ion-card.medcard{ // carduri medii
+.maxicard{ // carduri maxime...
   display: flex;
-  width: 200px !important;
+  width: 400px;
   border-radius: 10px !important;
+  margin: 10px 20px 10px 20px !important; }
+
+.biggercard{ // carduri marioace
+  display: flex;
+  width: 380px !important;
+  border-radius: 20px !important;
   margin: 5px 5px 5px 5px !important; }
 
-ion-card.roundcard{ // carduri rotunde
+.bigcard{ // carduri mari
   display: flex;
-  width: 150px !important;
-  border-radius: 120px !important;
-  margin: 10px 5px 10px 5px !important; }
+  width: 250px !important;
+  border-radius: 20px !important;
+  margin: 5px 5px 5px 5px !important; }
 
-ion-card.thumbcard{ // carduri mici
+.medcard{ // carduri medii
+  display: flex;
+  width: 190px !important;
+  border-radius: 20px !important;
+  margin: 6px !important; }
+
+.thumbcard{ // carduri mici
   display: flex;
   width: 170px !important;
   border-radius: 5px !important;
   margin: 5px 5px 5px 5px !important; }
 
-ion-card.thincard{ // carduri inguste
-  margin: 10px 30px -5px 30px !important; }
+.smallest{ // carduri foarte mici
+  width: 110px !important;
+  border-radius: 3px !important;
+  margin: 3px 3px 3px 3px !important; }
+
+.thincard{ // carduri inguste
+  margin: 10px 20px -5px 20px !important; }
 
 ion-card-header{ // setarea generala
   padding: 10px 2px 0px 2px !important; }
@@ -116,48 +261,97 @@ ion-card-header{ // setarea generala
 ion-card-content{ // setarea generala
   padding: 13px 13px 13px 13px !important; }
 
-ion-card-content.thumbpad{ // carduri medii si mici
+.thumbpad{ // carduri medii si mici
   padding: 10px 10px 10px 10px !important; }
 
 ion-card-title{ // setarea generala
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
-  color: #37B77A;
-  margin: 0px 5px 10px 5px; }
+  text-transform: none;
+  color: var(--colorScrisCrd); // verde
+  margin: 0px 10px 10px 10px; }
 
-ion-card-subtitle{ // setarea generala
+.titlu{ // setarea titlu home
+  text-align: left !important; }
+
+.subtext1{ // setarea subtitle home
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: none;
+  text-align: right;
+  color: var(--colorScrisGen); // gri
+  margin: 5px 10px -5px 10px; }
+
+.subtext2{ // subtitle thumbcard
   font-size: 16px;
-  color: #ADADAD;
-  margin: 5px 5px -5px 5px; }
+  color: var(--colorScrisGen); // gri
+  text-transform: none;
+  text-align: left;
+  margin: 5px 5px 5px 5px; }
+
+.subtext3{ // subtitle thumbcard
+  font-size: 12px;
+  color: var(--colorScrisGen); // gri
+  text-transform: none;
+  text-align: left;
+  margin: 4px 4px 4px 4px; }
+
+.subtext4{ // subtitle thumbcard
+  font-size: 22px;
+  font-weight: bold !important;
+  text-transform: none;
+  color: var(--colorScrisGen); // gri
+  text-align: left;
+  margin: 4px 4px 4px 4px; }
 
 .paratext{ // paragraph: in slides
-  font-size: 18px !important;
-  color: #37B77A;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  color: var(--colorScrisCrd); // verde
   margin: 10px 10px 15px 10px !important; }
+
+.bottomtext{ // paragraph: in slides
+  font-size: 24px !important;
+  font-weight: bold !important;
+  color: var(--colorScrisCrd); // verde
+  text-align: right;
+  margin: 5px 10px 20px 10px !important; }
 
 .minitext{ // paragraph: in slides
   font-size: 16px !important;
-  color: #37B77A;
+  color: var(--colorScrisCrd); // verde
+  text-align: center;
+  margin: 0px 5px -5px 5px !important; }
+
+.microtext{ // paragraph: in slides
+  font-size: 14px !important;
+  color: var(--colorScrisCrd); // verde
   text-align: center;
   margin: 0px 5px -5px 5px !important; }
 
 .swiper-pagination-bullet{ // punctele de la swipe
   width: 12px;
   height: 12px;
-  --bullet-background: #ADADAD;
-  --bullet-background-active: #F99531;
+  --bullet-background: var(--colorScrisAgr); // gri
+  --bullet-background-active: var(--colorScrisLnk); // orange
   margin: 12px 8px 10px 8px !important;
   display: inline-block;
   border-radius: 100%;
   opacity: 0.8; }
 
 ion-content{ // fondul tuturor ecranelor
-  --background: white;
+  --background: var(--colorFond);
   --margin: auto; }
 
+ion-menu{ // setarea generala
+  --background: var(--colorFond);
+  --z-index: 100;
+  --width: 350px;
+  /*--height: 655px;*/ }
+
 ion-item{ // setarea generala
-  --background: white;
-  --border-color: white;
+  --background: var(--colorFond);
+  --border-color: var(--colorFond);
   --border-radius: 25px;
   --inner-padding-end: 0px;
   --inner-border-width: 0px;
@@ -165,30 +359,85 @@ ion-item{ // setarea generala
   --align-items: center !important;
   --padding-start: 0px; }
 
-ion-item.linkstyle{ // link orange + la 4 digits
-  --background: white;
-  --background-focused: white; // la trecere cu Tab
-  --background-activated: white; // la apasare
-  --background-hover: white; // la trecere cu mouse
+.linkstyle{ // link orange + la 4 digits
+  --background-focused: var(--colorFond); // la trecere cu Tab
+  --background-activated: var(--colorFond); // la apasare
+  --background-hover: var(--colorFond); // la trecere cu mouse
   --border-radius: 10px;
   --inner-padding: 0px 10px 0px 10px; }
 
 ion-row{ // SETAREA GENERALA
   margin-top: 0px;
   margin-bottom: 0px;
+  display: flex;
   justify-content: center; }
+
+.searched{  // ion-row - carduri mici rezultate la cautare
+  max-width: 400px;
+  margin: auto; }
+
+.grouped{  // ion-row - carduri mici rezultate la cautare
+  max-width: 450px; }
 
 ion-col{ // setarea generala + la casutele de digits
  --ion-grid-column-padding: 0px; }
 
-ion-fab-button.fbgg{ // Butoanele de FB si G+
-  margin: 10px 30px 20px 30px;
+.fbgg{ // butoanele de FB si G+
+  margin: 10px 30px 5px 30px;
   --background: clear; }
 
-ion-fab-button.plus{ // Butoanele de +
+.plus{ // butoanele de zoom-in / -out
   width: 50px;
   height: 50px;
+  --color: var(--colorFond);
+  --color-activated: var(--colorFond);
+  --color-hover: var(--colorFond);
+  --background: var(--colorButon1);
+  --background-activated: var(--colorActBut1);
+  --background-focused: var(--colorActBut1);
+  --background-hover: var(--colorActBut1);
   margin: 12px; }
+
+ion-fab-button{ // butoanele de FAB 1/2+3
+  width: 50px;
+  height: 50px;
+  --color: var(--colorFond);
+  --color-activated: var(--colorFond);
+  --color-hover: var(--colorFond);
+  display: inline-block !important; }
+
+.fabplus1{ // butonul central de FAB
+  --background: var(--colorButon1);
+  --background-activated: var(--colorActBut1);
+  --background-focused: var(--colorActBut1);
+  --background-hover: var(--colorActBut1);
+  margin: 12px; }
+
+.fabplus23{ // butoanele laterale de FAB
+  margin: 12px; }
+
+.fabplus1m{ // butonul central de FAB, la MAP
+  --background: var(--colorButon1);
+  --background-activated: var(--colorActBut1);
+  --background-focused: var(--colorActBut1);
+  --background-hover: var(--colorActBut1);
+  margin: 0px 0px 50px 0px; }
+
+.fabplus23m{ // butoanele lateralE de FAB, la MAP
+  --background: var(--colorActBut2);
+  --background-activated: var(--colorActBut2);
+  --background-focused: var(--colorActBut2);
+  --background-hover: var(--colorActBut2);
+  margin: 0px 0px 50px 0px; }
+
+.icocolor{ // ion-icon: doar pe butoane de add photo
+  font-size: 35px;
+  width: 22px;
+  color: var(--colorFond); }
+
+.acticon{ // ion-icon: doar pe butoanele de FAB 2+3
+  font-size: 30px;
+  color: var(--colorScrisGen); }
 
 ion-button{ // setarea generala
   --border-radius: 23px;
@@ -198,61 +447,68 @@ ion-button{ // setarea generala
 
 .bigbutton{ // ion-button: butonul mare
   width: 305px;
-  --background: #37B77A;
-  --background-activated: #2E9664; // la apasare
-  --background-hover: #2E9664; } // la trecere cu mouse
+  --background: var(--colorButon1); // verde
+  --background-activated: var(--colorActBut1); // verde-tare - la apasare
+  --background-focused: var(--colorActBut1); // verde-tare - la trecere cu tab
+  --background-hover: var(--colorActBut1); } // verde-tare - la trecere cu mouse
 
-.acticon{ // ion-icon: butonul mare
-  color: #37B77A;
-  font-size: 30px;
-  font-weight: bold; }
-
-.bigbutton2{ // ion-button: butonul mare negativ
+.bigbutton2{ // ion-button: butonul mare negativ verde
   width: 305px;
-  --background: #FFFFFF;
-  --background-activated: #E8E8E8; // la apasare
-  --background-hover: #E8E8E8;  // la trecere cu mouse
-  border: 3px solid #37B77A;
+  --background: var(--colorFond); // alb
+  --background-activated: var(--colorActBut2); // gri - la apasare
+  --background-focused: var(--colorActBut2);  // gri - la trecere cu tab
+  --background-hover: var(--colorActBut2);  // gri - la trecere cu mouse
+  &:hover, &:active, &:focus { opacity: 0.7; }
+  border: 3px solid var(--colorButon1); // verde
   border-radius: 23px; }
 
-.addbutton{ // ion-button: butonul de "select image"
-  width: 216px;
-  --background: #37B77A;
-  --background-activated: #2E9664; // la apasare
-  --background-hover: #2E9664; } // la trecere cu mouse
+.addbutton{ // ion-button: butonul verde de "select image"
+  width: 195px;
+  --background: var(--colorButon1); // verde
+  --background-activated: var(--colorActBut1); // verde-tare - la apasare
+  --background-focused: var(--colorActBut1); // verde-tare - la trecere cu tab
+  --background-hover: var(--colorActBut1); } // verde-tare - la trecere cu mouse
+
+.samplebutton{ // ion-button: butonul mare negativ verde
+  width: 105px;
+  --background: var(--colorFond); // alb
+  --background-activated: var(--colorActBut2); // gri - la apasare
+  --background-focused: var(--colorActBut2);  // gri - la trecere cu tab
+  --background-hover: var(--colorActBut2);  // gri - la trecere cu mouse
+  &:hover, &:active, &:focus { opacity: 0.7; }
+  border: 3px solid var(--colorButon1); // verde
+  border-radius: 23px; }
 
 .remvbutton{ // ion-button: butonul de "remove image"
   width: 60px;
-  --background: #37B77A;
-  --background-activated: #2E9664; // la apasare
-  --background-hover: #2E9664; } // la trecere cu mouse
+  --background: var(--colorButon1); // verde
+  --background-activated: var(--colorActBut1); // verde-tare - la apasare
+  --background-focused: var(--colorActBut1); // verde-tare - la trecere cu tab
+  --background-hover: var(--colorActBut1); } // verde-tare - la trecere cu mouse
 
 .smallbutton{ // ion-button: butonul de arrow si account
-  width: 45px !important;
-  height: 45px !important;
-  --border-radius: 23px !important;
+  width: 48px !important;
+  height: 48px !important;
+  --border-radius: 24px !important;
   --padding-bottom: 0px;
   --padding-end: 0px;
   --padding-start: 0px;
   --padding-top: 0px;
   --box-shadow: none;
-  --background: white;
-  --background-focused: #F8F8F8 !important; // la trecere cu Tab
-  --background-activated: #F8F8F8 !important; // la apasare
-  --background-hover: #F8F8F8 !important; } // la trecere cu mouse
+  --background: var(--colorFond); }
 
 .styleb{ // p: scrisul pe butoane
   font-weight: bold;
   font-size: 18px;
-  color: white; }
+  color: var(--colorFond) !important; }
 
 .styleb2{ // p: scrisul pe butoane negative
   font-weight: bold;
   font-size: 18px;
-  color: #37B77A; /*verde*/ }
+  color: var(--colorButon1); } // verde
 
-.topbar{ // bara de sus
-  max-width: 400px; }
+.topbar{ // barele de sus si jos
+  background: var(--colorFond); }
 
 .header-md:after { // bara de header - setare generala
   bottom: -2px;
@@ -265,100 +521,136 @@ ion-button{ // setarea generala
   height: 2px; }
 
 .searcher{ // bara de search
-  padding: 0px !important;
-  max-width: 305px; }
-
-.style01{ // ion-icon: arrow
-  font-size: 26px !important;
-  margin: 0px;
-  color: #7A7A7A !important;
-  padding: 0px; }
+  color: var(--colorScrisGen) !important;
+  padding: 2px !important; }
 
 .style02{ // ion-label: header writing
   font-weight: bold;
   font-size: 20px !important;
   text-align: center;
   margin: auto;
-  color: #7A7A7A !important; }
+  color: var(--colorScrisGen) !important; } // gri
 
-.style0f{ // ion-label: footbar writing
+.style0f{ // ion-label: footbar writing + FAB text
   font-weight: bold;
   font-size: 20px !important;
   text-align: center;
   margin: auto;
-  color: #3880FF !important; }
+  color: var(--colorScrisAgr) !important; } // albastru
 
 .style10{ // ion-row: question one
   font-weight: bold;
   font-size: 18px;
-  color: #7A7A7A; }
+  color: var(--colorScrisGen); } // gri
 
 .style11{ // ion-row: question one
   font-weight: bold;
   font-size: 18px;
-  margin: 15px 10px 10px 10px;
-  color: #7A7A7A; }
+  margin: 10px 10px 10px 10px;
+  color: var(--colorScrisGen); } // gri
 
 .style12{ // ion row: answer one
   font-size: 16px;
   width: 305px;
   text-align: center;
   margin: 0px 0px 5px 0px;
-  color: #7A7A7A; }
+  color: var(--colorScrisGen); } // gri
+
+.style2c{ // ion-card-title: mainpage
+  margin-top: 0px !important;
+  margin-bottom: 0px !important; }
 
 .style21{ // ion-row: question two + group.svg
   font-size: 18px;
   margin: 8px 10px 0px 10px;
-  color: #7A7A7A; }
+  color: var(--colorScrisGen); } // gri
 
 .style22{ // ion-label: answer two
-  color: #F99531 !important; // portocaliu
+  color: var(--colorScrisLnk) !important; // orange
   font-size: 20px !important;
   font-weight: bold;
+  &:hover, &:focus {
+    border-bottom: 1px solid currentColor; }
   margin: 0px 10px 0px 10px; }
 
 .style23{ // ion-row: long description
   font-size: 18px;
-  max-width: 385px;
+  max-width: 380px;
   margin: 8px 10px 0px 10px;
-  color: #7A7A7A; }
+  color: var(--colorScrisGen); } // gri
+
+.style24{ // ion-label: answer two
+  color: var(--colorScrisLnk) !important; // orange
+  max-width: 380px;
+  font-size: 22px !important;
+  &:hover, &:focus {
+    border-bottom: 1px solid currentColor; }
+  margin: 0px 10px 0px 10px; }
 
 .style31{ // text: la checkbox
   font-size: 18px;
   margin: 8px 10px 8px 10px;
-  color: #7A7A7A; }
+  color: var(--colorScrisGen); } // gri
 
 .style32{ // text: la popup
   font-size: 18px;
   margin: 0px;
-  color: #7A7A7A; }
+  color: var(--colorScrisGen); } // gri
+
+.style1h{ // ion-label: menu header
+  font-size: 26px !important;
+  font-weight: bold !important;
+  color: var(--colorScrisGen) !important; // gri
+  margin: 10px 10px 10px 20px; }
+
+.style1sh{ // ion-label: menu subheader
+  font-size: 22px !important;
+  font-weight: bold !important;
+  height: 34px;
+  color: var(--colorScrisGen) !important; // gri
+  margin: 5px 10px 2px 20px; }
+
+.style1ssh{ // ion-label: menu subheader
+  font-size: 18px !important;
+  height: 34px;
+  color: var(--colorScrisGen) !important; // gri
+  margin: 2px 10px 2px 20px; }
 
 .style1m{ // ion-label: menu
+  font-size: 18px !important;
+  color: var(--colorScrisGen) !important; // gri
   margin: 5px 0px 5px 0px; }
 
 .style2m{ // ion-icon: menu icons
-    slot: start;
     width: 34px;
     height: 34px;
     margin: 0px 12px 0px 12px;
-    color: #7A7A7A;
+    color: var(--colorScrisGen); // gri
     padding: 1px; }
-// Put style rules here that you want to apply to the entire application. These
-// styles are for the entire app and not just one component. Additionally, this
-// file can hold Sass mixins, functions, and placeholder classes to be imported
-// and used throughout the application.
+
+.style2k{ // ion-icon: checkbox
+  margin: 2px;
+  color: var(--colorScrisGen); // gri
+  padding: 1px; }
+
 .sc-ion-modal-md-h {
     --border-radius: 4px;
-//  --width: 300px;
-//  --height: 500px;
     --ion-safe-area-top: 1%;
     --ion-safe-area-bottom: 1%;
     --ion-safe-area-right: 1%;
     --ion-safe-area-left: 1%;
-    --width: 98%;
+    --width: 88%;
     --max-width: 395px !important;
-    --height: 98%;
+    --height: 94%;
     --min-height: 580px;
+    --max-height: 700px !important;
     --max-height: auto;
-    --background: var(--ion-background-color,#fff);
-}
+    --background: var(--colorFond); } // alb
+
+ion-app._gmaps_cdv_ .nav-decor {
+  background-color: transparent !important; }
+
+.mapstyle{
+  height: 100%;
+  width: 100%;
+  text-align: center; }

@@ -10,25 +10,24 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
   styleUrls: ['./lostpass3.page.scss'], })
 
 export class Lostpass3Page implements OnInit {
-  public password;
-  public confirmpass;
-  public tBarHide: boolean = false;
-  public tBarIcon1Hide: boolean = false;
-  public tBarTextCrt = 'Change Password';
-  public tBarIcon2Hide: boolean = true;
-  public fBarHide: boolean = true;
-  public fBarIcon1Hide: boolean = false;
-  public fBarTextCrt = '2019© by Flexiloquent™';
-  public fBarIcon2Hide: boolean = false;
+  private password: string = '';
+  private confirmpass: string = '';
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt: string = 'Change Password';
+  private tBarIcon2Hide: boolean = true;
+  private fBarHide: boolean = true;
+  private fBarIcon1Hide: boolean = false;
+  private fBarTextCrt: string = '2019© by Flexiloquent™';
+  private fBarIcon2Hide: boolean = false;
 
-  constructor(public afAuth: AngularFireAuth, public authService: AuthService, public router: Router, public alertCtrl: AlertController) { }
+  constructor(private afAuth: AngularFireAuth, public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
-  public validPassword(pass) {
+  private validPassword(pass) {
     const passwordFormat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d].{7,20}$/;
     return pass.match(passwordFormat); }
 
-  public changepass() {
-
+  private changepass() {
     if (this.password) {
       if (this.validPassword(this.password) && this.password === this.confirmpass) {
         /* lipsa actiune pentru salvarea parolei noi si logarea imediata*/
@@ -56,12 +55,11 @@ export class Lostpass3Page implements OnInit {
   async invalidPassAlert() {
     const alert = this.alertCtrl.create({
       header: 'Password change failed!',
-      message: 'Passwords must include at least 8 alphanumeric characters (lowercase, uppercase letters and numbers) and they have to be identical.',
+      message: 'Passwords have to be identical, at least 8 digits long with at least 7 letters and numbers, have both lowercase and uppercase and include at least one special character.',
       buttons: ['TRY AGAIN'] });
     (await alert).present(); }
 
-  public displayMarket() {
-    this.router.navigateByUrl('market'); }
+  private displayMarket() { this.router.navigateByUrl('sharemap'); }
 
   ngOnInit() { }
 }

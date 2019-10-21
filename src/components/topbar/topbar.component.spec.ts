@@ -13,15 +13,15 @@ describe('TopbarComponent', () => {
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
-  }));
+  } ) );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TopbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  } );
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-});
+  } );
+} );

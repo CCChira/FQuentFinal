@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { AuthService } from '../../providers/auth-tools/auth-tools';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { AlertController } from '@ionic/angular';
 import { NgModule } from '@angular/core';
+import { AuthService } from '../../providers/auth-tools/auth-tools';
 
 @Component({
   selector: 'app-topbar',
@@ -10,21 +9,26 @@ import { NgModule } from '@angular/core';
   styleUrls: ['./topbar.component.scss'], } )
 
 export class TopbarComponent implements OnInit {
-  @Input()
-    public tBarIcon1: boolean;
-  @Input()
-    public tBarText: any;
-  @Input()
-    public tBarSearch: any;
-  @Input()
-    public tBarIcon2: boolean;
+  @Input() private tBarIcon1: boolean;
+  @Input() private tBarText: string;
+  @Input() private tBarSearch: string;
+  @Input() private tBarIcon2: boolean;
 
-  public searchinbar;
-  public name = 'Alessia Bidian';
-  public email = 'alessia.bidian@yahoo.com';
-  public password;
-  public phone = '0723 147 497';
-  constructor(public authService: AuthService, public router: Router, public alertCtrl: AlertController) { }
+  @Output() topbarModif = new EventEmitter();
+  @Output() menuModif = new EventEmitter();
+
+  public searchTermBar: string = '';
+  public Trimite(){ this.topbarModif.emit(this.searchTermBar); }
+  public AscundeFAB(){ this.menuModif.emit('ascundeFAB'); }
+  public ArataFAB(){ this.menuModif.emit('arataFAB'); }
+  public Reseteaza(){ this.searchTermBar = ''; }
+
+  private name = 'Catalina Dumitru';
+  private email = 'catalina.dumitru@yahoo.com';
+  private password;
+  private phone = '0723 456 789';
+  constructor(private router: Router) { }
 
   ngOnInit() {}
 }
+// <ion-icon src="\assets\icon\user.svg" alt="FlexLogo" slot="start"> </ion-icon>

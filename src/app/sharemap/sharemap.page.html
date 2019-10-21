@@ -1,0 +1,30 @@
+<app-topbar #topbardata (topbarModif)='Cautare($event)' (menuModif)='ShowHideFAB($event)' [hidden]='tBarHide' [tBarIcon1]='tBarIcon1Hide' [tBarText]='tBarTextCrt' [tBarSearch]='tBarSearchShow' [tBarIcon2]='tBarIcon2Hide'> </app-topbar>
+
+  <div #Map class="mapstyle"> </div>
+
+  <ion-fab horizontal="end" vertical="center" slot="fixed" [hidden]='hideFAB'>
+    <ion-fab-button class="fabplus23m" debounce="500" (click)="ChangeMapGen()">
+      <ion-icon class="acticon" name="image"> </ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+  <ion-fab horizontal="center" vertical="bottom" slot="fixed" [hidden]='hideFAB'>
+    <ion-fab-button class="fabplus1m">
+      <ion-icon name="add"> </ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="start">
+      <ion-fab-button class="fabplus23m" (click)="displayOfrModal()">
+        <ion-icon class="acticon" name="gift"> </ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+
+    <ion-fab-list side="end">
+      <ion-fab-button class="fabplus23m" (click)="displayReqModal()">
+        <ion-icon class="acticon" name="megaphone"> </ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+<app-footbar [hidden]='fBarHide' [fBarIcon1]='fBarIcon1Hide' [fBarText]='fBarTextCrt' [fBarIcon2]='fBarIcon2Hide'> </app-footbar>

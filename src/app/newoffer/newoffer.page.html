@@ -1,75 +1,104 @@
-<div align="center">
-  <ion-header translucent class="topbar">
-    <ion-toolbar>
-
-      <ion-icon slot="start" class="fakeicons" name="close"> </ion-icon>
+<ion-header main class="topbar">
+  <ion-toolbar color="#FFF">
+    <ion-buttons>
+      <ion-button class="smallbutton">
+        <ion-icon name="close" class="style013"> </ion-icon>
+      </ion-button>
 
       <ion-label class="style02"> Insert a New Offer: </ion-label>
 
-      <ion-button class="smallbutton" slot="end" (click)="dismissNewofferModal()">
-        <ion-icon class="style01" name="close"> </ion-icon>
+      <ion-button class="smallbutton" (click)="dismissNewofferModal()">
+        <ion-icon name="close" class="style012"> </ion-icon>
       </ion-button>
-
-    </ion-toolbar>
-  </ion-header>
-</div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content>
   <form #newofferForm="ngForm">
     <ion-grid>
       <ion-col>
-        <ion-row class="margini1">
-          <input type="file" id="fileLoader" #fileLoader name="files" title="Load File" hidden />
-          <ion-button class="addbutton" icon-left>
-            <ion-icon name="camera"> </ion-icon>
-            <p class="styleb"> &nbsp;&nbsp;SELECT IMAGE </p>
-          </ion-button>
-          <ion-button class="remvbutton" icon-left [disabled]="uploadImage === null">
-            <ion-icon name="trash"> </ion-icon>
-          </ion-button>
+        <ion-row>
+          <ion-card class="medcard" [hidden]='!cardSwitch'>
+            <ion-card-content class="thumbpad">
+              <span *ngIf="offerImg === null"> <img id="initialImage" class="round" src="\assets\icon\CameraB.svg" /> </span>
+              <span *ngIf="offerImg != null"> <img id="checkinImage" class="round" [src]="offerImg" (load)="imageLoaded()" /> </span>
+              <span *ngIf="processing"> <ion-spinner> </ion-spinner> <h1>Processing...</h1> </span>
+              <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+                <ion-fab-button class="plus" (click)="Mareste()">
+                  <ion-icon src="\assets\icon\zoom-in.svg"> </ion-icon>
+                </ion-fab-button>
+              </ion-fab>
+            </ion-card-content>
+          </ion-card>
+          <ion-card class="biggercard" [hidden]='cardSwitch'>
+            <ion-card-content class="thumbpad">
+              <span *ngIf="offerImg === null"> <img id="initialImage" class="round" src="\assets\icon\CameraB.svg" /> </span>
+              <span *ngIf="offerImg != null"> <img id="checkinImage" class="round" [src]="offerImg" (load)="imageLoaded()" /> </span>
+              <span *ngIf="processing"> <ion-spinner> </ion-spinner> <h1>Processing...</h1> </span>
+              <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+                <ion-fab-button class="plus" (click)="Mareste()">
+                  <ion-icon src="\assets\icon\zoom-out.svg"> </ion-icon>
+                </ion-fab-button>
+              </ion-fab>
+            </ion-card-content>
+          </ion-card>
         </ion-row>
 
         <ion-row class="margini1">
+          <input type="file" id="fileLoader" #fileLoader name="files" title="Load File" hidden />
+          <ion-button class="addbutton" icon-left (click)="addPicture(fileLoader)">
+            <ion-icon class="icocolor" name="camera"> </ion-icon>
+            <p class="styleb"> &nbsp;&nbsp;SELECT IMAGE </p>
+          </ion-button>
+          <ion-button class="remvbutton" icon-left (click)="removePic()" [disabled]="offerImg === null">
+            <ion-icon class="icocolor" name="trash"> </ion-icon>
+          </ion-button>
+        </ion-row>
+
+        <ion-row class="marginis">
           <ion-item lines="none">
             <ion-input  class="infield" name="title" type="text" placeholder="Add a Title" [(ngModel)]="title"> </ion-input>
           </ion-item>
         </ion-row>
 
-        <ion-row class="margini1">
+        <ion-row class="marginis">
           <ion-item lines="none">
             <ion-input class="infield" name="category" type="text" placeholder="Category" [(ngModel)]="category"> </ion-input>
           </ion-item>
         </ion-row>
 
-        <ion-row class="margini1">
+        <ion-row class="marginis">
           <ion-item lines="none">
             <ion-input class="infield" name="description" type="text" placeholder="Description" [(ngModel)]="description"> </ion-input>
           </ion-item>
         </ion-row>
 
-        <ion-row class="margini1">
+        <ion-row class="marginis">
           <ion-item lines="none">
             <ion-input class="infield" name="proposedprice" type="text" placeholder="Requested Price" [(ngModel)]="proposedprice"> </ion-input>
           </ion-item>
         </ion-row>
 
-        <ion-row class="margini1">
+        <ion-row class="marginis">
           <ion-item lines="none">
             <ion-input class="infield" name="contactphone" type="tel" placeholder="Contact Phone" [(ngModel)]="contactphone"> </ion-input>
           </ion-item>
         </ion-row>
-        <ion-row class="margini1">
-            <ion-item lines="none">
-              <ion-input class="infield" name="type" type="text" placeholder="Type: Offer/Request" [(ngModel)]="type"> </ion-input>
-            </ion-item>
-          </ion-row>
-        <ion-row class="margini1">
+
+        <ion-row class="marginis">
+          <ion-item lines="none">
+            <ion-input class="infield" name="type" type="text" placeholder="Type: Offer/Request" [(ngModel)]="type"> </ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row class="marginis">
             <p class="style31"> Warranty included: &nbsp;&nbsp;</p>
-            <ion-checkbox name="warranty" [(ngModel)]="warranty" style="margin-top: 10px;"> </ion-checkbox>
+            <ion-checkbox name="warranty" [(ngModel)]="warranty" style="margin-top: 10px; --border-color: var(--colorScrisGen); --border-color-checked: var(--colorScrisGen); --background: var(--colorFond); --background-checked: var(--colorFond); --checkmark-color: var(--colorScrisGen);"> </ion-checkbox>
         </ion-row>
 
         <ion-row class="margini1">
-          <ion-button class="bigbutton" (click)="newoffer()"> <p class="styleb"> INSERT OFFER </p> </ion-button>
+          <ion-button class="bigbutton" (click)="newOffer()"> <p class="styleb"> INSERT OFFER </p> </ion-button>
         </ion-row>
       </ion-col>
     </ion-grid>

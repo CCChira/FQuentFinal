@@ -7,11 +7,29 @@
         <ion-row> <p class="style11"> Update your informations: </p> </ion-row>
 
         <ion-row>
-          <ion-card class="roundcard">
+          <ion-card class="medcard" [hidden]='!cardSwitch'>
             <ion-card-content class="thumbpad">
-              <span *ngIf="uploadImage === null"> <img class="round" id="initialImage" src="\assets\icon\Camera.jpg" /> </span>
-              <span *ngIf="uploadImage != null"> <img class="round" id="checkinImage" [src]="uploadImage" (load)="imageLoaded()" /> </span>
+              <span *ngIf="profileImg === null"> <img class="round" id="initialImage" src="\assets\icon\CameraB.svg" /> </span>
+              <span *ngIf="profileImg != null"> <img class="round" id="checkinImage" [src]="profileImg" (load)="imageLoaded()" /> </span>
               <span *ngIf="processing"> <ion-spinner> </ion-spinner> <h1>Processing...</h1> </span>
+              <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+                <ion-fab-button class="plus" (click)="Mareste()">
+                  <ion-icon src="\assets\icon\zoom-in.svg"> </ion-icon>
+                </ion-fab-button>
+              </ion-fab>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="biggercard" [hidden]='cardSwitch'>
+            <ion-card-content class="thumbpad">
+              <span *ngIf="profileImg === null"> <img class="round" id="initialImage" src="\assets\icon\CameraB.svg" /> </span>
+              <span *ngIf="profileImg != null"> <img class="round" id="checkinImage" [src]="profileImg" (load)="imageLoaded()" /> </span>
+              <span *ngIf="processing"> <ion-spinner> </ion-spinner> <h1>Processing...</h1> </span>
+              <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+                <ion-fab-button class="plus" (click)="Mareste()">
+                  <ion-icon src="\assets\icon\zoom-out.svg"> </ion-icon>
+                </ion-fab-button>
+              </ion-fab>
             </ion-card-content>
           </ion-card>
         </ion-row>
@@ -19,47 +37,47 @@
         <ion-row class="margini1">
           <input type="file" id="fileLoader" #fileLoader name="files" title="Load File" hidden />
           <ion-button class="addbutton" icon-left (click)="addPicture(fileLoader)">
-            <ion-icon name="camera"> </ion-icon>
+            <ion-icon class="icocolor" name="camera"> </ion-icon>
             <p class="styleb"> &nbsp;&nbsp;SELECT IMAGE </p>
           </ion-button>
-          <ion-button class="remvbutton" icon-left (click)="removePic()" [disabled]="uploadImage === null">
-            <ion-icon name="trash"> </ion-icon>
+          <ion-button class="remvbutton" icon-left (click)="removePic()" [disabled]="profileImg === null">
+            <ion-icon class="icocolor" name="trash"> </ion-icon>
           </ion-button>
         </ion-row>
 
         <ion-row class="margini1">
           <ion-item lines="none">
-            <figure class="figicon">
-              <img class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima">
-              <img class="myicons" src="\assets\icon\user.svg" alt="mail">
-            </figure>
+            <div class="figicon">
+              <ion-icon class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima"> </ion-icon>
+              <ion-icon class="myicons" src="\assets\icon\user.svg"> </ion-icon>
+            </div>
             <ion-input class="infield" name="name" type="text" placeholder="Name" [(ngModel)]="name"> </ion-input>
           </ion-item>
         </ion-row>
 
         <ion-row class="margini1">
           <ion-item lines="none">
-            <figure class="figicon">
-              <img class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima">
-              <img class="myicons" src="\assets\icon\phone-call.svg" alt="mail">
-            </figure>
+            <div class="figicon">
+              <ion-icon class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima"> </ion-icon>
+              <ion-icon class="myicons" src="\assets\icon\phone-call.svg"> </ion-icon>
+            </div>
             <ion-input class="infield" name="phone" type="text" placeholder="Phone" [(ngModel)]="phone"> </ion-input>
           </ion-item>
         </ion-row>
 
         <ion-row class="margini1">
           <ion-item lines="none">
-            <figure class="figicon">
-              <img class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima">
-              <img class="myicons" src="\assets\icon\placeholder.svg" alt="location">
-            </figure>
+            <div class="figicon">
+              <ion-icon class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima"> </ion-icon>
+              <ion-icon class="myicons" src="\assets\icon\placeholder.svg"> </ion-icon>
+            </div>
             <ion-input class="infield" name="location" type="location" placeholder="Location" [(ngModel)]="location"> </ion-input>
           </ion-item>
         </ion-row>
 
         <ion-row class="margini0">
           <ion-button class="bigbutton2" (click)="changedata()">
-            <p class="styleb2"> DONE <ion-icon slot="start" name="checkmark" style="color: #37B77A;"></ion-icon></p>
+            <p class="styleb2"> DONE &nbsp;&nbsp;<ion-icon slot="start" name="checkmark" style="color: var(--colorButon1)"></ion-icon></p>
           </ion-button>
         </ion-row>
 

@@ -5,7 +5,7 @@
  <title>doodleutz</title>
  <g>
   <title>background</title>
-  <rect x="-1" y="-1" width="1382" height="1152" id="canvas_background" fill="#ffffff"/>
+  <rect x="-1" y="-1" width="1382" height="1152" id="canvas_background" fill="none"/>
  </g>
  <g>
   <title>Layer 1</title>

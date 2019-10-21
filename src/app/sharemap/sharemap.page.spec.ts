@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShareHomePage } from './share-home.page';
+import { SharemapPage } from './sharemap.page';
 
-describe('ShareHomePage', () => {
-  let component: ShareHomePage;
-  let fixture: ComponentFixture<ShareHomePage>;
+describe('SharemapPage', () => {
+  let component: SharemapPage;
+  let fixture: ComponentFixture<SharemapPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShareHomePage ],
+      declarations: [ SharemapPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShareHomePage);
+    fixture = TestBed.createComponent(SharemapPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

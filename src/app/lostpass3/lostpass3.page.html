@@ -4,26 +4,26 @@
   <form #lostpass3Form="ngForm">
     <ion-grid>
       <ion-col>
-        <ion-row class="margini0"> <img width="295px" src="\assets\doodleP.svg" alt="FlexLogo"> </ion-row>
+        <ion-row class="margini0"> <img width="295px" src="\assets\doodleF.svg" alt="FlexLogo"> </ion-row>
         <ion-row> <p class="style11"> Your reset code was correct. </p> </ion-row>
         <ion-row class="margini3"> <p class="style12"> Please enter a new password: </p> </ion-row>
 
         <ion-row class="margini1">
           <ion-item lines="none">
-            <figure class="figicon">
-              <img class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima">
-              <img class="myicons" src="\assets\Log In\padlock.svg" alt="pass">
-            </figure>
+            <div class="figicon">
+              <ion-icon class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima"> </ion-icon>
+              <ion-icon class="myicons" src="\assets\icon\padlock.svg"> </ion-icon>
+            </div>
             <ion-input class="infield" name="password" type="password" placeholder="Password" [(ngModel)]="password"> </ion-input>
           </ion-item>
         </ion-row>
 
         <ion-row class="margini1">
           <ion-item lines="none">
-            <figure class="figicon">
-              <img class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima">
-              <img class="myicons" src="\assets\Log In\padlock.svg" alt="pass">
-            </figure>
+            <div class="figicon">
+              <ion-icon class="mydrop" src="\assets\icon\lacrima.svg" alt="lacrima"> </ion-icon>
+              <ion-icon class="myicons" src="\assets\icon\padlock.svg"> </ion-icon>
+            </div>
             <ion-input class="infield" name="confirm" type="password" placeholder="Confirm Password" [(ngModel)]="confirmpass"> </ion-input>
           </ion-item>
         </ion-row>

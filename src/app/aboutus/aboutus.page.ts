@@ -1,8 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
-import { AuthService } from '../../providers/auth-tools/auth-tools';
 
 @Component( {
   selector: 'app-aboutus',
@@ -10,16 +7,16 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
   styleUrls: ['./aboutus.page.scss'], } )
 
 export class AboutusPage implements OnInit {
-  public tBarHide: boolean = false;
-  public tBarIcon1Hide: boolean = false;
-  public tBarTextCrt = 'About Us';
-  public tBarIcon2Hide: boolean = true;
-  public fBarHide: boolean = false;
-  public fBarIcon1Hide: boolean = true;
-  public fBarTextCrt = '2019© by Flexiloquent™';
-  public fBarIcon2Hide: boolean = true;
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt: string = 'About Us';
+  private tBarIcon2Hide: boolean = true;
+  private fBarHide: boolean = false;
+  private fBarIcon1Hide: boolean = true;
+  private fBarTextCrt: string = '2019© by Flexiloquent™';
+  private fBarIcon2Hide: boolean = true;
 
-  constructor(public authService: AuthService, public router: Router, public alertCtrl: AlertController) { }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
 }

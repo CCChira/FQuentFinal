@@ -16,18 +16,21 @@ import { EmailValidator } from '../validators/email.validator';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TopbarComponent } from 'src/components/topbar/topbar.component';
 import { FootbarComponent } from 'src/components/footbar/footbar.component';
-import {Geolocation} from '@ionic-native/geolocation/ngx';
-import { AngularFirestoreModule} from '@angular/fire/firestore';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { UserService } from './user.service';
 import { OfferService } from './offer.service';
 /// import { AuthServiceModule } from '../providers/auth-tools/auth-tools';
 import { NewofferPage } from 'src/app/newoffer/newoffer.page';
-// import { NewrequestPage } from 'src/app/newrequest/newrequest.page';
+import { NewrequestPage } from 'src/app/newrequest/newrequest.page';
+import { ArticolPage } from 'src/app/articol/articol.page';
 import { ToolerModule } from 'src/components/tooler.module';
+import { DataService } from 'src/app/data.service';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],
+  entryComponents: [ ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -37,7 +40,7 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     ToolerModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     EmailValidator,
@@ -46,13 +49,15 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
     TopbarComponent,
     FootbarComponent,
     NewofferPage,
-    // NewrequestPage,
+    NewrequestPage,
+    ArticolPage,
+    DataService,
     StatusBar,
     SplashScreen,
     Geolocation,
     UserService,
     OfferService,
-    NativeGeocoder,
+    NativeGeocoder,    
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

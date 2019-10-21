@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { AuthService } from '../../providers/auth-tools/auth-tools';
@@ -10,23 +9,23 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
   styleUrls: ['./lostpass1.page.scss'], })
 
 export class Lostpass1Page implements OnInit {
-  public email;
-  public tBarHide: boolean = false;
-  public tBarIcon1Hide: boolean = false;
-  public tBarTextCrt = 'Request Code';
-  public tBarIcon2Hide: boolean = true;
-  public fBarHide: boolean = true;
-  public fBarIcon1Hide: boolean = false;
-  public fBarTextCrt = '2019© by Flexiloquent™';
-  public fBarIcon2Hide: boolean = false;
+  private email: string = '';
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt: string = 'Request Code';
+  private tBarIcon2Hide: boolean = true;
+  private fBarHide: boolean = true;
+  private fBarIcon1Hide: boolean = false;
+  private fBarTextCrt: string = '2019© by Flexiloquent™';
+  private fBarIcon2Hide: boolean = false;
 
-  constructor(public authService: AuthService, public router: Router, public alertCtrl: AlertController) { }
+  constructor(public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
-  public validMail(mail) {
+  private validMail(mail) {
     const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return mail.match(mailformat); }
 
-  public getcode() {
+  private getcode() {
     if (this.email) {
       let ok = true;
       if (!this.validMail(this.email)) {
@@ -57,8 +56,7 @@ export class Lostpass1Page implements OnInit {
       buttons: ['OK'] });
     (await alert).present(); }
 
-  public displayLostpass2() {
-    this.router.navigateByUrl('lostpass2'); }
+  private displayLostpass2() { this.router.navigateByUrl('lostpass2'); }
 
   ngOnInit() { }
 }

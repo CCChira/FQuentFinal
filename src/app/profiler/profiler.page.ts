@@ -10,69 +10,36 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
   styleUrls: ['./profiler.page.scss'], } )
 
 export class ProfilerPage implements OnInit {
-  public processing: boolean;
-  public uploadImage = null;
-  public name;
-  public phone;
-  public email;
-  public password;
-  public confirmpass;
-  public tBarHide: boolean = false;
-  public tBarIcon1Hide: boolean = false;
-  public tBarTextCrt = 'Edit Profile';
-  public tBarIcon2Hide: boolean = true;
-  public fBarHide: boolean = true;
-  public fBarIcon1Hide: boolean = false;
-  public fBarTextCrt = '';
-  public fBarIcon2Hide: boolean = false;
-  public location;
-  constructor(public afAuth: AngularFireAuth, public authService: AuthService, public router: Router, public alertCtrl: AlertController) { }
+  private processing: boolean;
+  private profileImg = null;
+  private name: string = '';
+  private phone: string = '';
+  private email: string = '';
 
-  public changedata() {
-  // lipsa
-  this.displayMarket();
-}
+  private tBarHide: boolean = false;
+  private tBarIcon1Hide: boolean = false;
+  private tBarTextCrt: string = 'Edit Profile';
+  private tBarIcon2Hide: boolean = true;
+  private fBarHide: boolean = true;
+  private fBarIcon1Hide: boolean = false;
+  private fBarTextCrt: string = '';
+  private fBarIcon2Hide: boolean = false;
 
-  public validPassword(pass) {
-    const passwordFormat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d].{7,20}$/;
-    return pass.match(passwordFormat); }
+  constructor(private afAuth: AngularFireAuth, public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 
-  public changepass() {
-    if (this.password) {
-      if (this.validPassword(this.password) && this.password === this.confirmpass) {
-        /* lipsa actiune pentru salvarea parolei noi*/
-        console.log('good match')
-        this.validPassAlert();
-        return this.displayMarket(); }
-      else if (this.validPassword(this.password)) {
-        console.log('different passwords');
-        return this.invalidPassAlert(); }
-        else {
-          console.log('bad password');
-          return this.invalidPassAlert(); } }
-    else {
-      console.log('no password');
-      this.invalidPassAlert(); }
-  }
+  private cardSwitch: boolean = true;
+  private Mareste() { this.cardSwitch = !this.cardSwitch; }
 
-  async validPassAlert() {
-    const alert = this.alertCtrl.create({
-      header: 'The password was changed!',
-      message: 'You are logged now with the new password.',
-      buttons: ['OK'] });
-    (await alert).present(); }
+  private resetCardSwitch() { this.cardSwitch = true; }
 
-  async invalidPassAlert() {
-    const alert = this.alertCtrl.create({
-      header: 'Password change failed!',
-      message: 'Passwords must include at least 8 alphanumeric characters (lowercase, uppercase letters and numbers) and they have to be identical.',
-      buttons: ['TRY AGAIN'] });
-    (await alert).present(); }
+  private changedata() {
+    // lipsa procedura de pushare date noi de profil
+    this.resetCardSwitch();
+    this.displayMarket(); }
 
-  public displayMarket() {
-    this.router.navigateByUrl('market'); }
+  private displayMarket() { this.router.navigateByUrl('sharemap'); }
 
-  addPicture(fileLoader) {
+  private addPicture(fileLoader) {
     fileLoader.click();
     var that = this;
     fileLoader.onchange = function () {
@@ -80,16 +47,18 @@ export class ProfilerPage implements OnInit {
       var reader = new FileReader();
       reader.addEventListener("load", function () {
         that.processing = true;
-        that.uploadImage = reader.result; }, false);
+        that.profileImg = reader.result; }, false);
       if (file) {
-        reader.readAsDataURL(file); } }
-  }
+        reader.readAsDataURL(file); } };
+    this.resetCardSwitch(); }
 
-  imageLoaded(){
-    this.processing = false; }
+  private imageLoaded(){
+    this.processing = false;
+    this.resetCardSwitch(); }
 
-  removePic() {
-    this.uploadImage = null; }
+  private removePic() {
+    this.profileImg = null;
+    this.resetCardSwitch(); }
 
   ngOnInit() { }
 }

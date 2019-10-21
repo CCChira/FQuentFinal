@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AuthService } from '../../providers/auth-tools/auth-tools';
 import { Router, RouterModule } from '@angular/router';
-import { AlertController } from '@ionic/angular';
 import { NgModule } from '@angular/core';
+import { AuthService } from '../../providers/auth-tools/auth-tools';
 
 @Component({
   selector: 'app-footbar',
@@ -10,14 +9,12 @@ import { NgModule } from '@angular/core';
   styleUrls: ['./footbar.component.scss'], } )
 
 export class FootbarComponent implements OnInit {
-  @Input()
-    public fBarIcon1: boolean;
-  @Input()
-    public fBarText: any;
-  @Input()
-    public fBarIcon2: boolean;
+  @Input() private fBarIcon1: boolean;
+  @Input() private fBarText: string;
+  @Input() private fBarIcon2: boolean;
+  @Input() private fBarPhoto: any;
 
-  constructor(public authService: AuthService, public router: Router, public alertCtrl: AlertController) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
 }
