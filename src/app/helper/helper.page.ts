@@ -15,6 +15,7 @@ export class HelperPage implements OnInit {
   private tBarIcon2Hide: boolean = false;
   private fBarHide: boolean = false;
   private fBarIcon1Hide: boolean = true;
+  private fBarTextshowCrt: boolean = true;
   private fBarTextCrt: string = '2019© by Flexiloquent™';
   private fBarIcon2Hide: boolean = true;
 

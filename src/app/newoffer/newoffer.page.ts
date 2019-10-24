@@ -41,12 +41,12 @@ export class NewofferPage implements OnInit {
       console.log('aici sunt');
       let latitude;
       let longitude;
-      this.gLocation.getCurrentPosition().then((position) => {
+      this.gLocation.getCurrentPosition().then( (position) => {
           latitude = position.coords.latitude;
           longitude = position.coords.longitude;
-          if(this.type === 'offer'){
+          if(this.type.toLowerCase().indexOf('of') > -1){
             this.offerService.setOffer({
-              type: 'offer',
+              type: 'Offer',
               title: this.title,
               category: this.category,
               description: this.description,
@@ -56,9 +56,9 @@ export class NewofferPage implements OnInit {
               email: this.userService.getEmail(),
               secondCoord: longitude });
           }
-          if(this.type === 'request'){
+          else {
             this.offerService.setOffer({
-              type: 'request',
+              type: 'Request',
               title: this.title,
               category: this.category,
               description: this.description,
@@ -68,8 +68,6 @@ export class NewofferPage implements OnInit {
               email: this.userService.getEmail(),
               secondCoord: longitude });
           }  } );
-      console.log(this.offerService);
-      //  this.displayMarket();
       this.dismissNewofferModal();
       this.validOfferAlert(); }
 

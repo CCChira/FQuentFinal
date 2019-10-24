@@ -38,7 +38,7 @@ export class SharemapPage implements OnInit {
     else if (miscare === 'arataFAB') this.hideFAB = false; }
 
   @ViewChild('Map') mapElement: ElementRef;
-  offerDoc: any;
+  offerDoc = [];
   actualOfferDoc: any;
   offerLocation: any;
   map: any;
@@ -53,12 +53,6 @@ export class SharemapPage implements OnInit {
   private pinImageReq = '/assets/PinMarkerReq.svg';
   private mapGen = 'satellite';
 
-  ngOnInit() {
-    this.offerService.readOffer().valueChanges().subscribe(response => {
-      this.offerDoc = response; } );
-    this.Initializare();
-    return this.offerDoc; }
-
   constructor(public alertCtrl: AlertController, public modalCtrl: ModalController, public zone: NgZone, public geolocation: Geolocation,
     public router: Router, public offerService: OfferService, public afStore: AngularFirestore, public afAuth: AngularFireAuth) { }
 
@@ -66,7 +60,7 @@ export class SharemapPage implements OnInit {
     this.geolocation.getCurrentPosition().then((position) => {
       this.location.lat = position.coords.latitude;
       this.location.lng = position.coords.longitude; } );
-    this.mapOptions = { center: this.location, zoom: 13.1, mapTypeControl: false, mapTypeId: this.mapGen };
+    this.mapOptions = { center: this.location, zoom: 12, mapTypeControl: false, mapTypeId: this.mapGen };
 
     setTimeout(() => {  // Initializare harta
       this.map = new google.maps.Map(this.mapElement.nativeElement, this.mapOptions);
@@ -78,10 +72,10 @@ export class SharemapPage implements OnInit {
       let infowindow = new google.maps.InfoWindow( {content: 'This is my position!', maxWidth: 110} );
       this.marker.addListener('click', function() { infowindow.open(this.map, this); }, false);
       this.marker.addListener('mouseover', function() { infowindow.close(this.map, this); }, false);
-      this.Marcare(); }, 8000); }  // delay pentru incarcare harta
+      this.Marcare(); }, 4000); }  // delay pentru incarcare harta
 
   public Marcare() {  // Plasare marcatori
-    console.log(this.offerDoc); /// Verificare existenta Oferta Globala
+    console.log(this.offerDoc.length); /// Verificare existenta Oferta Globala
     for (const item of this.offerDoc) {
       this.location.lat = item.firstCoord;
       this.location.lng = item.secondCoord;
@@ -99,7 +93,6 @@ export class SharemapPage implements OnInit {
       this.marker.addListener('click', function() { infowindow.open(this.map, this); }, false);
       this.marker.addListener('mouseover', function() { infowindow.close(this.map, this); }, false);
       this.marker.addListener('dblclick', this.displayArtModal.bind(this, item ), false )   }  }
-  //  this.marker.addListener('mouseover', function( ) { infowindow.open(this.map, this); }, false );   }  }
 
   public ChangeMapGen() {
     if ( this.mapGen === 'satellite' ) {
@@ -138,4 +131,11 @@ export class SharemapPage implements OnInit {
       message: 'Please wait to be contacted by the poster or call him with the provided phone number',
       buttons: ['Go back to map'] } );
     (await alert).present(); }
+
+  ngOnInit() {
+    this.offerService.readOffer().valueChanges().subscribe(response => {
+      this.offerDoc = response; } );
+//    this.offerDoc = this.offerService.bazaDateServer;
+    this.Initializare();
+   }
 }

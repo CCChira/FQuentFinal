@@ -18,7 +18,7 @@ export class ActivityPage implements OnInit {
   private tBarIcon2Hide: boolean = false;
   private fBarHide: boolean = false;
   private fBarIcon1Hide: boolean = true;
-  private fBarTextCrt: string = '';
+  private fBarTextCrt: string = '2019© by Flexiloquent™';
   private fBarIcon2Hide: boolean = true;
   private hideFAB: boolean = false;
 

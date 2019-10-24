@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';  //  , HostListener
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
@@ -20,6 +20,10 @@ export class ArticolPage implements OnInit {
   @Input() private garantieArt: boolean;
 
   constructor(private modalCtrl: ModalController, private router: Router) { }
+
+/*@HostListener('document:ionBackButton', ['$event'])
+  private async overrideHardwareBackAction($event: any) {
+      await this.modalCtrl.dismiss(); }*/
 
   private cardSwitch: boolean = true;
   private Mareste() { this.cardSwitch = !this.cardSwitch; }

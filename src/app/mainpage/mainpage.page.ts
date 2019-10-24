@@ -21,6 +21,7 @@ export class MainpagePage implements OnInit {
   private tBarIcon2Hide: boolean = false;
   private fBarHide: boolean = false;
   private fBarIcon1Hide: boolean = true;
+  private fBarTextshowCrt: boolean = true;
   private fBarTextCrt: string = 'Add Offers or Requests!';
   private fBarIcon2Hide: boolean = true;
   private hideFAB: boolean = false;
@@ -29,12 +30,9 @@ export class MainpagePage implements OnInit {
     if (miscare === 'ascundeFAB') this.hideFAB = true;
     else if (miscare === 'arataFAB') this.hideFAB = false; }
 
-  private bazaDate = [ ];
-
-  constructor(private dataService: DataService, private modalCtrl: ModalController, private router: Router) {
-    this.bazaDate = this.dataService.getBazaDate(); }
-
-  private bazaFiltrata = [];
+  constructor(private dataService: DataService, private modalCtrl: ModalController, private router: Router) { }
+  private bazaDate = this.dataService.getBazaDate();
+  private bazaFiltrata = this.bazaDate;
 
   private serchInit: string = '';
   private sGen: string = '';
@@ -43,12 +41,10 @@ export class MainpagePage implements OnInit {
   private sDescription: string = '';
   private sMaxprice: number = 1000;
   private refinedHide: boolean = true;
-  private resultHide: boolean = true;
 
   private ShowRefined() {
     this.tBarSearchShow = !this.tBarSearchShow;
     this.refinedHide = !this.refinedHide;
-    this.resultHide = true;
     this.sGen = '';
     this.sArea = '';
     this.sCategory = '';
@@ -57,14 +53,12 @@ export class MainpagePage implements OnInit {
     this.bazaFiltrata = this.bazaDate; }
 
   private Cautare(termen){
-    this.resultHide = false;
     this.bazaFiltrata = this.bazaDate.filter(oriceart => {
       return ((oriceart.pretpezi <= parseInt(termen, 10)) || oriceart.gen.toLowerCase().indexOf(termen.toLowerCase()) > -1) ||
       (oriceart.zona.toLowerCase().indexOf(termen.toLowerCase()) > -1) || (oriceart.categorie.toLowerCase().indexOf(termen.toLowerCase()) > -1) ||
       (oriceart.descriere.toLowerCase().indexOf(termen.toLowerCase()) > -1); } ); }
 
   private Rafinare() {
-    this.resultHide = false;
     this.bazaFiltrata = this.bazaDate.filter(item => {
       return (item.gen.toLowerCase().indexOf(this.sGen.toLowerCase()) > -1) && (item.zona.toLowerCase().indexOf(this.sArea.toLowerCase()) > -1) &&
       (item.categorie.toLowerCase().indexOf(this.sCategory.toLowerCase()) > -1) &&
@@ -93,5 +87,5 @@ export class MainpagePage implements OnInit {
       garantieArt: item.garantie },  });
     return await ListModal.present(); }
 
-  ngOnInit() { this.bazaFiltrata = this.bazaDate; }
+  ngOnInit() { }
 }

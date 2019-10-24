@@ -62,22 +62,21 @@
         </ion-card>
       </ion-row>
 
-      <div [hidden]='resultHide'>
-        <ion-row>
-          <ion-item class="linkstyle">
-            <ion-label class="style24"> Top results: &nbsp; </ion-label>
-          </ion-item>
-        </ion-row>
-        <ion-row class="searched">
-          <ion-card class="smallest"  *ngFor="let articol of bazaFiltrata | slice:0:3">
-            <ion-card-content class="thumbpad" (click)="displayArtModal( articol )">
-              <ion-card-subtitle class="subtext3"> {{articol.categorie}} </ion-card-subtitle>
-              <img  src={{articol.srcimg}} alt={{articol.categorie}}>
-              <p class="microtext"> {{articol.zona}} </p>
-            </ion-card-content>
-          </ion-card>
-        </ion-row>
-      </div>
+      <ion-row>
+        <ion-item class="linkstyle">
+          <ion-label class="style24"> Top results: &nbsp; </ion-label>
+        </ion-item>
+      </ion-row>
+
+      <ion-row class="searched">
+        <ion-card class="smallest"  *ngFor="let articol of bazaFiltrata | slice:0:3">
+          <ion-card-content class="thumbpad" (click)="displayArtModal( articol )">
+            <ion-card-subtitle class="subtext3"> {{articol.categorie}} </ion-card-subtitle>
+            <img  src={{articol.srcimg}} alt={{articol.categorie}}>
+            <p class="microtext"> {{articol.zona}} </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
 
       <br><br>
 
@@ -107,4 +106,4 @@
   </form>
 </ion-content>
 
-<app-footbar [hidden]='fBarHide' [fBarIcon1]='fBarIcon1Hide' [fBarText]='fBarTextCrt' [fBarIcon2]='fBarIcon2Hide'> </app-footbar>
+<app-footbar [hidden]='fBarHide' [fBarIcon1]='fBarIcon1Hide' [fBarTextshow]='fBarTextshowCrt' [fBarText]='fBarTextCrt' [fBarIcon2]='fBarIcon2Hide'> </app-footbar>

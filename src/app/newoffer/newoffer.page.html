@@ -21,8 +21,8 @@
         <ion-row>
           <ion-card class="medcard" [hidden]='!cardSwitch'>
             <ion-card-content class="thumbpad">
-              <span *ngIf="offerImg === null"> <img id="initialImage" class="round" src="\assets\icon\CameraB.svg" /> </span>
-              <span *ngIf="offerImg != null"> <img id="checkinImage" class="round" [src]="offerImg" (load)="imageLoaded()" /> </span>
+              <span *ngIf="offerImg === null"> <img id="initialImage" class="roundedcard" src="\assets\icon\CameraB.svg" /> </span>
+              <span *ngIf="offerImg != null"> <img id="checkinImage" class="roundedcard" [src]="offerImg" (load)="imageLoaded()" /> </span>
               <span *ngIf="processing"> <ion-spinner> </ion-spinner> <h1>Processing...</h1> </span>
               <ion-fab horizontal="end" vertical="bottom" slot="fixed">
                 <ion-fab-button class="plus" (click)="Mareste()">
@@ -33,8 +33,8 @@
           </ion-card>
           <ion-card class="biggercard" [hidden]='cardSwitch'>
             <ion-card-content class="thumbpad">
-              <span *ngIf="offerImg === null"> <img id="initialImage" class="round" src="\assets\icon\CameraB.svg" /> </span>
-              <span *ngIf="offerImg != null"> <img id="checkinImage" class="round" [src]="offerImg" (load)="imageLoaded()" /> </span>
+              <span *ngIf="offerImg === null"> <img id="initialImage" class="roundedcard" src="\assets\icon\CameraB.svg" /> </span>
+              <span *ngIf="offerImg != null"> <img id="checkinImage" class="roundedcard" [src]="offerImg" (load)="imageLoaded()" /> </span>
               <span *ngIf="processing"> <ion-spinner> </ion-spinner> <h1>Processing...</h1> </span>
               <ion-fab horizontal="end" vertical="bottom" slot="fixed">
                 <ion-fab-button class="plus" (click)="Mareste()">

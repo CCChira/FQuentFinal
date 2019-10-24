@@ -10,9 +10,10 @@ export class AboutusPage implements OnInit {
   private tBarHide: boolean = false;
   private tBarIcon1Hide: boolean = false;
   private tBarTextCrt: string = 'About Us';
-  private tBarIcon2Hide: boolean = true;
+  private tBarIcon2Hide: boolean = false;
   private fBarHide: boolean = false;
   private fBarIcon1Hide: boolean = true;
+  private fBarTextshowCrt: boolean = true;
   private fBarTextCrt: string = '2019© by Flexiloquent™';
   private fBarIcon2Hide: boolean = true;
 

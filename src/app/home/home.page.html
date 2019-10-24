@@ -23,11 +23,11 @@
           <ion-card>
             <ion-card-header>
               <ion-card-title class="titlu"> Oferta zilei! </ion-card-title>
-              <ion-card-subtitle class="subtext1"> Ultima aparitie&nbsp;&nbsp; - &nbsp;&nbsp;categoria: {{articol.categorie}}</ion-card-subtitle>
+              <ion-card-subtitle class="subtext1"> Ultima aparitie&nbsp;-&nbsp;{{articol.categorie}}</ion-card-subtitle>
             </ion-card-header>
             <ion-card-content (click)="displayArtModal( articol )">
               <img src={{articol.srcimg}} alt={{articol.categorie}}>
-              <p class="paratext">{{articol.gen}} &nbsp;-&nbsp; {{articol.zona}}  &nbsp;-&nbsp; {{articol.pretpezi}} lei/zi </p>
+              <p class="paratext">{{articol.gen}}&nbsp;{{articol.zona}}&nbsp;-&nbsp;{{articol.pretpezi}}&nbsp;lei/zi </p>
               <br>
             </ion-card-content>
           </ion-card>

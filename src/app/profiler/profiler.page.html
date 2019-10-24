@@ -4,13 +4,11 @@
   <form #profilerForm="ngForm">
     <ion-grid>
       <ion-col>
-        <ion-row> <p class="style11"> Update your informations: </p> </ion-row>
-
         <ion-row>
           <ion-card class="medcard" [hidden]='!cardSwitch'>
             <ion-card-content class="thumbpad">
-              <span *ngIf="profileImg === null"> <img class="round" id="initialImage" src="\assets\icon\CameraB.svg" /> </span>
-              <span *ngIf="profileImg != null"> <img class="round" id="checkinImage" [src]="profileImg" (load)="imageLoaded()" /> </span>
+              <span *ngIf="profileImg === null"> <img class="roundedcard" id="initialImage" src="\assets\icon\CameraB.svg" /> </span>
+              <span *ngIf="profileImg != null"> <img class="roundedcard" id="checkinImage" [src]="profileImg" (load)="imageLoaded()" /> </span>
               <span *ngIf="processing"> <ion-spinner> </ion-spinner> <h1>Processing...</h1> </span>
               <ion-fab horizontal="end" vertical="bottom" slot="fixed">
                 <ion-fab-button class="plus" (click)="Mareste()">
@@ -22,8 +20,8 @@
 
           <ion-card class="biggercard" [hidden]='cardSwitch'>
             <ion-card-content class="thumbpad">
-              <span *ngIf="profileImg === null"> <img class="round" id="initialImage" src="\assets\icon\CameraB.svg" /> </span>
-              <span *ngIf="profileImg != null"> <img class="round" id="checkinImage" [src]="profileImg" (load)="imageLoaded()" /> </span>
+              <span *ngIf="profileImg === null"> <img class="roundedcard" id="initialImage" src="\assets\icon\CameraB.svg" /> </span>
+              <span *ngIf="profileImg != null"> <img class="roundedcard" id="checkinImage" [src]="profileImg" (load)="imageLoaded()" /> </span>
               <span *ngIf="processing"> <ion-spinner> </ion-spinner> <h1>Processing...</h1> </span>
               <ion-fab horizontal="end" vertical="bottom" slot="fixed">
                 <ion-fab-button class="plus" (click)="Mareste()">
@@ -38,7 +36,7 @@
           <input type="file" id="fileLoader" #fileLoader name="files" title="Load File" hidden />
           <ion-button class="addbutton" icon-left (click)="addPicture(fileLoader)">
             <ion-icon class="icocolor" name="camera"> </ion-icon>
-            <p class="styleb"> &nbsp;&nbsp;SELECT IMAGE </p>
+            <p class="styleb"> &nbsp;&nbsp;&nbsp;SELECT IMAGE </p>
           </ion-button>
           <ion-button class="remvbutton" icon-left (click)="removePic()" [disabled]="profileImg === null">
             <ion-icon class="icocolor" name="trash"> </ion-icon>
@@ -81,7 +79,6 @@
           </ion-button>
         </ion-row>
 
-        <br>
         <ion-row> <p class="style21"> Want to change your password? </p> </ion-row>
 
         <ion-row>

@@ -18,12 +18,12 @@ export class ProfilerPage implements OnInit {
 
   private tBarHide: boolean = false;
   private tBarIcon1Hide: boolean = false;
-  private tBarTextCrt: string = 'Edit Profile';
-  private tBarIcon2Hide: boolean = true;
-  private fBarHide: boolean = true;
-  private fBarIcon1Hide: boolean = false;
-  private fBarTextCrt: string = '';
-  private fBarIcon2Hide: boolean = false;
+  private tBarTextCrt: string = 'Update your informations:';
+  private tBarIcon2Hide: boolean = false;
+  private fBarHide: boolean = false;
+  private fBarIcon1Hide: boolean = true;
+  private fBarTextCrt: string = '2019© by Flexiloquent™';
+  private fBarIcon2Hide: boolean = true;
 
   constructor(private afAuth: AngularFireAuth, public authService: AuthService, private router: Router, private alertCtrl: AlertController) { }
 

@@ -32,11 +32,11 @@ export class OfferService {
   setOffer( request: Request ) { this.request = request; this.afStore.collection('GlobalOffers').add(request); }
   //  this.request.contactphone = ContactPhone;
 
-  async getMarker() {
+  /*async getMarker() {
     let markers = [];
     const snapshot = await this.afStore.collection('GlobalOffers').get().subscribe(querySnapshot => {
       querySnapshot.docs.forEach(doc => {
-        return doc.data(); } );  } ); }
+        return doc.data(); } );  } ); } */
 
   /*async getDbTitle() {
   const snp = await this.afStore.collection('GlobalOffers').snapshotChanges( res=>{

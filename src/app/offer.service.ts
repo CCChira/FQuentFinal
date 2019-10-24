@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Directive } from '@angular/core';  // , OnInit - bagat in plus OnInit
+import { BehaviorSubject, Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { query } from '@angular/core/src/render3';
 import { markParentViewsForCheck } from '@angular/core/src/view/util';
@@ -17,6 +18,7 @@ interface Offer {
 @Injectable()
 export class OfferService {
   public offer: Offer;
+  public bazaDateServer = [];
 
   constructor(public afStore: AngularFirestore) {}
 
@@ -29,13 +31,14 @@ export class OfferService {
   setLng( Lng ) { this.offer.firstCoord = Lng; }
   setOffer( offer: Offer ) {
     this.offer = offer;
-    this.afStore.collection('GlobalOffers').add( offer ); } // this.offer.contactphone = ContactPhone;
+    this.afStore.collection('GlobalOffers').add( offer );
+    console.log('oferta noua'); } // this.offer.contactphone = ContactPhone;
 
-  async getMarker() {
+/*  async getMarker() {
     let markers = [];
     const snapshot = await this.afStore.collection('GlobalOffers').get().subscribe(querySnapshot => {
       querySnapshot.docs.forEach(doc => {
-        return doc.data(); } ); } ); }
+        return doc.data(); } ); } ); } */
 
   /*async getDbTitle() {
     const snp = await this.afStore.collection('GlobalOffers').snapshotChanges( res=>{
@@ -51,4 +54,7 @@ export class OfferService {
   getPhone() { return this.offer.contactphone; }
   getLatitude() { return this.offer.firstCoord; }
   getLongitude() { return this.offer.secondCoord; }
+
+  public getBazaDate() {
+   return this.bazaDateServer; }
 }

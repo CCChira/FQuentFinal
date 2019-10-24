@@ -22,6 +22,7 @@ export class TooltopPage implements OnInit {
   private tBarIcon2Hide: boolean = false;
   private fBarHide: boolean = false;
   private fBarIcon1Hide: boolean = true;
+  private fBarTextshowCrt: boolean = true;
   private fBarTextCrt: string = 'Add Offers or Requests!';
   private fBarIcon2Hide: boolean = true;
   private hideFAB: boolean = false;
@@ -30,10 +31,9 @@ export class TooltopPage implements OnInit {
     if (miscare === 'ascundeFAB') this.hideFAB = true;
     else if (miscare === 'arataFAB') this.hideFAB = false; }
 
-  private bazaDate = [ ];
-
-  constructor(private dataService: DataService, private modalCtrl: ModalController, private router: Router) {
-    this.bazaDate = this.dataService.getBazaDate(); }
+  constructor(private dataService: DataService, private modalCtrl: ModalController, private router: Router) { }
+  private bazaDate = this.dataService.getBazaDate();
+  private bazaFiltrata = this.bazaDate;
 
   private serchInit: string = '';
   private sGen: string = '';
@@ -54,7 +54,6 @@ export class TooltopPage implements OnInit {
     this.bazaFiltrata = this.bazaDate;
     this.Indexare(); }
 
-  private bazaFiltrata = [];
   private Cautare(termen) {
     this.bazaFiltrata = this.bazaDate.filter(oriceart => {
       return ((oriceart.pretpezi <= parseInt(termen, 10)) || oriceart.gen.toLowerCase().indexOf(termen.toLowerCase()) > -1) ||
@@ -86,7 +85,7 @@ export class TooltopPage implements OnInit {
     this.bazaSeparata = [];
     for (this.numecat of this.IndexA) {
     this.bazalaIndex = this.bazaFiltrata.filter(item => {
-      return (item.categorie.toLowerCase() === this.numecat.toLowerCase()); } )
+      return (item.categorie.toLowerCase() === this.numecat.toLowerCase()); } );
     this.bazaSeparata.push([{categ: this.numecat}, this.bazalaIndex]); } }
 
   async displayOfrModal(): Promise <void> {
@@ -112,7 +111,5 @@ export class TooltopPage implements OnInit {
       garantieArt: item.garantie },  });
     return await ListModal.present(); }
 
-  ngOnInit() {
-    this.bazaFiltrata = this.bazaDate;
-    this.Indexare(); }
+  ngOnInit() { this.Indexare(); }
 }

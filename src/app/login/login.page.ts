@@ -13,8 +13,11 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['./login.page.scss'], } )
 
 export class LoginPage implements OnInit {
+  public name: string = ''; //
   public email: string = '';
+  public uid: string = ''; //
   private password: string = '';
+
   private tBarHide: boolean = false;
   private tBarIcon1Hide: boolean = false;
   private tBarTextCrt: string = 'Login Page';
@@ -33,7 +36,7 @@ export class LoginPage implements OnInit {
 
   private logmein() {
     if (this.email && this.password) {
-      const mail = this.email;
+  //    const mail = this.email;
       let ok = true;
       if (!this.validMail(this.email)) {
         ok = false;
@@ -46,8 +49,11 @@ export class LoginPage implements OnInit {
           console.log(response);
           this.loggedInAlert();
           this.userService.setUser({
-            email: mail,
-            uid: response.user.uid  });
+  //        name: this.name,   //
+            email: this.email,
+            uid: response.user.uid
+  //        password: this.password   //
+           });
           return this.displayMarket(); },
 
         (error) => {
@@ -117,5 +123,6 @@ export class LoginPage implements OnInit {
 
   private displayMarket() { this.router.navigateByUrl('sharemap'); }
 
-  ngOnInit() { }
+  // private user: any;   //
+  ngOnInit() { /*this.user = getlocalUser();*/ }
 }

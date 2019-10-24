@@ -21,12 +21,10 @@ export class HomePage implements OnInit {
   private fBarTextCrt: string = '2019© by Flexiloquent™';
   private fBarIcon2Hide: boolean = false;
 
-  private bazaDate = [ ];
+  constructor(private dataService: DataService, private modalCtrl: ModalController, private router: Router) { }
 
-  constructor(private dataService: DataService, private modalCtrl: ModalController, private router: Router) {
-    this.bazaDate = this.dataService.getBazaDate(); }
-
-  private bazaFiltrata = [];
+  private bazaDate = this.dataService.getBazaDate();
+  private bazaFiltrata = this.bazaDate;
   private IndexA = [];
   private maxIndex = 6;
   private j = 0;
@@ -71,6 +69,5 @@ export class HomePage implements OnInit {
     return await ListModal.present(); }
 
   ngOnInit() {
-    this.bazaFiltrata = this.bazaDate;
     this.Indexare(); }
 }

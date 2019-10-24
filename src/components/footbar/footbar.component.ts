@@ -11,6 +11,7 @@ import { AuthService } from '../../providers/auth-tools/auth-tools';
 export class FootbarComponent implements OnInit {
   @Input() private fBarIcon1: boolean;
   @Input() private fBarText: string;
+  @Input() private fBarTextshow: boolean;
   @Input() private fBarIcon2: boolean;
   @Input() private fBarPhoto: any;
 

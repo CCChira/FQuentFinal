@@ -20,6 +20,7 @@
   --clrScrisGen: #75577F; // MOV
   --clrChenare: #C5A4CF; } // mov deschis
 
+
 [tema2="modif"]{
   --clrScrisAgr: #6175FF; // ALBASTRU electric
   --clrScrisCrd: #6175FF; } // ALBASTRU electric
@@ -65,10 +66,10 @@ ion-toggle{
   margin: 10px 15px 0px 15px; }
 
 .margini1{ //ion-row: randuri de inserare + butoane validare
-  margin: 8px; }
+  margin: 6px; }
 
 .margini2{ //ion-row: specific page logos - binoclu
-  margin: 5px 15px 0px 15px; }
+  margin: 5px 10px 0px 5px; }
 
 .margini3{ //ion-row: answer one
   margin: 10px 12px 10px 12px; }
@@ -78,24 +79,13 @@ ion-toggle{
 
 .marginip{ //ion-row: photos
   margin: 0px auto 0px auto;
-  max-width: 280px; }
+  max-width: 250px; }
 
-.round{
+.roundedcard{
   border-radius: 10px !important; }
 
-.infield{ //ion-input: campurile de inserare
-  width: 305px;
-  height: 48px;
-  font-size: 18px;
-  color: var(--colorScrisGen); // gri
-  background: var(--colorFond); //alb
-  opacity: 0.9;
-  border: 1px solid var(--colorChenare); //gri chenar
-  border-radius: 28px;
-  padding: 0px 2px 0px 58px !important; }
-
 .marginis{ //ion-row: randuri de inserare la search
-  margin: 6px; }
+  margin: 3px 6px; }
 
 .sfield{ //ion-input: campurile de cautare
   width: 250px;
@@ -111,14 +101,14 @@ ion-toggle{
 .snote{ //ion-note: notele de langa campurile de cautare
   width: 145px;
   height: 42px;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--colorScrisGen); // gri
   margin: auto !important;
   padding: 10px 0px 10px 0px !important; }
 
 .marginia{ //ion-row: randuri de la prezentare articol
   margin: 0px;
-  height: 44px; }
+  height: 42px; }
 
 .afield{ //ion-label: campurile de articol
   width: 230px;
@@ -129,7 +119,7 @@ ion-toggle{
   opacity: 0.9;
   border: 1px solid var(--colorChenare); //gri chenar
   border-radius: 28px;
-  margin: 8px 0px 8px 0px !important;
+  margin: 7px 0px 7px 0px !important;
   padding: 2px 5px 2px 10px !important; }
 
 .xfield{ //ion-label: camp blank la articol
@@ -150,7 +140,7 @@ ion-toggle{
   font-size: 18px;
   color: var(--colorScrisGen); // gri
   text-align: right;
-  margin: 8px 5px 8px 0px !important;
+  margin: 7px 5px 7px 0px !important;
   padding: 2px 0px 2px 0px !important; }
 
 .digitfield{ //ion-input: campurile de digits
@@ -164,14 +154,6 @@ ion-toggle{
   border: 1px solid var(--colorChenare); //gri chenar
   margin: 0px 12px 0px 12px;
   padding: 10px 4px 10px 4px !important; }
-
-.mydrop{ //img: lacrima
-  color: var(--colorButon1) !important;;
-  font-size: 54px !important;
-  top: 1.6px;
-  position: relative;
-  left: 1px;
-  z-index: -1; }
 
 .figicon{ //figure: small white icons la inputuri
   margin: 0;
@@ -190,10 +172,30 @@ ion-toggle{
   top: 50%;
   width: 18px; }
 
+.mydrop{ //img: lacrima
+  color: var(--colorButon1) !important;;
+  font-size: 48px !important;
+  top: 1.6px;
+  position: relative;
+  left: 1.6px;
+  z-index: -1; }
+
 .myicons{ //img: small icons
   width: 18px;
   height: 20px;
   margin-left: 14px; }
+
+.infield{ //ion-input: campurile de inserare
+  width: 305px;
+  height: 44px;
+  font-size: 18px;
+  color: var(--colorScrisGen); // gri
+  background: var(--colorFond); //alb
+  background: var(--colorFond); //alb
+  opacity: 0.9;
+  border: 1px solid var(--colorChenare); //gri chenar
+  border-radius: 28px;
+  padding: 0px 1px 0px 65px !important; }
 
 .style011{ // ion-button: arrow si menu
   font-size: 32px;
@@ -213,13 +215,13 @@ ion-toggle{
 
 ion-card{ // setarea generala
   display: flex;
-  width: 400px;
+  width: 370px;
   border-radius: 10px !important;
   margin: 10px 30px 10px 30px !important; }
 
 .maxicard{ // carduri maxime...
   display: flex;
-  width: 400px;
+  width: 390px;
   border-radius: 10px !important;
   margin: 10px 20px 10px 20px !important; }
 
@@ -231,19 +233,19 @@ ion-card{ // setarea generala
 
 .bigcard{ // carduri mari
   display: flex;
-  width: 250px !important;
+  width: 200px !important;
   border-radius: 20px !important;
   margin: 5px 5px 5px 5px !important; }
 
 .medcard{ // carduri medii
   display: flex;
-  width: 190px !important;
-  border-radius: 20px !important;
+  width: 180px !important;
+  border-radius: 16px !important;
   margin: 6px !important; }
 
 .thumbcard{ // carduri mici
   display: flex;
-  width: 170px !important;
+  width: 160px !important;
   border-radius: 5px !important;
   margin: 5px 5px 5px 5px !important; }
 
@@ -253,6 +255,7 @@ ion-card{ // setarea generala
   margin: 3px 3px 3px 3px !important; }
 
 .thincard{ // carduri inguste
+  width: 390px;
   margin: 10px 20px -5px 20px !important; }
 
 ion-card-header{ // setarea generala
@@ -265,7 +268,7 @@ ion-card-content{ // setarea generala
   padding: 10px 10px 10px 10px !important; }
 
 ion-card-title{ // setarea generala
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   text-transform: none;
   color: var(--colorScrisCrd); // verde
@@ -273,6 +276,10 @@ ion-card-title{ // setarea generala
 
 .titlu{ // setarea titlu home
   text-align: left !important; }
+
+.titluc{ // setarea titlu home
+  font-size: 22px !important;
+  text-align: center !important; }
 
 .subtext1{ // setarea subtitle home
   font-size: 20px;
@@ -297,7 +304,7 @@ ion-card-title{ // setarea generala
   margin: 4px 4px 4px 4px; }
 
 .subtext4{ // subtitle thumbcard
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold !important;
   text-transform: none;
   color: var(--colorScrisGen); // gri
@@ -311,7 +318,7 @@ ion-card-title{ // setarea generala
   margin: 10px 10px 15px 10px !important; }
 
 .bottomtext{ // paragraph: in slides
-  font-size: 24px !important;
+  font-size: 22px !important;
   font-weight: bold !important;
   color: var(--colorScrisCrd); // verde
   text-align: right;
@@ -345,8 +352,8 @@ ion-content{ // fondul tuturor ecranelor
 
 ion-menu{ // setarea generala
   --background: var(--colorFond);
-  --z-index: 100;
-  --width: 350px;
+  --z-index: 50;
+  --width: 330px;
   /*--height: 655px;*/ }
 
 ion-item{ // setarea generala
@@ -383,7 +390,7 @@ ion-col{ // setarea generala + la casutele de digits
  --ion-grid-column-padding: 0px; }
 
 .fbgg{ // butoanele de FB si G+
-  margin: 10px 30px 5px 30px;
+  margin: 5px 30px 5px 30px;
   --background: clear; }
 
 .plus{ // butoanele de zoom-in / -out
@@ -440,8 +447,8 @@ ion-fab-button{ // butoanele de FAB 1/2+3
   color: var(--colorScrisGen); }
 
 ion-button{ // setarea generala
-  --border-radius: 23px;
-  height: 45px;
+  --border-radius: 22px;
+  height: 44px;
   margin-top: 0px;
   margin-bottom: 0px; }
 
@@ -463,14 +470,14 @@ ion-button{ // setarea generala
   border-radius: 23px; }
 
 .addbutton{ // ion-button: butonul verde de "select image"
-  width: 195px;
+  width: 220px;
   --background: var(--colorButon1); // verde
   --background-activated: var(--colorActBut1); // verde-tare - la apasare
   --background-focused: var(--colorActBut1); // verde-tare - la trecere cu tab
   --background-hover: var(--colorActBut1); } // verde-tare - la trecere cu mouse
 
 .samplebutton{ // ion-button: butonul mare negativ verde
-  width: 105px;
+  width: 120px;
   --background: var(--colorFond); // alb
   --background-activated: var(--colorActBut2); // gri - la apasare
   --background-focused: var(--colorActBut2);  // gri - la trecere cu tab
@@ -533,7 +540,7 @@ ion-button{ // setarea generala
 
 .style0f{ // ion-label: footbar writing + FAB text
   font-weight: bold;
-  font-size: 20px !important;
+  font-size: 18px !important;
   text-align: center;
   margin: auto;
   color: var(--colorScrisAgr) !important; } // albastru
@@ -546,7 +553,7 @@ ion-button{ // setarea generala
 .style11{ // ion-row: question one
   font-weight: bold;
   font-size: 18px;
-  margin: 10px 10px 10px 10px;
+  margin: 10px 20px 10px 20px;
   color: var(--colorScrisGen); } // gri
 
 .style12{ // ion row: answer one
@@ -575,14 +582,14 @@ ion-button{ // setarea generala
 
 .style23{ // ion-row: long description
   font-size: 18px;
-  max-width: 380px;
-  margin: 8px 10px 0px 10px;
+  max-width: 370px;
+  margin: 8px 20px 0px 20px;
   color: var(--colorScrisGen); } // gri
 
 .style24{ // ion-label: answer two
   color: var(--colorScrisLnk) !important; // orange
   max-width: 380px;
-  font-size: 22px !important;
+  font-size: 18px !important;
   &:hover, &:focus {
     border-bottom: 1px solid currentColor; }
   margin: 0px 10px 0px 10px; }
@@ -639,9 +646,9 @@ ion-button{ // setarea generala
     --ion-safe-area-bottom: 1%;
     --ion-safe-area-right: 1%;
     --ion-safe-area-left: 1%;
-    --width: 88%;
+    --width: 92%;
     --max-width: 395px !important;
-    --height: 94%;
+    --height: 97%;
     --min-height: 580px;
     --max-height: 700px !important;
     --max-height: auto;

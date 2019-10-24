@@ -30,10 +30,9 @@ export class MarketPage implements OnInit {
     if (miscare === 'ascundeFAB') this.hideFAB = true;
     else if (miscare === 'arataFAB') this.hideFAB = false; }
 
-  private bazaDate = [ ];
-
-  constructor(private dataService: DataService, private modalCtrl: ModalController, private router: Router) {
-    this.bazaDate = this.dataService.getBazaDate(); }
+  constructor(private dataService: DataService, private modalCtrl: ModalController, private router: Router) { }
+  private bazaDate = this.dataService.getBazaDate();
+  private bazaFiltrata = this.bazaDate;
 
   private serchInit: string = '';
   private sGen: string = '';
@@ -53,7 +52,6 @@ export class MarketPage implements OnInit {
     this.sMaxprice = 1000;
     this.bazaFiltrata = this.bazaDate; }
 
-  private bazaFiltrata = [];
   private Cautare(termen){
     this.bazaFiltrata = this.bazaDate.filter(oriceart => {
       return ((oriceart.pretpezi <= parseInt(termen, 10)) || oriceart.gen.toLowerCase().indexOf(termen.toLowerCase()) > -1) ||
@@ -89,5 +87,5 @@ export class MarketPage implements OnInit {
       garantieArt: item.garantie },  });
     return await ListModal.present(); }
 
-  ngOnInit() { this.bazaFiltrata = this.bazaDate; }
+  ngOnInit() { }
 }

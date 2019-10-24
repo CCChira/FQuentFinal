@@ -7,7 +7,8 @@
           <ion-icon name="close" class="style013"> </ion-icon>
         </ion-button>
 
-        <ion-label class="style0f"> {{ fBarText }} </ion-label>
+        <ion-label class="style0f" [hidden]='fBarTextshow' (click)="this.router.navigateByUrl('aboutus')"> {{ fBarText }} </ion-label>
+        <ion-label class="style0f" [hidden]='!fBarTextshow' (click)="this.router.navigateByUrl('settings')"> {{ fBarText }} </ion-label>
 
         <ion-back-button class="show-back-button style011" [hidden]='fBarIcon2'> </ion-back-button>
         <ion-button class="smallbutton style013" [hidden]='!fBarIcon2'>

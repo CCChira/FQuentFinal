@@ -27,7 +27,7 @@
 
         <ion-row class="marginia">
           <ion-item lines="none">
-            <ion-note class="anote"> Header: </ion-note>
+            <ion-note class="anote"> Title: </ion-note>
             <ion-label class="afield" name="titluA"> {{titluArt}} </ion-label>
           </ion-item>
         </ion-row>
@@ -35,7 +35,7 @@
         <ion-row>
           <ion-card class="bigcard" [hidden]='!cardSwitch'>
             <ion-card-content class="thumbpad">
-              <img class="round" src={{srcimgArt}} alt={{categorieArt}}/>
+              <img class="roundedcard" src={{srcimgArt}} alt={{categorieArt}}/>
             </ion-card-content>
             <ion-fab horizontal="end" vertical="bottom" slot="fixed">
               <ion-fab-button class="plus" (click)="Mareste()">
@@ -46,7 +46,7 @@
 
           <ion-card class="biggercard" [hidden]='cardSwitch'>
             <ion-card-content class="thumbpad">
-              <img class="round" src={{srcimgArt}} alt={{categorieArt}}/>
+              <img class="roundedcard" src={{srcimgArt}} alt={{categorieArt}}/>
             </ion-card-content>
           <ion-fab horizontal="end" vertical="bottom" slot="fixed">
             <ion-fab-button class="plus" (click)="Mareste()">
